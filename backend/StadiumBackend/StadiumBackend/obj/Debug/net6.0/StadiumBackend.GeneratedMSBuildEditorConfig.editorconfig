@@ -9,7 +9,6 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = StadiumBackend
 build_property.RootNamespace = StadiumBackend
-<<<<<<< HEAD
 build_property.ProjectDir = C:\Users\lenovo\Desktop\LAB 2 - Stadium Management System\Stadium-Management-System\backend\StadiumBackend\StadiumBackend\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
@@ -17,11 +16,4 @@ build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = C:\Users\lenovo\Desktop\LAB 2 - Stadium Management System\Stadium-Management-System\backend\StadiumBackend\StadiumBackend
-=======
-build_property.ProjectDir = C:\Users\artin\Desktop\Lab2\Stadium-Management-System\backend\StadiumBackend\StadiumBackend\
-build_property.RazorLangVersion = 6.0
-build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\artin\Desktop\Lab2\Stadium-Management-System\backend\StadiumBackend\StadiumBackend
->>>>>>> 2b89cd78213ebbd9c2dc13fb47f31b4b15bd301b
 build_property._RazorSourceGeneratorDebug = 
