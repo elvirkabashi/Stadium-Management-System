@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "fNJdKmu+hdIu+ydq2vCI5awlcuEcv6vebS+Gxqd4k7CFjTvHZUbedQG1AgDApMLXgy9JpvwMGdmTqYW4IPFDCQ==",
+  "dgSpecHash": "RhzXwAGBkCrAX2VwZgr6o5AhMnxm9yPTWMUKjIZikPKFha+AXBdcwaFg7c/xDZtp69/VUvHG8jV+koRM/bXACw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumBackend\\StadiumBackend\\StadiumBackend.csproj",
+  "projectFilePath": "C:\\Users\\lenovo\\Desktop\\LAB 2 - Stadium Management System\\Stadium-Management-System\\backend\\StadiumBackend\\StadiumBackend\\StadiumBackend.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\elvir\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
-    "C:\\Users\\elvir\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\elvir\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
-    "C:\\Users\\elvir\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
-    "C:\\Users\\elvir\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
-    "C:\\Users\\elvir\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
   ],
   "logs": []
 }

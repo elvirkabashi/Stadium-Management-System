@@ -3,7 +3,7 @@ function App() {
 
   return (
     <>
-      <h1>Go hard or go home</h1>
+      <h1>Stadium Management System</h1>
     </>
   )
 }
