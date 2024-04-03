@@ -1,9 +1,17 @@
-import Sidebar from './Components/Sidebar'
+import React from 'react'
+import './App.css'
+import { Routes, Route, BrowserRouter, Navigate} from 'react-router-dom';
+import HomePage from './Components/HomePage/HomePage';
+import Sidebar from './Components/Sidebar';
 
-function App() {
-
+const App = () => {
   return (
-    <Sidebar />
+    <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/dashboard' element={<Sidebar />} />
+        </Routes>
+  </BrowserRouter>
   )
 }
 
