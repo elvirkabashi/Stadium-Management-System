@@ -1,7 +1,7 @@
 import React from 'react'
 import './App.css'
 import { Routes, Route, BrowserRouter, Navigate} from 'react-router-dom';
-import HomePage from './Components/HomePage/HomePage';
+import HomePage from './pages/HomePage/HomePage';
 import Sidebar from './Components/Sidebar';
 
 const App = () => {
