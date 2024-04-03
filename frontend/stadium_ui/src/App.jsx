@@ -1,10 +1,9 @@
+import Sidebar from './components/Sidebar'
 
 function App() {
 
   return (
-    <>
-      <h1>Stadium Management System</h1>
-    </>
+    <Sidebar />
   )
 }
 
