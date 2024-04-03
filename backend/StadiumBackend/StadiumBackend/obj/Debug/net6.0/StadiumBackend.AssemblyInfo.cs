@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StadiumBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+55cfb8b55db65ed9f68d29f375892dc4e340312e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d815cb9ef072432757e0529bf2cf21db6967faf")]
 [assembly: System.Reflection.AssemblyProductAttribute("StadiumBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StadiumBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
