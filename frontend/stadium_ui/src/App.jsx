@@ -2,7 +2,7 @@ import React from 'react'
 import './App.css'
 import { Routes, Route, BrowserRouter, Navigate} from 'react-router-dom';
 import HomePage from './pages/HomePage/HomePage';
-import Sidebar from './Components/Sidebar';
+import Sidebar from './components/Sidebar';
 
 const App = () => {
   return (
