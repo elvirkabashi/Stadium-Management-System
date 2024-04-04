@@ -13,14 +13,14 @@
 }
 
 .header {
-  position: fixed;
+  /* position: fixed; */
   display: flex;
   align-items: center;
   justify-content: space-between;
   background: whitesmoke;
   width: 100%;
   padding: 1rem;
-  z-index: 1000;
+  z-index: 1;
   box-shadow: 0 2px 4px rgba(2, 15, 29, 0.242);
 }
 .header .logo {
