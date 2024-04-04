@@ -11556,19 +11556,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\artin\\.nuget\\packages\\": {}
+    "C:\\Users\\lenovo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\artin\\Desktop\\ProjektiLab\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\LAB 2 - Stadium Management System\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
       "projectName": "MySqlWebApi",
-      "projectPath": "C:\\Users\\artin\\Desktop\\ProjektiLab\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
-      "packagesPath": "C:\\Users\\artin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\artin\\Desktop\\ProjektiLab\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\obj\\",
+      "projectPath": "C:\\Users\\lenovo\\Desktop\\LAB 2 - Stadium Management System\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
+      "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lenovo\\Desktop\\LAB 2 - Stadium Management System\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\artin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11576,7 +11576,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11651,7 +11650,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
