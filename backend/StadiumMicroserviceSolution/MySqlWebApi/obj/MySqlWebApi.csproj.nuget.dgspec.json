@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj": {}
+    "C:\\Users\\lenovo\\Desktop\\LAB 2 - Stadium Management System\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj": {
+    "C:\\Users\\lenovo\\Desktop\\LAB 2 - Stadium Management System\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\LAB 2 - Stadium Management System\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
         "projectName": "MySqlWebApi",
-        "projectPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
-        "packagesPath": "C:\\Users\\elvir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\obj\\",
+        "projectPath": "C:\\Users\\lenovo\\Desktop\\LAB 2 - Stadium Management System\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
+        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lenovo\\Desktop\\LAB 2 - Stadium Management System\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\elvir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -96,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
