@@ -8,6 +8,7 @@ import {AiOutlineTwitter} from 'react-icons/ai'
 import {FiInstagram} from 'react-icons/fi'
 import { useEffect, useState } from 'react';
 import Aos from 'aos';
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 
 function Contact() {
@@ -25,10 +26,13 @@ function Contact() {
         error: ''
       });
 
+      const[loading,setLoading] = useState(false)
+
     
       const handleSubmit = async (e) => {
         e.preventDefault();
           try {
+            setLoading(true)
             await axios.post('http://localhost:5163/api/Contact', newContact)
         
             setSubmissionStatus({ success: true, error: '' });
@@ -42,7 +46,9 @@ function Contact() {
           } catch (error) {
             console.error('Error adding contact:', error);
             setSubmissionStatus({ success: false, error: error.message });
-          }
+          }finally {
+            setLoading(false);
+        }
       };
 
       useEffect(() => {
@@ -105,8 +111,8 @@ function Contact() {
                       placeholder="Telefoni" 
                       id="contact-phone" 
                       name="contact-phone" 
-                      value={newContact.numriTel}
-                      onChange={(e) => setNewContact({ ...newContact, numriTel: e.target.value })}
+                      value={newContact.tel}
+                      onChange={(e) => setNewContact({ ...newContact, tel: e.target.value })}
                       />
                     </div>
                   </div>
@@ -124,9 +130,13 @@ function Contact() {
                   </div>
                   <div className="row100">
                     <div className="inputBox">
-                      <input type="submit" value="Dergo"/> {/* validimi i formes nuk lejon te ekzekutohet api */}
-                      <span id="submit-error"></span>
-                      <span id="submit-error2"></span>
+                      {loading ? (
+                        <div className='text-center'>
+                          <LoadingSpinner/>
+                        </div>
+                      ):(
+                        <input type="submit" value="Dergo"/>
+                      )}
                     </div>
                   </div>
                 </div>
