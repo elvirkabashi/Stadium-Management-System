@@ -1,6 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\backend",
+    "\\backend\\StadiumMicroserviceSolution",
+    "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi",
+    "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Controllers",
+    "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Data",
+    "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Model",
+    "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Model\\ViewModel"
   ],
+  "SelectedNode": "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Controllers\\ProductsController.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -437,19 +437,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\elvir\\.nuget\\packages\\": {}
+    "C:\\Users\\artin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\artin\\Desktop\\ProjektiLab\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
       "projectName": "MongoDbWebApi",
-      "projectPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
-      "packagesPath": "C:\\Users\\elvir\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\obj\\",
+      "projectPath": "C:\\Users\\artin\\Desktop\\ProjektiLab\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
+      "packagesPath": "C:\\Users\\artin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\artin\\Desktop\\ProjektiLab\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\elvir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\artin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -457,6 +457,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -499,7 +500,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }
