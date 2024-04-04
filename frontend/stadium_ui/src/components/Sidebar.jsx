@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './css/sidebar.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from "../pages/dashboard/Dashboard"
+import NotFound from "../components/NotFound/NotFound"
 
 function Sidebar() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -104,6 +105,7 @@ function Sidebar() {
                 
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
+                  <Route path="*" element={<NotFound/>} />
                 </Routes>
               </div>
             </BrowserRouter>
