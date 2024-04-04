@@ -33,7 +33,7 @@
     width: 120px;
     right: 0;
     bottom: 5px;
-    z-index: -1;
+    
   }
   .mainShortcut .secContent {
     justify-content: center;
