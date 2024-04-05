@@ -10,6 +10,8 @@ import { useEffect, useState } from 'react';
 import Aos from 'aos';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
+import { validateEmail, validateForm, validateMessage, validateName, validatePhone, validateSurname } from './script';
+
 
 function Contact() {
 
@@ -76,6 +78,7 @@ function Contact() {
                       placeholder="Emri" 
                       id="contact-name" 
                       name="contact-name"
+                      onKeyUp={validateName}
                       value={newContact.emri}
                       onChange={(e) => setNewContact({ ...newContact, emri: e.target.value })}
                       />
@@ -87,6 +90,7 @@ function Contact() {
                       placeholder="Mbiemri" 
                       id="contact-surname" 
                       name="contact-surname" 
+                      onKeyUp={validateSurname}
                       value={newContact.mbiemri}
                       onChange={(e) => setNewContact({ ...newContact, mbiemri: e.target.value })}
                       />
@@ -99,7 +103,8 @@ function Contact() {
                       type="text" 
                       placeholder="Email" 
                       id="contact-email" 
-                      name="contact-email"  
+                      name="contact-email" 
+                      onKeyUp={validateEmail}  
                       value={newContact.email}
                       onChange={(e) => setNewContact({ ...newContact, email: e.target.value })}
                       />
@@ -111,6 +116,7 @@ function Contact() {
                       placeholder="Telefoni" 
                       id="contact-phone" 
                       name="contact-phone" 
+                      onKeyUp={validatePhone} 
                       value={newContact.tel}
                       onChange={(e) => setNewContact({ ...newContact, tel: e.target.value })}
                       />
@@ -123,6 +129,7 @@ function Contact() {
                       placeholder="Shkruani mesazhin tuaj" 
                       id="contact-message" 
                       name="contact-message" 
+                      onKeyUp={validateMessage}
                       value={newContact.mesazhi}
                       onChange={(e) => setNewContact({ ...newContact, mesazhi: e.target.value })}
                       />
@@ -135,8 +142,10 @@ function Contact() {
                           <LoadingSpinner/>
                         </div>
                       ):(
-                        <input type="submit" value="Dergo"/>
+                        <input type="submit" value="Dergo" />
                       )}
+                      <span id="submit-error"></span>
+                      <span id="submit-error2"></span>
                     </div>
                   </div>
                 </div>
