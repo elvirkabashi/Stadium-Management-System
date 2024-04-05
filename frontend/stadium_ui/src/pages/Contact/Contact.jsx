@@ -142,7 +142,7 @@ function Contact() {
                           <LoadingSpinner/>
                         </div>
                       ):(
-                        <input type="submit" value="Dergo" />
+                        <input type="submit" value="Dergo"/>
                       )}
                       <span id="submit-error"></span>
                       <span id="submit-error2"></span>
