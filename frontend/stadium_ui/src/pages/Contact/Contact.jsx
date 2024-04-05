@@ -10,7 +10,7 @@ import { useEffect, useState } from 'react';
 import Aos from 'aos';
 import LoadingSpinner from '../../components/LoadingSpinner';
 
-import { validateEmail, validateForm, validateMessage, validateName, validatePhone, validateSurname } from './script';
+import { validateEmail, validateMessage, validateName, validatePhone, validateSurname } from './script';
 
 
 function Contact() {
@@ -139,7 +139,7 @@ function Contact() {
                     <div className="inputBox">
                       {loading ? (
                         <div className='text-center'>
-                          <LoadingSpinner/>
+                          <LoadingSpinner color={'text-danger'}/>
                         </div>
                       ):(
                         <input type="submit" value="Dergo"/>
