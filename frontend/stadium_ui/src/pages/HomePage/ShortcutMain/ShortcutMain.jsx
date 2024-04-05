@@ -1,4 +1,4 @@
-import {useEffect} from 'react'
+import React, {useEffect} from 'react'
 import './ShortcutMain.css'
 import {HiOutlineLocationMarker} from 'react-icons/hi'
 import {HiOutlineClipboardCheck} from 'react-icons/hi'
@@ -12,6 +12,7 @@ import Robin_Krasniqi from '../../../Assets/RobinKrasniqi.jpg'
 
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+
 
 //array named Data
 const Data = [
