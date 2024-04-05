@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage/HomePage';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar/Navbar'
 import Contact from './pages/Contact/Contact';
+import NotFound from './components/NotFound/NotFound';
 
 const App = () => {
                               //provo true ose false
@@ -25,6 +26,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/contact' element={<Contact />} />
+          <Route path='*' element={<NotFound/>} />
         </Routes>
       </BrowserRouter>
     )}

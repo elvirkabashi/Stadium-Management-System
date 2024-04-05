@@ -9,6 +9,6 @@
     "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Model",
     "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Model\\ViewModel"
   ],
-  "SelectedNode": "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Controllers\\ProductsController.cs",
+  "SelectedNode": "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Model\\ViewModel\\ProductVm.cs",
   "PreviewInSolutionExplorer": false
 }
