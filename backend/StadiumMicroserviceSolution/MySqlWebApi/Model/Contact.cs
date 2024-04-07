@@ -16,5 +16,6 @@ namespace MySqlWebApi.Model
         public string Mesazhi { get; set; }
         public string Tel { get; set; }
         public bool Status { get; set; } = true;
+        public DateTime DataKrijimit { get; set; } = DateTime.Now;
     }
 }

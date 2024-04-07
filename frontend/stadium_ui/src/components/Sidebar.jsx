@@ -3,6 +3,7 @@ import './css/sidebar.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from "../pages/dashboard/Dashboard"
 import NotFound from "../components/NotFound/NotFound"
+import ContactMessages from '../pages/ContactMessages/ContactMessages';
 
 function Sidebar() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -80,9 +81,9 @@ function Sidebar() {
                         </ul>
                     </li>
                     <li className="sidebar-item">
-                        <a href="#" className="sidebar-link">
+                        <a href="/contact" className="sidebar-link">
                             <i className="lni lni-popup"></i>
-                            <span>Notification</span>
+                            <span>Contact Messages</span>
                         </a>
                     </li>
                     <li className="sidebar-item">
@@ -99,12 +100,13 @@ function Sidebar() {
                     </a>
                 </div>
             </aside>
-            <div className="main p-3">
+            <div className="main p-3" style={{backgroundColor:'#e9e9e9'}}>
             <BrowserRouter>
               <div className="app-container">
                 
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
+                  <Route path="/contact" element={<ContactMessages/>} />
                   <Route path="*" element={<NotFound/>} />
                 </Routes>
               </div>

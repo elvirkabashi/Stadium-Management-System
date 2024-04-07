@@ -21,7 +21,6 @@
     --bodyColor:rgb(240,240,246);
     --cardBg:rgb(255,255,255);
 }
-
 html{
     scroll-behavior: smooth;
 }
