@@ -1,14 +1,9 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "yKb1H63SvTYS0VOAsbgJBkLBpEU18YQkMvEHdj0zVoNBHrnBE9B1ZND6hHL4WvNPxnyTSQ8srN22ZsnAti7aEw==",
-=======
-  "dgSpecHash": "HRAVvZcXrcMoP2ed168q/3lXmE9it5JwJ2+rI0rPjvnpgTN/t77Mbl+5qrQJGUoepFoLBD1+fwZL3HbouAplIQ==",
->>>>>>> bdbbc990970cd3d8cb03796ca00da793d0444ce6
   "success": true,
-  "projectFilePath": "C:\\Users\\lenovo\\Desktop\\LAB 2 - Stadium Management System\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
+  "projectFilePath": "C:\\Users\\artin\\Desktop\\ProjektiLab\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
   "expectedPackageFiles": [
-<<<<<<< HEAD
     "C:\\Users\\artin\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\artin\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\artin\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
@@ -240,21 +235,13 @@
     "C:\\Users\\artin\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\artin\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\artin\\.nuget\\packages\\zstdsharp.port\\0.7.3\\zstdsharp.port.0.7.3.nupkg.sha512"
-=======
-    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
-    "C:\\Users\\lenovo\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\lenovo\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
-    "C:\\Users\\lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
-    "C:\\Users\\lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
-    "C:\\Users\\lenovo\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
->>>>>>> bdbbc990970cd3d8cb03796ca00da793d0444ce6
   ],
   "logs": [
     {
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Problem reading the cache file C:\\Users\\lenovo\\Desktop\\LAB 2 - Stadium Management System\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+      "message": "Problem reading the cache file C:\\Users\\artin\\Desktop\\ProjektiLab\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
     }
   ]
 }

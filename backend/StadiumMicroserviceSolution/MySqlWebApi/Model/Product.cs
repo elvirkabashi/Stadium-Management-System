@@ -22,7 +22,7 @@ namespace MySqlWebApi.Model
 
 		[Required]
 		[Display(Name = "Price")]
-		[Range(1, 2000)]
+		[Range(1, 200)]
 		public double Price { get; set; }
 
 		public int CategoryId { get; set; }
