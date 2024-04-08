@@ -29,7 +29,7 @@ namespace MySqlWebApi.Controllers
           {
               return NotFound();
           }
-            return await _context.Contact.ToListAsync();
+            return await _context.Contact.OrderByDescending(c => c.DataKrijimit).ToListAsync();
         }
 
         // GET: api/Contact/5
@@ -50,36 +50,6 @@ namespace MySqlWebApi.Controllers
             return contact;
         }
 
-        // PUT: api/Contact/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutContact(int id, Contact contact)
-        {
-            if (id != contact.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(contact).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!ContactExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
 
         // POST: api/Contact
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
