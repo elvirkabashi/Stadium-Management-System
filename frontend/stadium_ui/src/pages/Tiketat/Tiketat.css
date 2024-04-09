@@ -1,0 +1,37 @@
+.dropdownContainer{
+  margin-top: 10%;
+  margin-bottom: 5%;
+}
+.titleE h2{
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 10px;
+  font-size: 38px;
+  font-weight: bold;
+}
+
+.titleE p{
+  padding-top: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: blue;
+}
+ 
+.dropdownContainer .dropdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dropdownContainer .selectT {
+  width: 50%;
+  padding: 8px;
+  margin: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+.selectT option {
+  font-size: 16px;
+}
