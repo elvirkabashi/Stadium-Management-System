@@ -3,6 +3,7 @@ import './Tiketat.css'
 import ConcertSeat from './ConcertSeat'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
+import StadiumSeat from './StadiumSeat'
 
 const eventTypes = [
   { label: 'Futboll', value: 'Futboll' },
@@ -25,7 +26,7 @@ const Tiketat = () => {
     if (selectedType === 'Futboll') {
       return (
         <>
-        <h1>Futboll</h1>
+        <StadiumSeat />
         </>
       );
     } else if (selectedType === 'Koncert') {
