@@ -1,0 +1,152 @@
+
+:root{
+    --PrimaryColor:hsl(199,100%,33%);
+    --SecondaryColor:hsl(187,85%,43%);
+    --gradientColor:linear-gradient(to right, hsl(187,85%,43%), hsl(199,100%,33%));
+    --whiteColor:hsl(0,0%,100%);
+    --blackColor:hsl(201,33%,16%);
+    --textColor:hsl(240,4%,36%);
+    --whiteColorDeam:hsl(199,100%,33%);
+    --greyColor:rgb(190,190,190);
+    --inputColor:rgb(239,239,239);
+    --bodyColor:rgb(240,240,246);
+    --cardBg:rgb(255,255,255);
+}
+
+.stroke-text{
+    color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+.Testimonials{
+    display: flex;
+    gap: 1rem;
+    padding: 0 2rem 3.4rem 2rem;
+}
+
+.left-t{
+    display: flex;
+    flex: 1 1;
+    gap: 2rem;
+    flex-direction: column;
+    text-transform: uppercase;
+    color: black;
+}
+
+.left-t>:nth-child(1){
+    color: linear-gradient(to right, hsl(187,85%,43%), hsl(199,100%,33%));
+    font-weight: bold;
+}
+
+.left-t>:nth-child(2),
+.left-t>:nth-child(3){
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+
+.left-t>:nth-child(4){
+    text-transform: none;
+    text-align: justify;
+    letter-spacing: 2px;
+    line-height: 40px;
+}
+
+.right-t{
+    flex: 1;
+    position: relative;
+}
+
+.right-t>img{
+    position: absolute;
+    width: 17rem;
+    height: 20rem;
+    object-fit: cover;
+    right: 8rem;
+    top: 2rem;
+}
+
+.right-t>:nth-child(1){
+    position: absolute;
+    width: 17rem;
+    height: 20rem;
+    border: 2px solid hsl(199,100%,33%);
+    background-color: transparent;
+    right: 9rem;
+    top: 0.9rem;
+}
+
+
+.right-t>:nth-child(2){
+    position: absolute;
+    width: 17rem;
+    height: 19rem;
+    right: 7rem;
+    top: 4rem;
+    background: linear-gradient(to right, hsl(187,85%,43%), hsl(199,100%,33%));
+}
+
+
+.arrows{
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 3rem;
+    fill:black;
+}
+
+.arrows .img{
+    width: 1.5rem;
+    cursor: pointer;
+    fill:black;
+}
+
+@media screen and (max-width:768px){
+    .Testimonials{
+        flex-direction: column;
+    }
+
+    .left-t>:nth-child(2),
+    .left-t>:nth-child(3){
+        font-size: xx-large;
+    }
+    .right-t{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+    .right-t>div{
+        position: relative;
+        display: none;
+    }
+    .right-t>img{
+        top: 0;
+        right: 0;
+        position: relative;
+        align-self: center;
+    }
+    .right-t>:last-child{
+        display: block;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
