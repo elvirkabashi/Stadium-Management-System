@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import './Tiketat.css'
-
+import ConcertSeat from './ConcertSeat'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 
@@ -31,7 +31,7 @@ const Tiketat = () => {
     } else if (selectedType === 'Koncert') {
       return (
         <>
-        <h1>Koncert</h1>
+        <ConcertSeat />
         </>
       );
     }
