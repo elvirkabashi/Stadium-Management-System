@@ -1,4 +1,5 @@
 import '../../App.css'
+import Footer from '../Footer/Footer';
 import Home from '../Home/Home';
 import ShortcutMain from '../HomePage/ShortcutMain/ShortcutMain';
 import Programs from '../Programs/Programs';
@@ -16,6 +17,7 @@ const HomePage = () => {
     <Programs />
     <Home />
     <Map />
+    <Footer />
     </>
   )
 }
