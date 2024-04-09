@@ -1,6 +1,7 @@
 import '../../App.css'
 import Home from '../Home/Home';
 import ShortcutMain from '../HomePage/ShortcutMain/ShortcutMain';
+import Programs from '../Programs/Programs';
 import Homeslider from '../Slider/homeslider/slider';
 import Testimonials from '../Testimonials/Testimonials';
 import Map from './Map/Map';
@@ -12,6 +13,7 @@ const HomePage = () => {
     <Homeslider />
     <ShortcutMain />
     <Testimonials />
+    <Programs />
     <Home />
     <Map />
     </>
