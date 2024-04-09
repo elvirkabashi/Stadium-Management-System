@@ -21,8 +21,36 @@ const Footer = () => {
 
   const form = useRef();
 
+
+  function validateEmailSubscribe() {
+    const email = document.getElementById('contact-email').value;
+
+    if (email.length === 0) {
+      alert('Email duhet të plotësohet !');
+      return false;
+    }
+    if (!email.match(/^[a-z0-9]+(-[a-z0-9]+)*@[a-z]+(-[a-z]+)*\.(com|net)$/)) {
+      alert('Email nuk është valid !');
+      return false;
+    }
+    return true;
+  }
+
   const sendEmail = (e) => {
     e.preventDefault();
+
+    if (validateEmailSubscribe()) {
+      emailjs
+        .sendForm('service_gcj4oir', 'template_84ow1h5', form.current, '4DoiBi7SLfO0O-fYc')
+        .then((result) => {
+          console.log(result.text);
+          window.alert('Jeni bërë subscribe me sukses !');
+          form.current.querySelector('input').value = '';
+        })
+        .catch((error) => {
+          console.log(error.text);
+        });
+    }
   };
 
   
