@@ -4,6 +4,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from "../pages/dashboard/Dashboard"
 import NotFound from "../components/NotFound/NotFound"
 import ContactMessages from '../pages/ContactMessages/ContactMessages';
+import Subscribe from '../pages/Subscribe/Subscribe';
+
+
 
 function Sidebar() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -87,6 +90,12 @@ function Sidebar() {
                         </a>
                     </li>
                     <li className="sidebar-item">
+                        <a href="/subscribes" className="sidebar-link">
+                        <i className="bi bi-envelope"></i>
+                            <span>Subscribes</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-item">
                         <a href="#" className="sidebar-link">
                             <i className="lni lni-cog"></i>
                             <span>Setting</span>
@@ -107,6 +116,7 @@ function Sidebar() {
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
                   <Route path="/contact" element={<ContactMessages/>} />
+                  <Route path="/subscribes" element={<Subscribe/>} />
                   <Route path="*" element={<NotFound/>} />
                 </Routes>
               </div>
