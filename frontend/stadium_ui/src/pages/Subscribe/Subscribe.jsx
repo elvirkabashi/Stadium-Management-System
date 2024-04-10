@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Subscribes.scss';
 import LoadingSpinner from '../../components/LoadingSpinner';
@@ -9,7 +9,7 @@ function Subscribe() {
     const [sub, setSub] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-    const [subToDelete, setSubToDelete] = useState(null); // ID e mesazhit që do të fshihet
+    const [subToDelete, setSubToDelete] = useState(null);
     const [showConfirmModal, setShowConfirmModal] = useState(false);
 
     useEffect(() => {
