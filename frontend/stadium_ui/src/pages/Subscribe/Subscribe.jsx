@@ -76,7 +76,7 @@ function Subscribe() {
                         ))
                     ) : (
                         <tr>
-                            <td colSpan="2">No subscribers</td>
+                            <td colSpan="3">No subscribers</td>
                         </tr>
                     )}
                 </tbody>
