@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Subscribes.scss';
 import LoadingSpinner from '../../components/LoadingSpinner';
@@ -50,35 +50,44 @@ function Subscribe() {
     if (error) {
         return <div className='text-danger'>{error}</div>;
     }
-    
 
     return (
-        <div className='container d-flex flex-column'>
-            <div>
-                <h4>Subscribes</h4>
-            </div>
+        <div className='container'>
+            <h4>Subscribes</h4>
 
-            <div className="subs">
-                {sub.length > 0 ? (
-                    sub.map(m => (
-                        <div key={m.id} className='d-flex justify-content-between align-items-center px-5'>
-                            <span id='email'>{m.email}</span>
-                            <div className='date d-flex align-items-center gap-3'>
-                                <a href="#" className="bi bi-trash fs-5 mb-1 text-danger" onClick={() => openDeleteConfirmation(m.id)}></a>
-                            </div>
-                        </div>
-                    ))
-                ):(
-                    <p>Ska asnje subscribes</p>
-                )}
-            </div>
+            <table className="table">
+                <thead>
+                    <tr>
+                        <th>Nr.</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {sub.length > 0 ? (
+                        sub.map(m => (
+                            <tr key={m.id}>
+                                <td>{m.id}</td>
+                                <td>{m.email}</td>
+                                <td>
+                                    <button className="btn btn-danger" onClick={() => openDeleteConfirmation(m.id)}>Delete</button>
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan="2">No subscribers</td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
 
             {/* Modal për konfirmim të fshirjes */}
             <Modal show={showConfirmModal} onHide={() => setShowConfirmModal(false)}>
                 <Modal.Header closeButton>
                     <Modal.Title>Confirm Delete</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>Are you sure you want to delete this subscribers?</Modal.Body>
+                <Modal.Body>Are you sure you want to delete this subscriber?</Modal.Body>
                 <Modal.Footer>
                     <Button variant="secondary" onClick={() => setShowConfirmModal(false)}>
                         Cancel
