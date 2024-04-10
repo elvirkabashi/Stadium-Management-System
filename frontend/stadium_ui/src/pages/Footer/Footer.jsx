@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import './footer.css'
 import video2 from '../../Assets/Kosovo_Flag_Loop.mp4'
 import {FiSend} from 'react-icons/fi'
@@ -12,48 +12,45 @@ import { Link } from "react-router-dom";
 import emailjs from 'emailjs-com';
 import Aos from 'aos'
 import 'aos/dist/aos.css'
-
+import axios from 'axios'; // Import axios here
+import LoadingSpinner from '../../components/LoadingSpinner';
 
 const Footer = () => {
+  const [newSubscribe,setNewSubscribe] = useState({
+    email:''
+  });
+
+  const [submissionStatus, setSubmissionStatus] = useState({
+    success: false,
+    error: ''
+  });
+
+  const[loading,setLoading] = useState(false)
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+      try {
+        setLoading(true)
+        await axios.post('http://localhost:5163/api/Subscribe', newSubscribe)
+    
+        setSubmissionStatus({ success: true, error: '' });
+        setNewSubscribe({
+          email: ''
+        });
+      } catch (error) {
+        console.error('Error adding subscribe:', error);
+        setSubmissionStatus({ success: false, error: error.message });
+      }finally {
+        setLoading(false);
+    }
+  };
+
   useEffect(() => {
     Aos.init({duration: 2000})
   },[])
 
-  const form = useRef();
-
-
-  function validateEmailSubscribe() {
-    const email = document.getElementById('contact-email').value;
-
-    if (email.length === 0) {
-      alert('Email duhet të plotësohet !');
-      return false;
-    }
-    if (!email.match(/^[a-z0-9]+(-[a-z0-9]+)*@[a-z]+(-[a-z]+)*\.(com|net)$/)) {
-      alert('Email nuk është valid !');
-      return false;
-    }
-    return true;
-  }
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    if (validateEmailSubscribe()) {
-      emailjs
-        .sendForm('service_gcj4oir', 'template_84ow1h5', form.current, '4DoiBi7SLfO0O-fYc')
-        .then((result) => {
-          console.log(result.text);
-          window.alert('Jeni bërë subscribe me sukses !');
-          form.current.querySelector('input').value = '';
-        })
-        .catch((error) => {
-          console.log(error.text);
-        });
-    }
-  };
-
-  
+  //const form = useRef();
     
   
   return (
@@ -63,18 +60,29 @@ const Footer = () => {
       </div>
 
       <div className="secContent container">
-      <form ref={form} onSubmit={sendEmail}>
+      <form onSubmit={handleSubmit}>
         <div className="contactDiv flex">
           <div data-aos="fade-up" className="text">
             <small>Na shkruani</small>
             <h2>KOSOVA</h2>
           </div>
-
+          {submissionStatus.success && <p className='text-success'>Mesazhi u dërgua me sukses!</p>}
+          {submissionStatus.error && <p className='text-danger'>Gabimi gjatë dërgimit të mesazhit!</p>}
           <div className="inputDiv flex">
-            <input data-aos="fade-up"  type="text" placeholder='Shkruani email' id="contact-email"/>
-            <button  data-aos="fade-up" className='btn flex' type="submit" value="Send">
-              DERGO <FiSend className='icon' />
-            </button>
+            <input 
+            data-aos="fade-up"  
+            type="text" 
+            placeholder='Shkruani email' 
+            id="contact-email"
+            value={newSubscribe.email}
+            onChange={(e) => setNewSubscribe({ ...newSubscribe, email: e.target.value })}/>
+            {loading ? (
+                        <div className='text-center'>
+                          <LoadingSpinner color={'text-danger'}/>
+                        </div>
+                      ):(
+                        <input type="submit" value="Dergo"/>
+                      )}
           </div>
         </div>
         <span id="submit-error-footer"></span>

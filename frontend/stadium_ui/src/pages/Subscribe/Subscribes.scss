@@ -1,0 +1,41 @@
+.container{
+    h4{
+        margin-top: 50px;
+    }
+}
+.subs{
+
+    div{
+        background-color: rgb(255, 255, 255);
+        margin-bottom: 15px;
+        padding: 15px;
+        border-radius: 15px;
+
+
+        #name{
+            font-weight: 500;
+        }
+
+        div{
+            span{
+                color: rgb(100, 95, 95);
+            }
+        }
+    }
+
+    div:hover{
+        background-color: rgb(212, 212, 212);
+        div{
+            background-color: rgb(212, 212, 212);
+        }
+    }
+
+    .date{
+        padding: 0;
+        margin: 0;
+    }
+    a:hover{
+        scale: 1.2;   
+    }
+
+}
