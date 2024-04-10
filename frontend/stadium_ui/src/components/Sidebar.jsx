@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from "../pages/dashboard/Dashboard"
 import NotFound from "../components/NotFound/NotFound"
 import ContactMessages from '../pages/ContactMessages/ContactMessages';
+import Tiketat from '../pages/TiketatDashboard/Tiketat';
 
 function Sidebar() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -37,9 +38,9 @@ function Sidebar() {
                         </a>
                     </li>
                     <li className="sidebar-item">
-                        <a href="#" className="sidebar-link">
+                        <a href="/tiketat" className="sidebar-link">
                             <i className="lni lni-agenda"></i>
-                            <span>Task</span>
+                            <span>Tiketat</span>
                         </a>
                     </li>
                     <li className="sidebar-item">
@@ -107,6 +108,7 @@ function Sidebar() {
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
                   <Route path="/contact" element={<ContactMessages/>} />
+                  <Route path="/tiketat" element={<Tiketat/>} />
                   <Route path="*" element={<NotFound/>} />
                 </Routes>
               </div>

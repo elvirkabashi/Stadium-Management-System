@@ -10,5 +10,6 @@ namespace MySqlWebApi.Data
         public DbSet<Contact> Contact {  get; set; }
         public DbSet<Category> Categories {  get; set; }
         public DbSet<Product> Products {  get; set; }
+        public DbSet<Tiketa> Tiketat { get; set; }
     }
 }

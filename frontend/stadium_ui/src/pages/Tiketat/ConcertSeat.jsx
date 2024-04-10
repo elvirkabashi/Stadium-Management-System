@@ -1,4 +1,3 @@
-import React from 'react';
 import { SeatsioSeatingChart } from '@seatsio/seatsio-react';
 
 const ConcertSeat = () => {
