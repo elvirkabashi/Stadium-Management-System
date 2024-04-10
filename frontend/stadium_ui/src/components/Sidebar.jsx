@@ -4,13 +4,8 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Dashboard from "../pages/dashboard/Dashboard"
 import NotFound from "../components/NotFound/NotFound"
 import ContactMessages from '../pages/ContactMessages/ContactMessages';
-<<<<<<< HEAD
 import Tiketat from '../pages/TiketatDashboard/Tiketat';
-=======
 import Subscribe from '../pages/Subscribe/Subscribe';
-
-
->>>>>>> 4b242fbe9da9500957f8f4fe12a8042725974504
 
 function Sidebar() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -120,11 +115,8 @@ function Sidebar() {
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
                   <Route path="/contact" element={<ContactMessages/>} />
-<<<<<<< HEAD
                   <Route path="/tiketat" element={<Tiketat/>} />
-=======
                   <Route path="/subscribes" element={<Subscribe/>} />
->>>>>>> 4b242fbe9da9500957f8f4fe12a8042725974504
                   <Route path="*" element={<NotFound/>} />
                 </Routes>
               </div>
