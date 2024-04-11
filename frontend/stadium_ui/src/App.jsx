@@ -7,6 +7,7 @@ import Navbar from './components/Navbar/Navbar'
 import Contact from './pages/Contact/Contact';
 import NotFound from './components/NotFound/NotFound';
 import Tiketat from './pages/Tiketat/Tiketat'
+import Stadiumi from './pages/Stadiumi/Stadiumi';
 
 const App = () => {
                               //provo true ose false
@@ -26,6 +27,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/' element={<HomePage />} />
+          <Route path='/stadiumi' element={<Stadiumi />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/tiketat' element={<Tiketat />} />
           <Route path='*' element={<NotFound/>} />
