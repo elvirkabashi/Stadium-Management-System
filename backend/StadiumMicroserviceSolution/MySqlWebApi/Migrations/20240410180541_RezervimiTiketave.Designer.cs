@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MySqlWebApi.Data;
 
@@ -10,9 +11,10 @@ using MySqlWebApi.Data;
 namespace MySqlWebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240410180541_RezervimiTiketave")]
+    partial class RezervimiTiketave
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -109,7 +111,6 @@ namespace MySqlWebApi.Migrations
                     b.ToTable("Products");
                 });
 
-
             modelBuilder.Entity("MySqlWebApi.Model.Tiketa", b =>
                 {
                     b.Property<int>("TiketaId")
@@ -132,38 +133,19 @@ namespace MySqlWebApi.Migrations
                     b.HasKey("TiketaId");
 
                     b.ToTable("Tiketat");
-
-                    modelBuilder.Entity("MySqlWebApi.Model.Subscribe", b =>
-                        {
-                            b.Property<int>("Id")
-                                .ValueGeneratedOnAdd()
-                                .HasColumnType("int");
-
-                            b.Property<string>("Email")
-                                .IsRequired()
-                                .HasColumnType("longtext");
-
-                            b.Property<bool>("Status")
-                                .HasColumnType("tinyint(1)");
-
-                            b.HasKey("Id");
-
-                            b.ToTable("Subscribe");
-
-                        });
-
-                    modelBuilder.Entity("MySqlWebApi.Model.Product", b =>
-                        {
-                            b.HasOne("MySqlWebApi.Model.Category", "Category")
-                                .WithMany()
-                                .HasForeignKey("CategoryId")
-                                .OnDelete(DeleteBehavior.Cascade)
-                                .IsRequired();
-
-                            b.Navigation("Category");
-                        });
-#pragma warning restore 612, 618
                 });
+
+            modelBuilder.Entity("MySqlWebApi.Model.Product", b =>
+                {
+                    b.HasOne("MySqlWebApi.Model.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+#pragma warning restore 612, 618
         }
     }
 }

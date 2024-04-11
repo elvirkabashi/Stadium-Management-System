@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import './Tiketat.css'
 import ConcertSeat from './ConcertSeat'
 import Aos from 'aos'
