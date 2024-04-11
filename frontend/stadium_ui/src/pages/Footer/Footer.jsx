@@ -66,8 +66,8 @@ const Footer = () => {
             <small>Na shkruani</small>
             <h2>KOSOVA</h2>
           </div>
-          {submissionStatus.success && <p className='text-success'>Mesazhi u dërgua me sukses!</p>}
-          {submissionStatus.error && <p className='text-danger'>Gabimi gjatë dërgimit të mesazhit!</p>}
+          {submissionStatus.success && <p className='text-success'>Jeni bërë subscribe me sukses !</p>}
+          {submissionStatus.error && <p className='text-danger'>Gabim gjatë tentimit për subscribe!</p>}
           <div className="inputDiv flex">
             <input 
             data-aos="fade-up"  
