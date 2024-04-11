@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lenovo\\Desktop\\Sistemi per Menaxhimin e Stadiumit - Projekt\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj": {}
+    "/Users/suad/Desktop/Stadium-Management-System/backend/StadiumMicroserviceSolution/MongoDbWebApi/MongoDbWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lenovo\\Desktop\\Sistemi per Menaxhimin e Stadiumit - Projekt\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj": {
+    "/Users/suad/Desktop/Stadium-Management-System/backend/StadiumMicroserviceSolution/MongoDbWebApi/MongoDbWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\Sistemi per Menaxhimin e Stadiumit - Projekt\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
+        "projectUniqueName": "/Users/suad/Desktop/Stadium-Management-System/backend/StadiumMicroserviceSolution/MongoDbWebApi/MongoDbWebApi.csproj",
         "projectName": "MongoDbWebApi",
-        "projectPath": "C:\\Users\\lenovo\\Desktop\\Sistemi per Menaxhimin e Stadiumit - Projekt\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
-        "packagesPath": "C:\\Users\\lenovo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lenovo\\Desktop\\Sistemi per Menaxhimin e Stadiumit - Projekt\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\obj\\",
+        "projectPath": "/Users/suad/Desktop/Stadium-Management-System/backend/StadiumMicroserviceSolution/MongoDbWebApi/MongoDbWebApi.csproj",
+        "packagesPath": "/Users/suad/.nuget/packages/",
+        "outputPath": "/Users/suad/Desktop/Stadium-Management-System/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/suad/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -82,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.404/RuntimeIdentifierGraph.json"
         }
       }
     }

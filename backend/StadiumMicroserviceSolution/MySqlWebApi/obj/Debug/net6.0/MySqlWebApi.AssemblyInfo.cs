@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MySqlWebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d2274809226f4cc5363056742dcc5a1e46ef360e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+195e523a8eb768b4674b8f7a0d4671e0802ed8f3")]
 [assembly: System.Reflection.AssemblyProductAttribute("MySqlWebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MySqlWebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
