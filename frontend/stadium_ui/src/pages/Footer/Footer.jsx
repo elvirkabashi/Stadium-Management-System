@@ -27,22 +27,41 @@ const Footer = () => {
 
   const[loading,setLoading] = useState(false)
 
+  function validateEmailSubscribe() {
+    const email = document.getElementById('contact-email').value;
+
+    if (email.length === 0) {
+      alert('Email duhet të plotësohet !');
+      return false;
+    }
+    if (!email.match(/^[a-z0-9]+(-[a-z0-9]+)*@[a-z]+(-[a-z]+)*\.(com|net)$/)) {
+      alert('Email nuk është valid !');
+      return false;
+    }
+    return true;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-      try {
-        setLoading(true)
-        await axios.post('http://localhost:5163/api/Subscribe', newSubscribe)
-    
-        setSubmissionStatus({ success: true, error: '' });
-        setNewSubscribe({
-          email: ''
-        });
-      } catch (error) {
-        console.error('Error adding subscribe:', error);
-        setSubmissionStatus({ success: false, error: error.message });
-      }finally {
-        setLoading(false);
+    const email = newSubscribe.email;
+
+    if (!validateEmailSubscribe(email)) {
+      return; //Ndalo ekzekutimin nese email nuk eshte valid
+    }
+
+    try {
+      setLoading(true);
+      await axios.post('http://localhost:5163/api/Subscribe', newSubscribe);
+
+      setSubmissionStatus({ success: true, error: '' });
+      setNewSubscribe({
+        email: '',
+      });
+    } catch (error) {
+      console.error('Error adding subscribe:', error);
+      setSubmissionStatus({ success: false, error: error.message });
+    } finally {
+      setLoading(false);
     }
   };
 
