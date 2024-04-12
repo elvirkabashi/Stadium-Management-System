@@ -11556,11 +11556,16 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\lenovo\\.nuget\\packages\\": {}
+=======
+    "C:\\Users\\elvir\\.nuget\\packages\\": {}
+>>>>>>> eec81dc9e6c305d5cb11dd8be9c50e47c00a2a91
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\lenovo\\Desktop\\Sistemi per Menaxhimin e Stadiumit - Projekt\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
       "projectName": "MySqlWebApi",
       "projectPath": "C:\\Users\\lenovo\\Desktop\\Sistemi per Menaxhimin e Stadiumit - Projekt\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
@@ -11569,6 +11574,16 @@
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\lenovo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+      "projectUniqueName": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
+      "projectName": "MySqlWebApi",
+      "projectPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
+      "packagesPath": "C:\\Users\\elvir\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\elvir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> eec81dc9e6c305d5cb11dd8be9c50e47c00a2a91
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -11650,7 +11665,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+=======
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+>>>>>>> eec81dc9e6c305d5cb11dd8be9c50e47c00a2a91
       }
     }
   }
