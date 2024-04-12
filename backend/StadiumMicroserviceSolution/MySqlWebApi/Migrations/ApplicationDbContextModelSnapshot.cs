@@ -190,8 +190,8 @@ namespace MySqlWebApi.Migrations
                     b.Property<DateTime>("DataRezervimit")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Eventi")
-                        .HasColumnType("longtext");
+                    b.Property<int>("EventId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Ulsja")
                         .IsRequired()
@@ -201,6 +201,8 @@ namespace MySqlWebApi.Migrations
                         .HasColumnType("longtext");
 
                     b.HasKey("TiketaId");
+
+                    b.HasIndex("EventId");
 
                     b.ToTable("Tiketat");
                 });
@@ -225,6 +227,17 @@ namespace MySqlWebApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("MySqlWebApi.Model.Tiketa", b =>
+                {
+                    b.HasOne("MySqlWebApi.Model.Events", "Event")
+                        .WithMany()
+                        .HasForeignKey("EventId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Event");
                 });
 #pragma warning restore 612, 618
         }

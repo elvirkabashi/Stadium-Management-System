@@ -67,6 +67,7 @@ const StadiumSeat = () => {
     try {
       for (const ulsaEmri of selectedSeats) {
         await axios.post('http://localhost:5163/api/Tiketa', {
+          EventId:1,
           Ulsja: ulsaEmri,
           UserId: userId
         });

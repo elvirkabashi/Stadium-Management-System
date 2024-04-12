@@ -1,9 +1,81 @@
-
+import { useEffect, useState } from "react";
+import axios from 'axios';
+import { format, parseISO } from 'date-fns';  // Import format and parseISO
+import LoadingSpinner from "../../components/LoadingSpinner";
 
 function Tiketat() {
-  return (
-    <div>Tiketat</div>
-  )
+    const [tiketat, setTiketat] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
+
+    useEffect(() => {
+        axios.get('http://localhost:5163/api/Tiketa')
+            .then(res => {
+                const formattedTiketat = res.data.map(tiketa => {
+                    return {
+                        ...tiketa,
+                        dataRezervimit: format(parseISO(tiketa.dataRezervimit), 'dd MMM yyyy , HH:mm') // Format the date
+                    };
+                });
+                setTiketat(formattedTiketat);
+                setLoading(false);
+            })
+            .catch(error => {
+                console.error('Error fetching tikets:', error);
+                setError('Error fetching tikets!');
+                setLoading(false);
+            });
+    }, []);
+
+    if (loading) {
+        return (
+            <div className='d-flex justify-content-center mt-5'>
+                <LoadingSpinner color={'text-primary'} />
+            </div>
+        );
+    }
+
+    if (error) {
+        return <div className='text-danger'>{error}</div>;
+    }
+
+    return (
+        <div className='container d-flex flex-column'>
+            <div>
+                <h4>Tiketat</h4>
+            </div>
+
+            <div>
+            <table className="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Eventi</th>
+                    <th scope="col">Rezervuesi</th>
+                    <th scope="col">Nr. Ulseve</th>
+                    <th scope="col">Date</th>
+                </tr>
+                </thead>
+                <tbody>
+                {tiketat.length > 0 ? (
+                    tiketat.map(t => (
+                        <tr key={t.tiketaId}>
+                            <th scope="row">{t.tiketaId}</th>
+                            <td>{t.eventName}</td>
+                            <td>Filani</td>
+                            <td>{t.nrUlseve} {t.nrUlseve > 1 ? 'persona':'person'}</td>
+                            <td>{t.dataRezervimit}</td>
+                        </tr>
+                    ))
+                ) : (
+                    <p>Ska asnje mesazh</p>
+                )}
+                
+                </tbody>
+            </table>
+            </div>
+        </div>
+    )
 }
 
-export default Tiketat
+export default Tiketat;
