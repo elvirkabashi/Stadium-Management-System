@@ -11556,24 +11556,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/suad/.nuget/packages/": {}
+    "C:\\Users\\elvir\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/suad/Desktop/Stadium-Management-System/backend/StadiumMicroserviceSolution/MySqlWebApi/MySqlWebApi.csproj",
+      "projectUniqueName": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
       "projectName": "MySqlWebApi",
-      "projectPath": "/Users/suad/Desktop/Stadium-Management-System/backend/StadiumMicroserviceSolution/MySqlWebApi/MySqlWebApi.csproj",
-      "packagesPath": "/Users/suad/.nuget/packages/",
-      "outputPath": "/Users/suad/Desktop/Stadium-Management-System/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/",
+      "projectPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\MySqlWebApi.csproj",
+      "packagesPath": "C:\\Users\\elvir\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/suad/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\elvir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -11648,7 +11650,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.404/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
