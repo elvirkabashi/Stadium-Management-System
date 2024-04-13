@@ -6,6 +6,7 @@ import NotFound from "../components/NotFound/NotFound"
 import ContactMessages from '../pages/ContactMessages/ContactMessages';
 import Tiketat from '../pages/TiketatDashboard/Tiketat';
 import Subscribe from '../pages/Subscribe/Subscribe';
+import Details from '../pages/TiketatDashboard/Details';
 
 function Sidebar() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -44,7 +45,7 @@ function Sidebar() {
                             <span>Tiketat</span>
                         </a>
                     </li>
-                    <li className="sidebar-item">
+                    {/* <li className="sidebar-item">
                         <a href="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                             data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
                             <i className="lni lni-protection"></i>
@@ -58,8 +59,8 @@ function Sidebar() {
                                 <a href="#" className="sidebar-link">Register</a>
                             </li>
                         </ul>
-                    </li>
-                    <li className="sidebar-item">
+                    </li> */}
+                    {/* <li className="sidebar-item">
                         <a href="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                             data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
                             <i className="lni lni-layout"></i>
@@ -81,7 +82,7 @@ function Sidebar() {
                                 </ul>
                             </li>
                         </ul>
-                    </li>
+                    </li> */}
                     <li className="sidebar-item">
                         <a href="/contact" className="sidebar-link">
                             <i className="lni lni-popup"></i>
@@ -117,6 +118,7 @@ function Sidebar() {
                   <Route path="/contact" element={<ContactMessages/>} />
                   <Route path="/tiketat" element={<Tiketat/>} />
                   <Route path="/subscribes" element={<Subscribe/>} />
+                  <Route path="/tiketat/:id" element={<Details/>} />
                   <Route path="*" element={<NotFound/>} />
                 </Routes>
               </div>

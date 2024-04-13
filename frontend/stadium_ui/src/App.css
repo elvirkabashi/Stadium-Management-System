@@ -28,12 +28,15 @@ html{
 
 a{
     text-decoration: none;
+    color: black;
 }
 
 li{
     list-style: none;
 }
-
+.p-table td,.p-table th{
+    padding: 8px;
+}
 .section{
     padding:4rem 0 2rem;
 }

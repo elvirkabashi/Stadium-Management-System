@@ -31,7 +31,7 @@ namespace MySqlWebApi.Controllers
             var tiketatByUser = await _context.Tiketat
                 .Include(t => t.Event)  
                 .OrderByDescending(t => t.DataRezervimit)
-                .GroupBy(t => t.UserId)
+                .GroupBy(t => t.UserId  )
                 .Select(group => new TiketaVm
                 {
                     TiketaId = group.First().TiketaId,
@@ -53,20 +53,36 @@ namespace MySqlWebApi.Controllers
 
         // GET: api/Tiketa/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Tiketa>> GetTiketa(int id)
+        public async Task<ActionResult<TiketaVm>> GetTiketa(int id)
         {
-          if (_context.Tiketat == null)
-          {
-              return NotFound();
-          }
-            var tiketa = await _context.Tiketat.FindAsync(id);
-
-            if (tiketa == null)
+            if (_context.Tiketat == null)
             {
                 return NotFound();
             }
 
-            return tiketa;
+            var tiketaVm = await _context.Tiketat
+                .Where(t => t.TiketaId == id)
+                .Include(t => t.Event)
+                .Select(t => new TiketaVm
+                {
+                    TiketaId = t.TiketaId,
+                    UserId = t.UserId,
+                    EventId = t.EventId,
+                    EventName = t.Event.Titulli,
+                    Ulset = _context.Tiketat
+                                .Where(x => x.UserId == t.UserId && x.EventId == t.EventId)
+                                .Select(x => x.Ulsja)
+                                .ToList(),
+                    DataRezervimit = t.DataRezervimit
+                })
+                .FirstOrDefaultAsync();
+
+            if (tiketaVm == null)
+            {
+                return NotFound();
+            }
+
+            return tiketaVm;
         }
 
         // PUT: api/Tiketa/5
