@@ -37,15 +37,13 @@ namespace MySqlWebApi.Controllers
         }
 
         [HttpPost]
-        public ActionResult<Events> AddEvent(Events events, int eventCategoryId)
+        public ActionResult<Events> AddEvent(Events events)
         {
-            var category = _context.EventsCategories.Find(eventCategoryId);
+            var category = _context.EventsCategories.Find(events.EventCategoryId);
             if (category == null)
             {
                 return BadRequest("Invalid Event Category Id");
             }
-
-            events.EventsCategory = category; // Associate Events with the specified EventsCategory
             _context.Events.Add(events);
             _context.SaveChanges();
 

@@ -28,5 +28,6 @@ namespace MySqlWebApi.Model
         [ForeignKey("EventCategoryId")]
         [ValidateNever]
         public EventsCategory EventsCategory { get; set; }
+        public int EventCategoryId { get; set; }
     }
 }
