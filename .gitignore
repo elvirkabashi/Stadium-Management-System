@@ -2,6 +2,8 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+
+
 /backend/StadiumMicroserviceSolution/.vs
 /backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/apphost.exe
 /backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.AssemblyInfo.cs
@@ -62,3 +64,21 @@
 /backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.pdb
 /backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.sourcelink.json
 /backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/MongoDbWebApi.csproj.nuget.g.props
+
+*.suo
+*.user
+_ReSharper.*
+bin
+obj
+bin/
+*.obj 
+backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.GeneratedMSBuildEditorConfig.editorconfig
+backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.assets.cache
+backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.AssemblyInfoInputs.cache
+backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.AssemblyInfo.cs
+backend/StadiumMicroserviceSolution/MySqlWebApi/obj/project.assets.json
+backend/StadiumMicroserviceSolution/MySqlWebApi/obj/MySqlWebApi.csproj.nuget.g.props
+backend/StadiumMicroserviceSolution/MySqlWebApi/obj/MySqlWebApi.csproj.nuget.dgspec.json
+/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/project.assets.json
+/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/MySqlWebApi.csproj.nuget.dgspec.json
+/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/MySqlWebApi.csproj.nuget.g.props
