@@ -15,7 +15,7 @@ namespace MySqlWebApi.Controllers
     public class CategoriesController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-
+        
         public CategoriesController(ApplicationDbContext context)
         {
             _context = context;

@@ -18,47 +18,24 @@ namespace MySqlWebApi.Controllers
 		{
 			_context = context;
 		}
-
 		// GET: api/Products
 		[HttpGet]
-		public async Task<ActionResult<IEnumerable<ProductVm>>> GetProducts()
+		public async Task<ActionResult<IEnumerable<Product>>> GetProducts()
 		{
-			var productsWithCategories = await _context.Products
+			var products = await _context.Products
 				.Include(p => p.Category)
-				.Select(p => new ProductVm
-				{
-					Product = p,
-					CategoryList = _context.Categories
-						.Select(c => new SelectListItem
-						{
-							Value = c.Id.ToString(),
-							Text = c.Name
-						})
-						.ToList()
-				})
 				.ToListAsync();
 
-			return productsWithCategories;
+			return products;
 		}
 
 		// GET: api/Products/5
 		[HttpGet("{id}")]
-		public async Task<ActionResult<ProductVm>> GetProduct(int id)
+		public async Task<ActionResult<Product>> GetProduct(int id)
 		{
 			var product = await _context.Products
 				.Include(p => p.Category)
-				.Select(p => new ProductVm
-				{
-					Product = p,
-					CategoryList = _context.Categories
-						.Select(c => new SelectListItem
-						{
-							Value = c.Id.ToString(),
-							Text = c.Name
-						})
-						.ToList()
-				})
-				.FirstOrDefaultAsync(p => p.Product.Id == id);
+				.FirstOrDefaultAsync(p => p.Id == id);
 
 			if (product == null)
 			{
@@ -67,6 +44,7 @@ namespace MySqlWebApi.Controllers
 
 			return product;
 		}
+
 
 		// PUT: api/Products/5
 		[HttpPut("{id}")]
