@@ -8,10 +8,10 @@ import Contact from './pages/Contact/Contact';
 import NotFound from './components/NotFound/NotFound';
 import Tiketat from './pages/Tiketat/Tiketat'
 import Stadiumi from './pages/Stadiumi/Stadiumi';
-
+import LiveScore from './pages/Livescore/LiveScore';
 const App = () => {
                               //provo true ose false
-  const [isAdmin,] = useState(true)//Nese admini eshte true kan me u shfaq Sidebari dhe Routes per adminin 
+  const [isAdmin,] = useState(false)//Nese admini eshte true kan me u shfaq Sidebari dhe Routes per adminin 
                                             //ne te kunderten ka mu shfaq pjesa e userit
 
                                             //BrowserRouter per user te tjesht kan mu caktu te app.jsx 
@@ -30,6 +30,8 @@ const App = () => {
           <Route path='/stadiumi' element={<Stadiumi />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/tiketat' element={<Tiketat />} />
+          <Route path='/livescore' element={<LiveScore />} />
+
 
           <Route path='*' element={<NotFound/>} />
         </Routes>

@@ -1,432 +1,232 @@
-/* Navbar styles */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-/* * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #F2F2F2;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0077cc;
-    color: #fff;
-    padding: 10px 50px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-}
-
-nav .logo img {
-    height: 50px;
-}
-
-nav .nav-links {
-    display: flex;
-    justify-content: space-between;
-    width: 40%;
-}
-
-nav .nav-links li {
-    list-style: none;
-}
-
-nav .nav-links a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-nav .nav-links a:hover {
-    background-color: #fff;
-    color: #0077cc;
-}
-
-nav .burger {
-    display: none;
-    cursor: pointer;
-}
-
-nav .burger div {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px;
-    transition: all 0.3s ease;
-}
-
-@media screen and (max-width: 1024px) {
-    nav .nav-links {
-        width: 60%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    body {
-        overflow-x: hidden;
-    }
-    nav .nav-links {
-        position: fixed;
-        height: 100vh;
-        top: 70px;
-        left: -100%;
-        background-color: #0077cc;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        transition: all 0.5s ease;
-    }
-    nav .nav-links li {
-        margin-top: 50px;
-    }
-    nav .burger {
-        display: block;
-    }
-}
-
-.nav-active {
-    left: 0;
-}
-
-.burger .line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.burger .line2 {
-    opacity: 0;
-}
-
-.burger .line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-} */
-
+/* Hero Section */
 .hero {
-    background-image: url('../Stadiumi/stadiumi.jpg');
-    background-size: cover;
-    height: 80vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+  background-image: url('../Stadiumi/stadiumi.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-inner {
+  max-width: 800px;
+  padding: 0 20px;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    margin-bottom: 20px;
-    color: #fff;
-    font-weight: bold;
-    letter-spacing: 1rem;
+  font-size: 5vw;
+  margin-bottom: 2vh;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 0.1rem;
+  animation: slideInDown 1s ease forwards;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #fff;
+  font-size: 2vw;
+  margin-bottom: 4vh;
+  color: #fff;
+  animation: slideInUp 1s ease forwards 0.5s;
 }
 
 .tiketButon {
-    display: inline-block;
-    background-color: #fff;
-    color: #0077cc;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: all 0.3s ease;
+  display: inline-block;
+  background-color: #0077cc;
+  color: #fff;
+  border: none;
+  padding: 2vh 4vw;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-top: 3vh;
+  transition: all 0.3s ease;
+  font-size: 2vw;
+  animation: zoomIn 0.8s ease forwards 1s;
 }
 
 .tiketButon:hover {
-    background-color: #0077cc;
-    color: #fff;
-    }
-    
-    .services {
-    padding: 100px 50px;
-    text-align: center;
-    background-color: #fff;
-    }
-    
-    .services h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #0077cc;
-    }
-    
-    .services p {
-    font-size: 1.2rem;
-    margin-bottom: 50px;
-    color: #777;
-    }
-    
-    .services .service-container {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-    }
-    
-    .services .service-container .service-box {
-    background-color: #F2F2F2;
-    padding: 20px;
-    border-radius: 5px;
-    width: 30%;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
-    }
-    
-    .services .service-container .service-box img {
-    width: 60px;
-    margin-bottom: 20px;
-    }
-    
-    .services .service-container .service-box h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #0077cc;
-    }
-    
-    .services .service-container .service-box p {
-    font-size: 1rem;
-    color: #777;
-    }
-    
-    /* .cta { */
-    /* background-image: url('bg.jpg'); */
-    /* background-size: cover;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
-    }
-    
-    .cta h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #fff;
-    }
-    
-    .cta .btn {
-    margin-top: 20px;
-    } */
-
-
-.containerContact {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  background-color: #0056b3;
 }
 
-/* h2, p{
-    color: white;
-} */
+/* Vendor prefixes for animations */
+@-webkit-keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
-.FaSearchLocation {
-  color: rgb(255, 255, 255);
-  font-size: 64px;
-  padding:10px;
-}
-.FaRegAddressBook {
-  color: rgb(255, 255, 255);
-  font-size: 64px;
-  padding:10px;
-}
-.FaLaptop {
-  color: rgb(255, 255, 255);
-  font-size: 64px;
-  padding:10px;
-}
-.cardContact {
-  background-color: #0077cc;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 70px;
-  margin-top: 20px; 
-  width: 100%;
-  max-width: 500px;
+/* Stadium Information */
+.stadium-info {
+  padding: 10vh 5vw;
   text-align: center;
+  background-color: #f9f9f9;
+}
+
+.stadium-info h2 {
+  font-size: 4rem;
+  margin-bottom: 30px;
+  color: #0077cc;
+  animation: fadeIn 1s ease forwards;
+}
+
+.stadium-info p {
+  font-size: 1.5rem;
+  margin-bottom: 50px;
+  color: #777;
+  animation: fadeIn 1s ease forwards 0.5s;
+}
+
+/* Stadium Services */
+.stadium-services {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.stadium-services h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #0077cc;
+}
+
+.stadium-services ul {
+  list-style: none;
+  padding: 0;
+}
+
+.stadium-services li {
+  margin-bottom: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-
-@media screen and (min-width: 768px) {
-  .cardContact {
-    width: calc(50% - 20px);
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .cardContact {
-    width: calc(33.33% - 20px);
-  }
-}
-
-/* me te vogla se 768px */
-@media only screen and (max-width: 767px) {
-  .container1 {
-    height: auto;
-    padding: 1rem;
-  }
-
-
-  .contact-info {
-    padding: 2rem;
-    margin: 2rem;
-  }
-  
-  .contact-info h4{
-    padding: 1rem;
-  }
-
-  .contact-info p{
-    padding: 1rem;
-  }
-}
-
-/*  mes 768px dhe 991px */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .container1 {
-    height: auto;
-    padding: 2rem;
-  }
-  
-
-  .contact-info {
-    padding: 3rem;
-    margin: 3rem;
-  }
-  
-  .contact-info h4{
-    padding: 1rem;
-  }
-
-  .contact-info p{
-    padding: 1rem;
-  }
-}
-
-/* me te medha se 992px */
-@media only screen and (min-width: 992px) {
-  .container1 {
-    height: 100vh;
-  }
-
-  .contact-info {
-    padding: 50px;
-    margin: 50px;
-  }
-  
-  .contact-info h4{
-    padding: 20px;
-  }
-
-  .contact-info p{
-    padding: 20px;
-  }
-}
-
-/* all screen sizes */
-.container1 {
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.contact-info h4{
-  color: rgb(97, 97, 97);
+.stadium-services li svg {
+  margin-right: 20px;
+  font-size: 2rem;
+  color: #0077cc;
 }
 
-.contact-info p{
-  color: rgb(97, 97, 97);
+.stadium-services li span {
+  font-size: 1.5rem;
+  color: #333;
 }
 
-.HeaderHis{
-  padding: 70px;
-  color: white;
-  background-color:#0077cc;
+/* Stadium Gallery */
+.stadium-gallery {
   text-align: center;
-  font-size: 70px;
+  padding: 100px 50px;
 }
 
-.container2 {
+.stadium-gallery h2 {
+  font-size: 4rem;
+  margin-bottom: 30px;
+  color: #0077cc;
+  animation: fadeIn 1s ease forwards;
+}
+
+.gallery-images {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 1rem;
-  background-color: #F2F2F2;
+  justify-content: center;
+  gap: 30px;
 }
 
-
-.image-container {
-  flex: 1;
-  margin: 2rem;
-  width: 50%;
-}
-
-
-.image-container img {
+.gallery-images img {
   width: 100%;
-  height: auto;
-  display: block;
+  max-width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
 }
 
-
-.text-container {
-  text-align: justify;
-  border: 1px dashed #666;
-  padding: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  background-color: #FFF8DC;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  font-size: 1.2rem;
-  line-height: 1.5;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+.gallery-images img:hover {
+  transform: scale(1.05);
 }
 
-
-.text-container p {
-  color: rgb(97, 97, 97);
-  text-align: justify;
+/* Upcoming Events */
+.events {
+  text-align: center;
+  padding: 100px 50px;
+  background-color: #f9f9f9;
 }
 
-
-@media screen and (max-width: 768px) {
-
-  .container2 {
-    flex-direction: column;
-  }
-
-
-  .image-container {
-    width: 100%;
-    margin: 0;
-    text-align: center;
-  }
-
-
-  .text-container {
-    text-align: justify;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.2;
-  }
+.events h2 {
+  font-size: 4rem;
+  margin-bottom: 30px;
+  color: #0077cc;
+  animation: fadeIn 1s ease forwards;
 }
 
+.event-card {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 60px;
+  animation: slideInUp 1s ease forwards;
+}
 
+.event-card img {
+  max-width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.event-card img:hover {
+  transform: scale(1.05);
+}
+
+.event-details {
+  text-align: left;
+  animation: fadeIn 1s ease forwards;
+}
+
+.event-details h3 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #0077cc;
+}
+
+.event-details p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #777;
+}
+
+/* Opening Hours */
+.stadium-opening-hours {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 100px;
+}
+
+.stadium-opening-hours h2 {
+  font-size: 4rem;
+  margin-bottom: 30px;
+  color: #0077cc;
+  animation: fadeIn 1s ease forwards;
+}
+
+.opening-hours-details {
+  text-align: left;
+}
+
+.opening-hours-details p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #777;
+}
 

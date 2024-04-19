@@ -3,14 +3,11 @@
     "",
     "\\backend",
     "\\backend\\StadiumMicroserviceSolution",
-    "\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi",
-    "\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\Model",
     "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi",
     "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Controllers",
-    "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Data",
     "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Model",
     "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Model\\ViewModel"
   ],
-  "SelectedNode": "\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\appsettings.json",
+  "SelectedNode": "\\backend\\StadiumMicroserviceSolution\\MySqlWebApi\\Controllers\\CategoriesController.cs",
   "PreviewInSolutionExplorer": false
 }

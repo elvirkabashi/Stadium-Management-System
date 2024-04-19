@@ -79,6 +79,11 @@ const Navbar = () => {
                                 Kontakt
                             </Link>
                         </li>
+                        <li className="navItem">
+                            <Link to="/livescore" className="navLink">
+                                LiveScore
+                            </Link>
+                        </li>
                         {isLoggedIn ? (
                             <li className="navItem">
                                 <button className="btn" onClick={handleLogout}>

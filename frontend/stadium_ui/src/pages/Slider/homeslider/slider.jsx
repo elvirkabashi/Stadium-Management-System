@@ -21,7 +21,7 @@ export default function Homeslider(){
     return (
     <div>
         <Swiper
-        className='relative group'
+        className='relative'
         spaceBetween={50}
         slidesPerView={1}
         navigation = {{
@@ -78,10 +78,10 @@ export default function Homeslider(){
             </div>
         </SwiperSlide>
         
-        <div className="button-slide button-prev-slide group-hover:left-0">
+        <div className="button-slide button-prev-slide -hover:left-0">
             <HiOutlineArrowNarrowLeft/>
         </div>
-        <div className="button-slide button-next-slide group-hover:right-0">
+        <div className="button-slide button-next-slide -hover:right-0">
             <HiOutlineArrowNarrowRight/>
         </div>
 
