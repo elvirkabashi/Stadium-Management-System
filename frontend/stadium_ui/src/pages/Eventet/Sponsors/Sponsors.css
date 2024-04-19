@@ -1,0 +1,38 @@
+  .sponsors-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+   .sponsors-container h2{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+   }
+  .sponsors-list {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+  }
+  
+  .sponsor-item {
+    margin: 20px;
+  }
+  
+  .sponsor-item img {
+    border-radius: 20px;
+    max-width: 200px;
+    max-height: 150px;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 768px) {
+    .sponsors-list {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .sponsor-item {
+      margin: 10px 0;
+    }
+  }
+  

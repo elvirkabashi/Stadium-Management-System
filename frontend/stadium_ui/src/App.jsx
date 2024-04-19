@@ -5,13 +5,13 @@ import HomePage from './pages/HomePage/HomePage';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar/Navbar'
 import Contact from './pages/Contact/Contact';
-import NotFound from './components/NotFound/NotFound';
+import Eventet from './pages/Eventet/Eventet';
 import Tiketat from './pages/Tiketat/Tiketat'
 import Stadiumi from './pages/Stadiumi/Stadiumi';
 
 const App = () => {
                               //provo true ose false
-  const [isAdmin,] = useState(true)//Nese admini eshte true kan me u shfaq Sidebari dhe Routes per adminin 
+  const [isAdmin,] = useState(false)//Nese admini eshte true kan me u shfaq Sidebari dhe Routes per adminin 
                                             //ne te kunderten ka mu shfaq pjesa e userit
 
                                             //BrowserRouter per user te tjesht kan mu caktu te app.jsx 
@@ -31,7 +31,7 @@ const App = () => {
           <Route path='/contact' element={<Contact />} />
           <Route path='/tiketat' element={<Tiketat />} />
 
-          <Route path='*' element={<NotFound/>} />
+          <Route path='*' element={<Eventet/>} />
         </Routes>
       </BrowserRouter>
     )}
