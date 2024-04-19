@@ -5,10 +5,13 @@ import HomePage from './pages/HomePage/HomePage';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar/Navbar'
 import Contact from './pages/Contact/Contact';
-import NotFound from './components/NotFound/NotFound';
+import Eventet from './pages/Eventet/Eventet';
 import Tiketat from './pages/Tiketat/Tiketat'
 import Stadiumi from './pages/Stadiumi/Stadiumi';
 import LiveScore from './pages/Livescore/LiveScore';
+import Fans from './pages/Fans/Fans';
+
+
 const App = () => {
                               //provo true ose false
   const [isAdmin,] = useState(false)//Nese admini eshte true kan me u shfaq Sidebari dhe Routes per adminin 
@@ -28,12 +31,13 @@ const App = () => {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/stadiumi' element={<Stadiumi />} />
+          <Route path='/fans' element={<Fans />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/tiketat' element={<Tiketat />} />
           <Route path='/livescore' element={<LiveScore />} />
 
 
-          <Route path='*' element={<NotFound/>} />
+          <Route path='*' element={<Eventet/>} />
         </Routes>
       </BrowserRouter>
     )}
