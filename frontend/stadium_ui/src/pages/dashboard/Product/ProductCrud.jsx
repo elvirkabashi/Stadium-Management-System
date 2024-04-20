@@ -1,99 +1,73 @@
-import React, { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import "./ProductCrud.css";
 import AddProductModal from "./Modals/AddProductModal";
 import EditProductModal from "./Modals/EditProductModal";
+import "./ProductCrud.css";
 
 function ProductCrud() {
   const [products, setProducts] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const [selectedProductId, setSelectedProductId] = useState(null);
-  const [editProduct, setEditProduct] = useState(null);
   const [categories, setCategories] = useState([]);
-  const [isEditing, setIsEditing] = useState(false); 
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [, setIsEditing] = useState(false);
 
   useEffect(() => {
     loadProducts();
     loadCategories();
   }, []);
 
-  async function loadCategories() {
-    try {
-      const response = await axios.get("http://localhost:5163/api/Categories");
-      setCategories(response.data);
-    } catch (error) {
-      console.error("Error loading categories:", error);
-    }
-  }
-
-  async function loadProducts() {
+  const loadProducts = async () => {
     try {
       const response = await axios.get("http://localhost:5163/api/Products");
       setProducts(response.data);
     } catch (error) {
       console.error("Error loading products:", error);
     }
-  }
+  };
 
-  async function handleSubmit(event) {
-    event.preventDefault();
+  const loadCategories = async () => {
     try {
-      const newProduct = { title, description, company, price, categoryId };
-      if (isEditing && selectedProductId) {
-        await axios.put(`http://localhost:5163/api/Products/${selectedProductId}`, newProduct);
-      } else {
-        await axios.post("http://localhost:5163/api/Products", newProduct);
-      }
-      await loadProducts();
-      setShowModal(false);
-      clearFormFields();
+      const response = await axios.get("http://localhost:5163/api/Categories");
+      setCategories(response.data);
     } catch (error) {
-      console.error("Error creating or updating product:", error);
+      console.error("Error loading categories:", error);
     }
-  }
+  };
 
-  async function handleDelete(id) {
+  const handleAddProduct = () => {
+    setShowAddModal(true);
+  };
+
+  const handleCloseAddModal = () => {
+    setShowAddModal(false);
+  };
+
+  const handleEditProduct = (product) => {
+    setSelectedProduct(product);
+    setIsEditing(true);
+    setShowEditModal(true);
+  };
+
+  const handleCloseEditModal = () => {
+    setSelectedProduct(null);
+    setIsEditing(false);
+    setShowEditModal(false);
+  };
+
+  const handleDeleteProduct = async (id) => {
     try {
       await axios.delete(`http://localhost:5163/api/Products/${id}`);
       await loadProducts();
     } catch (error) {
       console.error("Error deleting product:", error);
     }
-  }
-
-  function handleEdit(id) {
-    const selectedProduct = products.find((product) => product.id === id);
-    setEditProduct(selectedProduct);
-    setSelectedProductId(id);
-    setIsEditing(true); 
-    setShowModal(true); 
-  }
-
-  function handleEditCancel() {
-    setEditProduct(null);
-    setIsEditing(false); 
-    setSelectedProductId(null);
-    setShowModal(false); 
-  }
-
-  const openModal = () => {
-    setIsEditing(false);
-    setShowModal(true);
-  };
-
-  const clearFormFields = () => {
-    setTitle("");
-    setDescription("");
-    setCompany("");
-    setPrice("");
-    setCategoryId("");
-    setSelectedProductId(null);
   };
 
   return (
     <div className="container">
       <div className="action-container">
-        <button onClick={openModal} className="btn btn-primary">
+        <button onClick={handleAddProduct} className="btn btn-primary">
           Add Product
         </button>
       </div>
@@ -115,12 +89,12 @@ function ProductCrud() {
               <td>{product.description}</td>
               <td>{product.company}</td>
               <td>{product.price}</td>
-              <td>{product.categoryId}</td>
+              <td>{product.category.name}</td>
               <td>
-                <button onClick={() => handleEdit(product.id)} className="edit-button">
+                <button onClick={() => handleEditProduct(product)} className="edit-button">
                   Edit
                 </button>
-                <button onClick={() => handleDelete(product.id)} className="delete-button">
+                <button onClick={() => handleDeleteProduct(product.id)} className="delete-button">
                   Delete
                 </button>
               </td>
@@ -128,22 +102,19 @@ function ProductCrud() {
           ))}
         </tbody>
       </table>
-      {showModal && !isEditing && (
-        <AddProductModal
-          isOpen={showModal}
-          onRequestClose={() => setShowModal(false)}
-          categories={categories}
-          handleSubmit={handleSubmit}
-        />
-      )}
-      {showModal && isEditing && (
+      <AddProductModal
+        isOpen={showAddModal}
+        onRequestClose={handleCloseAddModal}
+        categories={categories}
+        loadProducts={loadProducts}
+      />
+      {selectedProduct && (
         <EditProductModal
-          isOpen={showModal}
-          onRequestClose={() => setShowModal(false)}
-          product={editProduct}
+          isOpen={showEditModal}
+          onRequestClose={handleCloseEditModal}
+          product={selectedProduct}
           categories={categories}
-          handleSubmit={handleSubmit}
-          handleCancel={handleEditCancel}
+          loadProducts={loadProducts}
         />
       )}
     </div>

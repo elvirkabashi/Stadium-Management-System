@@ -43,10 +43,6 @@ namespace MySqlWebApi.Controllers
                 })
                 .ToListAsync();
 
-            if (!tiketatByUser.Any())
-            {
-                return NotFound();
-            }
 
             return tiketatByUser;
         }
