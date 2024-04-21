@@ -33,7 +33,7 @@ namespace MySqlWebApi.Model
 
 
 		[ValidateNever]
-		public string ImageUrl { get; set; } = "noimg";
+		public string ImageUrl { get; set; }
 
 
 	}

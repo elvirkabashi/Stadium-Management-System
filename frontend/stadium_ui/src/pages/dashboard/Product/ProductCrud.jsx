@@ -79,6 +79,7 @@ function ProductCrud() {
             <th>Company</th>
             <th>Price</th>
             <th>Category</th>
+            <th>Image</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -90,6 +91,7 @@ function ProductCrud() {
               <td>{product.company}</td>
               <td>{product.price}</td>
               <td>{product.category.name}</td>
+              <td style={{padding:'0',textAlign:'center'}}><img src={product.imageUrl} style={{height:'60px',width:'auto'}}/></td>
               <td>
                 <button onClick={() => handleEditProduct(product)} className="edit-button">
                   Edit

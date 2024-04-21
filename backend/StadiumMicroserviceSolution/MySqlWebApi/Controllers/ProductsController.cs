@@ -85,6 +85,7 @@ namespace MySqlWebApi.Controllers
             existingProduct.Company = product.Company;
             existingProduct.Price = product.Price;
             existingProduct.CategoryId = product.CategoryId;
+            existingProduct.ImageUrl = product.ImageUrl;
 
             try
             {
