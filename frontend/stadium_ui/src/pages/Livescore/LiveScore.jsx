@@ -46,7 +46,7 @@ const LiveScore = () =>{
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '67fd92b166mshba66ed90c147fc4p166dc8jsn13e422347d03',
+                'X-RapidAPI-Key': 'aa301af0dbmsh1936a196495c187p1e487ajsn569a4f7f9764',
                 'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
             }
         };
@@ -117,7 +117,7 @@ const LiveScore = () =>{
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '67fd92b166mshba66ed90c147fc4p166dc8jsn13e422347d03',
+                'X-RapidAPI-Key': 'aa301af0dbmsh1936a196495c187p1e487ajsn569a4f7f9764',
                 'X-RapidAPI-Host': 'sportscore1.p.rapidapi.com'
             }
         };
@@ -247,12 +247,12 @@ const LiveScore = () =>{
             <div className="round-controls">
                 
                 <MdNavigateBefore
-                className="round"
+                className={"round" + (showFixture === "last" ? "hide-match" : "") }
                 onClick={showLastMatch}
                 />
 
                 <MdNavigateNext
-                className="round"
+                className={"round" + (showFixture === "next" ? "hide-match" : "") }
                 onClick={showNextMatch}
                 />    
             </div>
