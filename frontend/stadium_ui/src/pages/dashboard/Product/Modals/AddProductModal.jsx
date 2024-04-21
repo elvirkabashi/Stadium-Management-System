@@ -1,5 +1,6 @@
 // AddProductModal.jsx
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
+import PropTypes from 'prop-types';
 import Modal from "react-modal";
 import axios from "axios";
 import "./AddProductModal.css";
@@ -11,14 +12,32 @@ function AddProductModal({ isOpen, onRequestClose }) {
   const [description, setDescription] = useState("");
   const [company, setCompany] = useState("");
   const [price, setPrice] = useState("");
-  const [category, setCategory] = useState("");
+  const [categories, setCategories] = useState([]);
+  const [categoryId, setCategoryId] = useState("");
+
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await axios.get("http://localhost:5163/api/Categories");
+        setCategories(response.data);
+      } catch (error) {
+        console.error('Error fetching categories:', error);
+      }
+    };
+    
+    fetchCategories();
+  }, []);
+
+
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const newProduct = { title, description, company, price, category };
+      const newProduct = { title, description, company, price, categoryId };
       await axios.post("http://localhost:5163/api/Products", newProduct);
       onRequestClose(); 
+      location.reload();
     } catch (error) {
       console.error("Error creating product:", error);
     }
@@ -65,7 +84,14 @@ function AddProductModal({ isOpen, onRequestClose }) {
         </div>
         <div className="form-group">
           <label htmlFor="category">Category:</label>
-          <input type="text" id="category" value={category} onChange={(e) => setCategory(e.target.value)} required />
+          <select className="form-select" id="category" value={categoryId} onChange={(e) => setCategoryId(e.target.value)} required>
+            <option value="">Select a Category</option>
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
         </div>
         <div className="modal-footer">
           <button type="submit" className="btn btn-primary">Add</button>
@@ -74,5 +100,8 @@ function AddProductModal({ isOpen, onRequestClose }) {
     </Modal>
   );
 }
-
+AddProductModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onRequestClose: PropTypes.func.isRequired
+};
 export default AddProductModal;

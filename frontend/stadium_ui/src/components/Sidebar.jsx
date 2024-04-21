@@ -49,7 +49,7 @@ function Sidebar() {
                         <a href="#" className="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
                             data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
                             <i className="lni lni-protection"></i>
-                            <span>Auth</span>
+                            <span>Auth</span>   
                         </a>
                         <ul id="auth" className="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
                             <li className="sidebar-item">

@@ -46,60 +46,68 @@ namespace MySqlWebApi.Controllers
 		}
 
 
-		// PUT: api/Products/5
-		[HttpPut("{id}")]
-		public async Task<IActionResult> PutProduct(int id, ProductVm productVm)
-		{
-			if (id != productVm.Product.Id)
-			{
-				return BadRequest();
-			}
+		
 
-			_context.Entry(productVm.Product).State = EntityState.Modified;
+        // POST: api/Products
+        [HttpPost]
+        public async Task<ActionResult<Product>> PostProduct(Product product)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
 
-			try
-			{
-				await _context.SaveChangesAsync();
-			}
-			catch (DbUpdateConcurrencyException)
-			{
-				if (!ProductExists(id))
-				{
-					return NotFound();
-				}
-				else
-				{
-					throw;
-				}
-			}
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
 
-			return NoContent();
-		}
+            return CreatedAtAction(nameof(GetProduct), new { id = product.Id }, product);
+        }
 
-		// POST: api/Products
-		[HttpPost]
-		public async Task<ActionResult<Product>> PostProduct(ProductVm productVm)
-		{
-			// Check if the specified category exists
-			var existingCategory = await _context.Categories.FindAsync(productVm.Product.CategoryId);
-			if (existingCategory == null)
-			{
-				// Handle the scenario where the category doesn't exist (optional)
-				return BadRequest("The specified category does not exist.");
-			}
+        // PUT: api/Products/5
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PutProduct(int id, Product product)
+        {
+            if (id != product.Id)
+            {
+                return BadRequest("ID in the URL does not match the ID in the product data.");
+            }
 
-			// Associate the existing category with the new product
-			productVm.Product.Category = existingCategory;
+            // Check if the product with the specified ID exists
+            var existingProduct = await _context.Products.FindAsync(id);
+            if (existingProduct == null)
+            {
+                return NotFound();
+            }
 
-			// Add the product to the database
-			_context.Products.Add(productVm.Product);
-			await _context.SaveChangesAsync();
+            // Update only the modifiable properties
+            existingProduct.Title = product.Title;
+            existingProduct.Description = product.Description;
+            existingProduct.Company = product.Company;
+            existingProduct.Price = product.Price;
+            existingProduct.CategoryId = product.CategoryId;
 
-			return CreatedAtAction("GetProduct", new { id = productVm.Product.Id }, productVm.Product);
-		}
+            try
+            {
+                _context.Entry(existingProduct).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!ProductExists(id))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
 
-		// DELETE: api/Products/5
-		[HttpDelete("{id}")]
+            return NoContent();
+        }
+
+        // DELETE: api/Products/5
+        [HttpDelete("{id}")]
 		public async Task<IActionResult> DeleteProduct(int id)
 		{
 			var product = await _context.Products.FindAsync(id);

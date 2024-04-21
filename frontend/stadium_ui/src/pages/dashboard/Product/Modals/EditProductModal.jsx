@@ -1,5 +1,6 @@
 // EditProductModal.jsx
-import React, { useState } from "react";
+import { useState } from "react";
+import PropTypes from 'prop-types';
 import Modal from "react-modal";
 import axios from "axios";
 import "./EditProductModal.css";
@@ -20,6 +21,7 @@ function EditProductModal({ isOpen, onRequestClose, product, onSubmit, categorie
       await axios.put(`http://localhost:5163/api/Products/${product.id}`, updatedProduct);
       onSubmit(updatedProduct); 
       onRequestClose(); 
+      window.location.reload();
     } catch (error) {
       console.error("Error updating product:", error);
     }
@@ -65,7 +67,7 @@ function EditProductModal({ isOpen, onRequestClose, product, onSubmit, categorie
         </div>
         <div className="form-group">
           <label htmlFor="categoryId">Category:</label>
-          <select id="categoryId" value={categoryId} onChange={(e) => setCategoryId(e.target.value)} required>
+          <select className="form-select" id="categoryId" value={categoryId} onChange={(e) => setCategoryId(e.target.value)} required>
             <option value="">Select Category</option>
             {categories.map((category) => (
               <option key={category.id} value={category.id}>
@@ -81,5 +83,22 @@ function EditProductModal({ isOpen, onRequestClose, product, onSubmit, categorie
     </Modal>
   );
 }
-
+// Define PropTypes
+EditProductModal.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  onRequestClose: PropTypes.func.isRequired,
+  product: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+    categoryId: PropTypes.number.isRequired,
+  }).isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  categories: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+  })).isRequired,
+};
 export default EditProductModal;
