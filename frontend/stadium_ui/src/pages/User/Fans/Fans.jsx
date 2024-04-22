@@ -57,7 +57,7 @@ const Fans = () => {
                       <span>{priceDescription}</span>
                     </div>
                     <div className="price">
-                      <span>{price}</span>
+                      <span>{price} €</span>
                     </div>
                   </div>
                   <div className="desc">
