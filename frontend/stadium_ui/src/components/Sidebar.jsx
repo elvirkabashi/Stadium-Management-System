@@ -8,6 +8,7 @@ import Tiketat from '../pages/Admin/TiketatDashboard/Tiketat';
 import Subscribe from '../pages/Admin/Subscribe/Subscribe';
 import Details from '../pages/Admin/TiketatDashboard/Details';
 import FansDashboard from '../pages/Admin/Fans/FansDashboard';
+import { MdGroups } from "react-icons/md";
 
 function Sidebar() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -98,7 +99,7 @@ function Sidebar() {
                     </li>
                     <li className="sidebar-item">
                         <a href="/fansDashboard" className="sidebar-link">
-                        <i className="bi bi-envelope"></i>
+                        <MdGroups />
                             <span>Fans</span>
                         </a>
                     </li>
