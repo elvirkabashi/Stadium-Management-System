@@ -11,8 +11,8 @@ using MySqlWebApi.Data;
 namespace MySqlWebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240419134547_ResetimiDatabazes")]
-    partial class ResetimiDatabazes
+    [Migration("20240422110715_ShtimiImageFans")]
+    partial class ShtimiImageFans
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -128,6 +128,40 @@ namespace MySqlWebApi.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("EventsCategories");
+                });
+
+            modelBuilder.Entity("MySqlWebApi.Model.Fans", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ImageUrl")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PriceDescription")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("TitleDescription")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Fans");
                 });
 
             modelBuilder.Entity("MySqlWebApi.Model.Product", b =>

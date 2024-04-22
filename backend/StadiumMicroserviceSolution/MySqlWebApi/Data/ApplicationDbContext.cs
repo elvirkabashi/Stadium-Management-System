@@ -14,5 +14,6 @@ namespace MySqlWebApi.Data
         public DbSet<Subscribe> Subscribe { get; set; }
         public DbSet<Events> Events { get; set; }
         public DbSet<EventsCategory> EventsCategories { get; set; }
+        public DbSet<Fans> Fans { get; set; }
     }
 }

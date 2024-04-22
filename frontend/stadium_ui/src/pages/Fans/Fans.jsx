@@ -20,30 +20,30 @@ const Data = [
   {
     id:1,
     imgSrc:KosovoPremium,
-    destTitle:'Kosovo Premium Fan',
-    location: 'Actual Premium Kosovar membership card.',
-    grade: 'Only for',
-    fees: '35€',
+    title:'Kosovo Premium Fan',
+    titleDescription: 'Actual Premium Kosovar membership card.',
+    priceDescription: 'Only for',
+    price: '35€',
     description: '15% discount at our Offical Online Shop, Advance Ticket Purchase, All of the benefits of the other plans.'
   },
 
   {
     id:2,
     imgSrc:KosovoStandard,
-    destTitle:'Kosovo Standard Fan',
-    location: 'Actual Kosovar digital card.',
-    grade: 'Free',
-    fees: '0€',
+    title:'Kosovo Standard Fan',
+    titleDescription: 'Actual Kosovar digital card.',
+    priceDescription: 'Free',
+    price: '0€',
     description: '5% discount on your first purchase on the Official Online Store, Contests and giveaways.'
   },
 
   {
     id:3,
     imgSrc:KosovoJunior,
-    destTitle:'Kosova Junior Fan',
-    location: 'Actual Junior Kosovar membership card.',
-    grade: 'Only for',
-    fees: '20€',
+    title:'Kosova Junior Fan',
+    titleDescription: 'Actual Junior Kosovar membership card.',
+    priceDescription: 'Only for',
+    price: '20€',
     description: 'Advance Ticket Purchase, Yearly surprise gift.'
   },
 
@@ -75,26 +75,26 @@ const Fans = () => {
       <div className="new-secContent grid">
         
         {
-          Data.map(({id, imgSrc, destTitle, location, grade, fees, description})=>{
+          Data.map(({id, imgSrc, title, titleDescription, priceDescription, price, description})=>{
             return( 
               <div key={id} className="singleDestination" data-aos="fade-up">
                 
                 <div className="imageDiv">
-                  <img src={imgSrc} alt={destTitle} />
+                  <img src={imgSrc} alt={title} />
                 </div>
 
                 <div className="cardInfo">
-                  <h4 className="destTitle">{destTitle}</h4>
+                  <h4 className="destTitle">{title}</h4>
                   <span className="continent flex">
-                     <span className="name">{location}</span>
+                     <span className="name">{titleDescription}</span>
                   </span>
 
                   <div className="fees flex">
                     <div className="grade">
-                      <span>{grade}</span>
+                      <span>{priceDescription}</span>
                     </div>
                     <div className="price">
-                      <span>{fees}</span>
+                      <span>{price}</span>
                     </div>
  
                   </div>
