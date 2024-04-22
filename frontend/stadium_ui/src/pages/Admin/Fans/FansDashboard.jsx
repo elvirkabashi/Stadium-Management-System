@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import AddFansModal from "./Modals/AddFansModal";
 import EditFansModal from "./Modals/EditFansModal";
@@ -23,7 +23,6 @@ function FansDashboard() {
       console.error("Error loading fans:", error);
     }
   };
-
 
   const handleAddFans = () => {
     setShowAddModal(true);
@@ -56,6 +55,8 @@ function FansDashboard() {
 
   return (
     <div className="container">
+      <h1 className="title">FANS</h1>
+      <div className="title-line"></div>
       <div className="action-container">
         <button onClick={handleAddFans} className="btn btn-primary">
           Add Fans
@@ -64,24 +65,28 @@ function FansDashboard() {
       <table className="table">
         <thead>
           <tr>
+            <th>#</th> {/* Numri i rreshtave */}
             <th>Title</th>
             <th>Title Description</th>
             <th>Price Description</th>
-            <th>Price</th>
+            <th>Price €</th>
             <th>Description</th>
             <th>Image</th>
             <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {fans.map((fans) => (
+          {fans.map((fans, index) => (
             <tr key={fans.id}>
+              <td>{index + 1}</td> {/* Numri i rreshtit */}
               <td>{fans.title}</td>
               <td>{fans.titleDescription}</td>
               <td>{fans.priceDescription}</td>
-              <td>{fans.price}</td>
+              <td>{fans.price}€</td>
               <td>{fans.description}</td>
-              <td style={{padding:'0',textAlign:'center'}}><img src={fans.imageUrl} style={{height:'60px',width:'auto'}}/></td>
+              <td style={{ padding: "0", textAlign: "center" }}>
+              <img src={fans.imageUrl} style={{ height: "60px", width: "auto" }}/>
+              </td>
               <td>
                 <button onClick={() => handleEditFans(fans)} className="edit-button">
                   Edit
@@ -94,18 +99,9 @@ function FansDashboard() {
           ))}
         </tbody>
       </table>
-      <AddFansModal
-        isOpen={showAddModal}
-        onRequestClose={handleCloseAddModal}
-        loadFans={loadFans}
-      />
+      <AddFansModal isOpen={showAddModal} onRequestClose={handleCloseAddModal} loadFans={loadFans} />
       {selectedFans && (
-        <EditFansModal
-          isOpen={showEditModal}
-          onRequestClose={handleCloseEditModal}
-          fans={selectedFans}
-          loadFans={loadFans}
-        />
+        <EditFansModal isOpen={showEditModal} onRequestClose={handleCloseEditModal} fans={selectedFans} loadFans={loadFans} />
       )}
     </div>
   );
