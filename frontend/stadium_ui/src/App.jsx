@@ -1,20 +1,21 @@
 import { useState } from 'react'
 import './App.css'
 import { Routes, Route, BrowserRouter} from 'react-router-dom';
-import HomePage from './pages/HomePage/HomePage';
+import HomePage from './pages/User/HomePage/HomePage';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar/Navbar'
-import Contact from './pages/Contact/Contact';
-import Eventet from './pages/Eventet/Eventet';
-import Tiketat from './pages/Tiketat/Tiketat'
-import Stadiumi from './pages/Stadiumi/Stadiumi';
-import LiveScore from './pages/Livescore/LiveScore';
-import Fans from './pages/Fans/Fans';
+import Contact from './pages/User/Contact/Contact';
+import Eventet from './pages/User/Eventet/Eventet';
+import Tiketat from './pages/User/Tiketat/Tiketat'
+import Stadiumi from './pages/User/Stadiumi/Stadiumi';
+import LiveScore from './pages/User/Livescore/LiveScore';
+import Fans from './pages/User/Fans/Fans';
+import Footer from './components/Footer/Footer';
 
 
 const App = () => {
                               //provo true ose false
-  const [isAdmin,] = useState(false)//Nese admini eshte true kan me u shfaq Sidebari dhe Routes per adminin 
+  const [isAdmin,] = useState(true)//Nese admini eshte true kan me u shfaq Sidebari dhe Routes per adminin 
                                             //ne te kunderten ka mu shfaq pjesa e userit
 
                                             //BrowserRouter per user te tjesht kan mu caktu te app.jsx 
@@ -39,6 +40,7 @@ const App = () => {
 
           <Route path='*' element={<Eventet/>} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     )}
   </>

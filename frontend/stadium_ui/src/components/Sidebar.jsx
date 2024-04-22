@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import './css/sidebar.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Dashboard from "../pages/dashboard/Dashboard"
+import Dashboard from "../pages/Admin/Dashboard/Dashboard"
 import NotFound from "../components/NotFound/NotFound"
-import ContactMessages from '../pages/ContactMessages/ContactMessages';
-import Tiketat from '../pages/TiketatDashboard/Tiketat';
-import Subscribe from '../pages/Subscribe/Subscribe';
-import Details from '../pages/TiketatDashboard/Details';
+import ContactMessages from '../pages/Admin/ContactMessages/ContactMessages';
+import Tiketat from '../pages/Admin/TiketatDashboard/Tiketat';
+import Subscribe from './Footer/Subscribe/Subscribe';
+import Details from '../pages/Admin/TiketatDashboard/Details';
 
 function Sidebar() {
     const [isExpanded, setIsExpanded] = useState(false);
