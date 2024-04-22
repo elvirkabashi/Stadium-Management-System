@@ -1,6 +1,7 @@
 // Dashboard.jsx
 import { useState } from "react";
 import { Grid, Card, CardContent, Typography, Button } from "@mui/material";
+import EventsCrud from "./Events/EventsCrud"
 import ProductCrud from "./Product/ProductCrud";
 import "./Dashboard.css"
 
@@ -25,6 +26,9 @@ function Dashboard() {
     switch (selectedItem.name) {
       case "Products":
         return <ProductCrud />;
+
+      case "Events":
+        return <EventsCrud />;
       // Ketu shtoni ndonje case , per shtimin e crudev tjera
       default:
         return null;
