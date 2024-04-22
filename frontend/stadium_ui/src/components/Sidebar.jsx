@@ -5,7 +5,7 @@ import Dashboard from "../pages/Admin/Dashboard/Dashboard"
 import NotFound from "../components/NotFound/NotFound"
 import ContactMessages from '../pages/Admin/ContactMessages/ContactMessages';
 import Tiketat from '../pages/Admin/TiketatDashboard/Tiketat';
-import Subscribe from './Footer/Subscribe/Subscribe';
+import Subscribe from '../pages/Admin/Subscribe/Subscribe';
 import Details from '../pages/Admin/TiketatDashboard/Details';
 
 function Sidebar() {

@@ -1,5 +1,5 @@
 .events {
-    background-image: linear-gradient(rgba(9,5,46,0.7), rgba(9,5,46,0.7)), url('../../Assets/bgimage.png');
+    background-image: linear-gradient(rgba(9,5,46,0.7), rgba(9,5,46,0.7)), url('../../../Assets/bgimage.png');
     background-size: cover;
     background-position: center;
     text-align: center;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Subscribes.scss';
-import LoadingSpinner from '../../LoadingSpinner';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
