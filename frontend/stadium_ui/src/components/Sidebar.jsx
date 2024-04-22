@@ -7,6 +7,7 @@ import ContactMessages from '../pages/Admin/ContactMessages/ContactMessages';
 import Tiketat from '../pages/Admin/TiketatDashboard/Tiketat';
 import Subscribe from '../pages/Admin/Subscribe/Subscribe';
 import Details from '../pages/Admin/TiketatDashboard/Details';
+import FansDashboard from '../pages/Admin/Fans/FansDashboard';
 
 function Sidebar() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -96,6 +97,12 @@ function Sidebar() {
                         </a>
                     </li>
                     <li className="sidebar-item">
+                        <a href="/fansDashboard" className="sidebar-link">
+                        <i className="bi bi-envelope"></i>
+                            <span>Fans</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-item">
                         <a href="#" className="sidebar-link">
                             <i className="lni lni-cog"></i>
                             <span>Setting</span>
@@ -118,6 +125,7 @@ function Sidebar() {
                   <Route path="/contact" element={<ContactMessages/>} />
                   <Route path="/tiketat" element={<Tiketat/>} />
                   <Route path="/subscribes" element={<Subscribe/>} />
+                  <Route path="/fansDashboard" element={<FansDashboard/>} />
                   <Route path="/tiketat/:id" element={<Details/>} />
                   <Route path="*" element={<NotFound/>} />
                 </Routes>
