@@ -14,7 +14,7 @@ import Fans from './pages/Fans/Fans';
 
 const App = () => {
                               //provo true ose false
-  const [isAdmin,] = useState(true)//Nese admini eshte true kan me u shfaq Sidebari dhe Routes per adminin 
+  const [isAdmin,] = useState(false)//Nese admini eshte true kan me u shfaq Sidebari dhe Routes per adminin 
                                             //ne te kunderten ka mu shfaq pjesa e userit
 
                                             //BrowserRouter per user te tjesht kan mu caktu te app.jsx 
