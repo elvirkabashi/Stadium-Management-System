@@ -99,7 +99,7 @@ function Sidebar() {
                     </li>
                     <li className="sidebar-item">
                         <a href="/fansDashboard" className="sidebar-link">
-                        <MdGroups />
+                        <i className='bi'><MdGroups /></i>
                             <span>Fans</span>
                         </a>
                     </li>

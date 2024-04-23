@@ -65,7 +65,7 @@ function FansDashboard() {
       <table className="table">
         <thead>
           <tr>
-            <th>#</th> {/* Numri i rreshtave */}
+            <th>Nr.</th> {/* Numri i rreshtave */}
             <th>Title</th>
             <th>Title Description</th>
             <th>Price Description</th>
