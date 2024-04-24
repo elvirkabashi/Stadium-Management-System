@@ -8,7 +8,7 @@ import LoadingSpinner from '../../../../components/LoadingSpinner';
 
 Modal.setAppElement("#root");
 
-function EditFansModal({ isOpen, onRequestClose, fans }) {
+function EditFansModal({ isOpen, onRequestClose, fans, fansCategory }) {
   const [title, setTitle] = useState(fans.title);
   const [titleDescription, setTitleDescription] = useState(fans.titleDescription);
   const [priceDescription, setPriceDescription] = useState(fans.priceDescription);
@@ -16,6 +16,7 @@ function EditFansModal({ isOpen, onRequestClose, fans }) {
   const [description, setDescription] = useState(fans.description);
   const [image, setImage] = useState(null);
   const [imageUrll, setImageUrl] = useState(fans.imageUrl);
+  const [fansCategoryId, setFansCategoryId] = useState(fans.fansCategoryId);
   const [isLoading, setIsLoading] = useState(false);
   const [saveLoading,setSaveLoading] = useState(false)
 
@@ -65,7 +66,8 @@ function EditFansModal({ isOpen, onRequestClose, fans }) {
         priceDescription,
         price: price,
         description: description,
-        imageUrl: imageUrll
+        imageUrl: imageUrll,
+        fansCategoryId: fansCategoryId,
       };
 
       await axios.put(`http://localhost:5163/api/Fans/${fans.id}`, updatedFans);
@@ -152,6 +154,24 @@ function EditFansModal({ isOpen, onRequestClose, fans }) {
             required
           />
         </div>
+        <div className="form-group" style={{width:'50%'}}>
+              <label htmlFor="categoryId" className="mt-1">Fans Category:</label>
+              <select
+                style={{height:'45px'}}
+                className="form-select"
+                id="categoryId"
+                value={fansCategoryId}
+                onChange={(e) => setFansCategoryId(e.target.value)}
+                required
+              >
+                <option value="">Fans Category</option>
+                {fansCategory.map((fansCategory) => (
+                  <option key={fansCategory.id} value={fansCategory.id}>
+                    {fansCategory.name}
+                  </option>
+                ))}
+              </select>
+            </div>
         <div className="d-flex gap3">
           <div>
             <div className="form-group">
@@ -191,9 +211,10 @@ EditFansModal.propTypes = {
     price: PropTypes.number.isRequired,
     description: PropTypes.string.isRequired,
     imageUrl: PropTypes.string.isRequired,
+    fansCategoryId: PropTypes.number.isRequired,
   }).isRequired,
   onSubmit: PropTypes.func.isRequired,
-  categories: PropTypes.arrayOf(
+  fansCategory: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
