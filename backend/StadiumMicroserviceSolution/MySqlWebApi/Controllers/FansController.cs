@@ -22,6 +22,7 @@ namespace MySqlWebApi.Controllers
         public async Task<ActionResult<IEnumerable<Fans>>> GetFans()
         {
             var fans = await _context.Fans
+                .Include(p => p.FansCategory)
                 .ToListAsync();
             return fans;
         }
@@ -31,6 +32,7 @@ namespace MySqlWebApi.Controllers
         public async Task<ActionResult<Fans>> GetFans(int id)
         {
             var fans = await _context.Fans
+                .Include(p => p.FansCategory)
                 .FirstOrDefaultAsync(p => p.Id == id);
 
             if (fans == null)
@@ -82,6 +84,7 @@ namespace MySqlWebApi.Controllers
             existingFans.Price = fans.Price;
             existingFans.Description = fans.Description;
             existingFans.ImageUrl = fans.ImageUrl;
+            existingFans.FansCategoryId = fans.FansCategoryId;
 
             try
             {

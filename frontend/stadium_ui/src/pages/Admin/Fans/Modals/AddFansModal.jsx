@@ -20,10 +20,23 @@ function AddFansModal({ isOpen, onRequestClose }) {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [imageUrl, setImageUrl] = useState("");
+  const [fansCategory, setFansCategory] = useState([]);
+  const [fansCategoryId, setFansCategoryId] = useState("");
   const inputRef = useRef(null);
 
 
+  useEffect(() => {
+    const fetchFansCategory = async () => {
+      try {
+        const response = await axios.get("http://localhost:5163/api/FansCategory");
+        setFansCategory(response.data);
+      } catch (error) {
+        console.error("Error fetching fans categories:", error);
+      }
+    };
 
+    fetchFansCategory();
+  }, []);
 
   const handleImageUpload = async () => {
     try {
@@ -64,7 +77,8 @@ function AddFansModal({ isOpen, onRequestClose }) {
         priceDescription,
         price: parseFloat(price),
         description,
-        imageUrl
+        imageUrl,
+        fansCategoryId
       };
 
 
@@ -154,6 +168,24 @@ function AddFansModal({ isOpen, onRequestClose }) {
                 required
               />
           </div>
+          <div className="form-group" style={{width:'50%'}}>
+              <label htmlFor="category" className="mt-1">Fans Category:</label>
+              <select
+                style={{height:'45px'}}
+                className="form-select"
+                id="category"
+                value={fansCategoryId}
+                onChange={(e) => setFansCategoryId(e.target.value)}
+                required
+              >
+                <option value="">Fans Category</option>
+                {fansCategory.map((fansCategory) => (
+                  <option key={fansCategory.id} value={fansCategory.id}>
+                    {fansCategory.name}
+                  </option>
+                ))}
+              </select>
+            </div>
           <div className="d-flex gap-3">
             <div>
                 <div className="form-group">

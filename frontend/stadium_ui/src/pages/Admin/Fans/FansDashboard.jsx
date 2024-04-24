@@ -6,6 +6,7 @@ import "./FansDashboard.css";
 
 function FansDashboard() {
   const [fans, setFans] = useState([]);
+  const [fansCategory, setFansCategory] = useState([]);
   const [showAddModal, setShowAddModal] = useState(false);
   const [showEditModal, setShowEditModal] = useState(false);
   const [selectedFans, setSelectedFans] = useState(null);
@@ -13,6 +14,7 @@ function FansDashboard() {
 
   useEffect(() => {
     loadFans();
+    loadFansCategory();
   }, []);
 
   const loadFans = async () => {
@@ -21,6 +23,15 @@ function FansDashboard() {
       setFans(response.data);
     } catch (error) {
       console.error("Error loading fans:", error);
+    }
+  };
+
+  const loadFansCategory = async () => {
+    try {
+      const response = await axios.get("http://localhost:5163/api/FansCategory");
+      setFansCategory(response.data);
+    } catch (error) {
+      console.error("Error loading fans category:", error);
     }
   };
 
@@ -72,6 +83,7 @@ function FansDashboard() {
             <th>Price €</th>
             <th>Description</th>
             <th>Image</th>
+            <th>Fans Category</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -85,8 +97,9 @@ function FansDashboard() {
               <td>{fans.price}€</td>
               <td>{fans.description}</td>
               <td style={{ padding: "0", textAlign: "center" }}>
-              <img src={fans.imageUrl} style={{ height: "60px", width: "auto" }}/>
+                <img src={fans.imageUrl} style={{ height: "60px", width: "auto" }}/>
               </td>
+              <td>{fans.fansCategory.name}</td>
               <td>
                 <button onClick={() => handleEditFans(fans)} className="edit-button">
                   Edit
@@ -99,9 +112,18 @@ function FansDashboard() {
           ))}
         </tbody>
       </table>
-      <AddFansModal isOpen={showAddModal} onRequestClose={handleCloseAddModal} loadFans={loadFans} />
+      <AddFansModal 
+        isOpen={showAddModal} 
+        onRequestClose={handleCloseAddModal} 
+        fansCategory={fansCategory} 
+        loadFans={loadFans} />
       {selectedFans && (
-        <EditFansModal isOpen={showEditModal} onRequestClose={handleCloseEditModal} fans={selectedFans} loadFans={loadFans} />
+        <EditFansModal 
+          isOpen={showEditModal} 
+          onRequestClose={handleCloseEditModal} 
+          fans={selectedFans} 
+          fansCategory={fansCategory} 
+          loadFans={loadFans} />
       )}
     </div>
   );
