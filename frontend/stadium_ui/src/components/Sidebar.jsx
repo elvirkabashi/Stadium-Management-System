@@ -98,12 +98,12 @@ function Sidebar() {
                             <span>Subscribes</span>
                         </a>
                     </li>
-                    <li className="sidebar-item">
+                    {/* <li className="sidebar-item">
                         <a href="/fansCategoryDashboard" className="sidebar-link">
                         <i className='bi'><MdGroups /></i>
                             <span>Fans Category</span>
                         </a>
-                    </li>
+                    </li> */}
                     <li className="sidebar-item">
                         <a href="/fansDashboard" className="sidebar-link">
                         <i className='bi'><MdGroups /></i>

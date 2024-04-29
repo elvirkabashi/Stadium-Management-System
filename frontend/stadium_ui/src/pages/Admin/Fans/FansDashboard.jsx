@@ -3,6 +3,7 @@ import axios from "axios";
 import AddFansModal from "./Modals/AddFansModal";
 import EditFansModal from "./Modals/EditFansModal";
 import "./FansDashboard.css";
+import { Link } from "react-router-dom"; // Import Link
 
 function FansDashboard() {
   const [fans, setFans] = useState([]);
@@ -72,6 +73,11 @@ function FansDashboard() {
         <button onClick={handleAddFans} className="btn btn-primary">
           Add Fans
         </button>
+      </div>
+      <div className="action-container">
+        <Link to="/fansCategoryDashboard" className="btn btn-secondary">
+          Open Fans Category Dashboard
+        </Link>
       </div>
       <table className="table">
         <thead>

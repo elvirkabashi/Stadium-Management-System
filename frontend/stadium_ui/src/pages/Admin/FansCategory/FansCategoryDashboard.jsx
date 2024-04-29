@@ -3,6 +3,8 @@ import axios from "axios";
 import AddFansCategoryModal from "./Modals/AddFansCategoryModal";
 import EditFansCategoryModal from "./Modals/EditFansCategoryModal";
 import "./FansCategoryDashboard.css";
+import { Link } from "react-router-dom";
+
 
 function FansCategoryDashboard() {
   const [fansCategory, setFansCategory] = useState([]);
@@ -56,6 +58,8 @@ function FansCategoryDashboard() {
 
   return (
     <div className="container">
+      <h1 className="title">FANS CATEGORY</h1>
+      <div className="title-line"></div>
       <div className="action-container">
         <button onClick={handleAddFansCategory} className="btn btn-primary">
           Add Fans Category
@@ -97,6 +101,12 @@ function FansCategoryDashboard() {
           loadFansCategory={loadFansCategory}
         />
       )}
+
+      <div className="action-container">
+        <Link to="/fansDashboard" className="btn btn-secondary">
+          Return
+        </Link>
+      </div>
     </div>
   );
 }
