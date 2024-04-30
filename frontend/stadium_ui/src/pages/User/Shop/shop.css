@@ -1,0 +1,283 @@
+body{
+    margin:0;
+}
+
+.height{
+
+    height: 10rem;
+}
+
+.form{
+
+    position: relative;
+}
+
+.form .fa-search{
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    color: #9ca3af;
+
+}
+
+.form .span{
+
+    position: absolute;
+    right: 17.5px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid #d1d5db;
+
+}
+
+.left-pan{
+    padding-left: 7px;
+}
+
+.left-pan i{
+   
+   padding-left: 10px;
+}
+
+.form-input{
+
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+}
+
+.form-input:focus{
+
+    box-shadow: none;
+    border:none;
+}
+
+
+hr{
+    margin: 0;
+}
+
+.nav-style{
+    
+    padding-bottom: 1rem;
+}
+
+.kits{
+    font-size: 20px;
+    font-weight:500;
+}
+
+.shbp{
+    font-size: 20px;
+    font-weight:500;
+}
+
+.sale{
+    font-size: 20px;
+    font-weight:500;
+}
+
+.kit-show{
+    padding-top: 10rem;
+}
+
+
+.snap-scroll-container{
+    padding-top: 5rem;
+}
+
+.snap-scroll-images{
+    height: 300px;
+}
+
+.card-img-top{
+    width: auto;
+}
+
+.kits-card img {
+    transition: transform 0.35s ease-in-out;
+  }
+  
+
+.kits-card img:hover{
+    transform:scale(1.05);
+} 
+
+.card-style{
+    border: none;
+    -webkit-box-shadow: 0px 6px 22px 4px rgba(0,0,0,0.1);
+-moz-box-shadow: 0px 6px 22px 4px rgba(0,0,0,0.1);
+box-shadow: 0px 6px 22px 4px rgba(0,0,0,0.1);
+}
+
+.card-body{
+    text-align:center;
+}
+
+.card-style-1:hover img {
+    content: url('../../images/aliti-back.webp');
+}
+
+.card-style-2:hover img {
+    content: url('../../images/muriqi-back.webp');
+}
+
+.card-style-3:hover img {
+    content: url('../../images/rashica-back.webp');
+}
+
+.card-style-4:hover img {
+    content: url('../../images/celina-back.webp');
+}
+
+.card-style-5:hover img {
+    content: url('../../images/vojvoda-back.webp');
+}
+
+.card-style-6:hover img {
+    content: url('../../images/your-back.webp');
+}
+  
+
+.card-style-7:hover img {
+    content: url('../../images/Albania-Back.jpg');
+}
+.card-style-8:hover img {
+    content: url('../../images/albania-black-back.jpg');
+}
+.card-style-9:hover img {
+    content: url('../../images/albania-white-back.jpg');
+}
+.card-style-10:hover img {
+    content: url('../../images/travel-back.jpg');
+}
+.card-style-11:hover img {
+    content: url('../../images/travel-sweat-back.jpg');
+}
+.card-style-12:hover img {
+    content: url('../../images/third-backk.jpg');
+}
+
+
+.card-text{
+    font-family: 'Bahnschrift', Verdana, Helvetica, sans-serif;
+}
+
+
+
+.snap-scroll-container .card {
+    border: none;
+  }
+
+
+
+  .vertical-scroll::-webkit-scrollbar {
+    width: 1em;
+    height: 0.5em;
+  }
+  
+  .vertical-scroll::-webkit-scrollbar-thumb {
+    background: hsla(231, 60%, 16%, 1);
+    border: 0.25em solid hsla(231, 60%, 16%, 1);
+    border-radius: 100vw;
+  }
+  
+  .vertical-scroll::-webkit-scrollbar-thumb:hover {
+    background: hsla(231, 60%, 16%, 1);
+  }
+  
+  
+
+  .logo-text {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .header-div{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .header-kits{
+    font-size: 50px;
+    font-weight: 700;
+    padding-right: 150px;
+  }
+
+  .header-lines{
+    font-size: 50px;
+    font-weight: bold;
+    transform: scaleX(2); 
+}
+
+.kits-container{
+    padding-bottom: 100px;
+}
+
+.kits-container-two{
+    padding-top:100px;
+}
+
+.kits-card{
+    width:25rem;
+}
+
+.kits-card-body {
+    position: absolute;
+    width: 400px;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    max-width: 80%;
+  }
+
+  .card-text{
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .second-cop{
+    margin-bottom:30px;
+    padding-bottom:20px;
+    padding-top: 20px;
+  }
+
+  .second-cop .container-fluid {
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  
+
+  .img10{
+    width:600px;
+    height: 450px;
+    }
+    
+    .second-cop-text{
+        
+    }
+
+    .img-text{
+        color:white;
+        align-self: center;
+    }
+  
+.background-img-color{
+    background: rgb(222,223,232);
+background: linear-gradient(107deg, rgba(222,223,232,1) 0%, rgba(143,159,192,1) 0%, rgba(129,147,185,1) 16%, rgba(122,142,181,1) 64%, rgba(74,103,158,1) 95%);
+}
+
+
+
+
+
+
+  
+  

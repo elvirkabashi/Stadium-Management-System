@@ -1,0 +1,123 @@
+.height{
+
+    height: 10rem;
+}
+
+.form{
+
+    position: relative;
+}
+
+.form .fa-search{
+
+    position: absolute;
+    top:20px;
+    left: 20px;
+    color: #9ca3af;
+}
+
+.form .span{
+
+    position: absolute;
+    right: 17.5px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid #d1d5db;
+
+}
+
+.left-pan{
+    padding-left: 7px;
+}
+
+.left-pan i{
+   
+   padding-left: 10px;
+}
+
+.form-input{
+
+    height: 55px;
+    text-indent: 33px;
+    border-radius: 10px;
+}
+
+.form-input:focus{
+
+    box-shadow: none;
+    border:none;
+}
+
+
+hr{
+    margin: 0;
+}
+
+.nav-style{
+    
+    padding-bottom: 1rem;
+}
+
+.image-banner{
+    background-image: url(collection_banner__mens_kits_1070x.webp);
+    padding: 20px 0;
+}
+
+.text-bannerr{
+    color:white;
+    border: 1px;
+    border-color: white;
+    border-style: solid;
+    height: auto;
+    width: auto;
+}
+
+.heading-banner{
+    font-size: 35px;
+    padding-bottom: 30px;
+    padding-top: 10px;
+}   
+
+.paragraph-banner{
+    padding-bottom: 14.9px;
+}
+
+.read-link:hover{
+    color:white;
+}
+
+.dropdown-container{
+    text-align:center;
+}
+
+.span-dot{
+    color:white;
+}
+
+.span-dot:hover{
+    color:black;
+}
+
+.filter-options{
+    padding-top: 25px;
+}
+
+.btn.btn-outline-dark {
+    color: #212529;
+    background-color: transparent;
+    background-image: none;
+    border-color: #212529;
+    border-radius: 0;
+    text-align: left;
+    width: 175px;
+  }
+
+  .buton1{
+    margin-right: 10px;
+  }
+  .buton2{
+    margin-right: 10px;
+  }
+  .buton3{
+    margin-right: 10px;
+  }
