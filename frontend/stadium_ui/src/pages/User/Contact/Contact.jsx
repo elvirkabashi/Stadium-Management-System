@@ -35,7 +35,7 @@ function Contact() {
         e.preventDefault();
           try {
             setLoading(true)
-            await axios.post('http://localhost:5163/api/Contact', newContact)
+            await axios.post(`${import.meta.env.VITE_BASE_URL}api/Contact`, newContact)
         
             setSubmissionStatus({ success: true, error: '' });
             setNewContact({

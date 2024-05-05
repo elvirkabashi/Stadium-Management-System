@@ -1,0 +1,43 @@
+version: '3.4'
+
+networks:
+  backend:
+
+services:
+  mysqlwebapi:
+    container_name: stadium-api
+    image: ${DOCKER_REGISTRY-}mysqlwebapi
+    build:
+      context: .
+      dockerfile: MySqlWebApi/Dockerfile
+    networks:
+      - backend
+    environment:
+     - DB_HOST=stadium.mysql.database.azure.com
+     - DB_NAME=stadium
+     - DB_ROOT_PASSWORD=Elvirk123*
+
+  mongodbwebapi:
+    container_name: stadiumi-api
+    image: ${DOCKER_REGISTRY-}mongodbwebapi
+    build:
+      context: .
+      dockerfile: MongoDbWebApi/Dockerfile 
+    networks:
+     - backend
+    environment:
+       - DB_NAME=StadiumiDB
+       - DB_ROOT_PASSWORD=lab2admin
+
+
+  apigateway:
+    container_name: api-gateway
+    image: ${DOCKER_REGISTRY-}apigateway
+    build:
+      context: .
+      dockerfile: ApiGateway/Dockerfile
+    ports:
+      - 8001:80
+    networks:
+      - backend
+

@@ -26,7 +26,7 @@ function AddFansCategoryModal({ isOpen, onRequestClose }) {
       };
 
 
-        await axios.post("http://localhost:5163/api/FansCategory", newFans);
+        await axios.post(`${import.meta.env.VITE_BASE_URL}api/FansCategory`, newFans);
         onRequestClose();
         window.location.reload();
 

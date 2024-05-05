@@ -23,7 +23,7 @@ function AddEventModal({ isOpen, onRequestClose }) {
   useEffect(() => {
     const fetchEventCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:5163/api/EventsCategory");
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}api/EventsCategory`);
         setEventCategories(response.data);
       } catch (error) {
         console.error("Error fetching event categories:", error);
@@ -48,7 +48,7 @@ function AddEventModal({ isOpen, onRequestClose }) {
         eventCategoryId
       };
 
-      await axios.post("http://localhost:5163/api/Events", newEvent);
+      await axios.post(`${import.meta.env.VITE_BASE_URL}api/Events`, newEvent);
       toast.success("Event added successfully!");
       onRequestClose();
       window.location.reload();

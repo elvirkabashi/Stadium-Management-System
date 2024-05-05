@@ -19,7 +19,7 @@ function EventCrud() {
 
   const loadEvents = async () => {
     try {
-      const response = await axios.get("http://localhost:5163/api/Events");
+      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}api/Events`);
       setEvents(response.data);
     } catch (error) {
       console.error("Error loading events:", error);
@@ -28,7 +28,7 @@ function EventCrud() {
 
   const loadEventCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:5163/api/EventsCategory");
+      const response = await axios.get("${import.meta.env.VITE_BASE_URL}api/EventsCategory");
       setEventCategories(response.data);
     } catch (error) {
       console.error("Error loading event categories:", error);
@@ -57,7 +57,7 @@ function EventCrud() {
 
   const handleDeleteEvent = async (id) => {
     try {
-      await axios.delete(`http://localhost:5163/api/Events/${id}`);
+      await axios.delete(`${import.meta.env.VITE_BASE_URL}api/Events/${id}`);
       await loadEvents();
     } catch (error) {
       console.error("Error deleting event:", error);

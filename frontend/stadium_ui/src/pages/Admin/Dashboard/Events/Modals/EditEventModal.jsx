@@ -19,7 +19,7 @@ function EditEventModal({ isOpen, onRequestClose, event, categories }) {
     try {
       setSaveLoading(true);
       const updatedEvent = { ...event, title, description, date, location, categoryId };
-      await axios.put(`http://localhost:5163/api/Events/${event.id}`, updatedEvent);
+      await axios.put(`${import.meta.env.VITE_BASE_URL}api/Events/${event.id}`, updatedEvent);
       toast.success("Event updated successfully!");
       onRequestClose();
     } catch (error) {

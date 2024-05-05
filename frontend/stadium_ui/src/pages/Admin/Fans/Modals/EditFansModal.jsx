@@ -70,7 +70,7 @@ function EditFansModal({ isOpen, onRequestClose, fans, fansCategory }) {
         fansCategoryId: fansCategoryId,
       };
 
-      await axios.put(`http://localhost:5163/api/Fans/${fans.id}`, updatedFans);
+      await axios.put(`${import.meta.env.VITE_BASE_URL}api/Fans/${fans.id}`, updatedFans);
       toast.success(`Fans updated successfully`);
       location.href = "/"
       setIsLoading(false);  

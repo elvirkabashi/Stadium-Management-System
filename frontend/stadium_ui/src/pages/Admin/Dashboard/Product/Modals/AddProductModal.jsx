@@ -25,7 +25,7 @@ function AddProductModal({ isOpen, onRequestClose }) {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await axios.get("http://localhost:5163/api/Categories");
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}api/Categories`);
         setCategories(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);
@@ -79,7 +79,7 @@ function AddProductModal({ isOpen, onRequestClose }) {
       };
 
 
-        await axios.post("http://localhost:5163/api/Products", newProduct);
+        await axios.post(`${import.meta.env.VITE_BASE_URL}api/Products`, newProduct);
         onRequestClose();
         window.location.reload();
 

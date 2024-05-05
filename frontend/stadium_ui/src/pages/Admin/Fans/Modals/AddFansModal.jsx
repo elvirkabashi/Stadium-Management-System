@@ -28,7 +28,7 @@ function AddFansModal({ isOpen, onRequestClose }) {
   useEffect(() => {
     const fetchFansCategory = async () => {
       try {
-        const response = await axios.get("http://localhost:5163/api/FansCategory");
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}api/FansCategory`);
         setFansCategory(response.data);
       } catch (error) {
         console.error("Error fetching fans categories:", error);
@@ -82,7 +82,7 @@ function AddFansModal({ isOpen, onRequestClose }) {
       };
 
 
-        await axios.post("http://localhost:5163/api/Fans", newFans);
+        await axios.post(`${import.meta.env.VITE_BASE_URL}api/Fans`, newFans);
         onRequestClose();
         window.location.reload();
 

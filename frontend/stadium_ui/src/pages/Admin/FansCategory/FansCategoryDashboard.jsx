@@ -20,7 +20,7 @@ function FansCategoryDashboard() {
 
   const loadFansCategory = async () => {
     try {
-      const response = await axios.get("http://localhost:5163/api/FansCategory");
+      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}api/FansCategory`);
       setFansCategory(response.data);
     } catch (error) {
       console.error("Error loading fans categories:", error);
@@ -49,7 +49,7 @@ function FansCategoryDashboard() {
 
   const handleDeleteFansCategory = async (id) => {
     try {
-      await axios.delete(`http://localhost:5163/api/FansCategory/${id}`);
+      await axios.delete(`${import.meta.env.VITE_BASE_URL}api/FansCategory/${id}`);
       await loadFansCategory();
     } catch (error) {
       console.error("Error deleting Fans Category:", error);

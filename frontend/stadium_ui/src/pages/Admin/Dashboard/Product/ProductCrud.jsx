@@ -19,7 +19,7 @@ function ProductCrud() {
 
   const loadProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5163/api/Products");
+      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}api/Products`);
       setProducts(response.data);
     } catch (error) {
       console.error("Error loading products:", error);
@@ -28,7 +28,7 @@ function ProductCrud() {
 
   const loadCategories = async () => {
     try {
-      const response = await axios.get("http://localhost:5163/api/Categories");
+      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}api/Categories`);
       setCategories(response.data);
     } catch (error) {
       console.error("Error loading categories:", error);
@@ -57,7 +57,7 @@ function ProductCrud() {
 
   const handleDeleteProduct = async (id) => {
     try {
-      await axios.delete(`http://localhost:5163/api/Products/${id}`);
+      await axios.delete(`${import.meta.env.VITE_BASE_URL}api/Products/${id}`);
       await loadProducts();
     } catch (error) {
       console.error("Error deleting product:", error);

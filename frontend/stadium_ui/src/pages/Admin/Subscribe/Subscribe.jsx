@@ -13,7 +13,7 @@ function Subscribe() {
     const [showConfirmModal, setShowConfirmModal] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:5163/api/Subscribe')
+        axios.get(`${import.meta.env.VITE_BASE_URL}api/Subscribe`)
         .then(res => {
             setSub(res.data);
             setLoading(false); 
@@ -22,7 +22,7 @@ function Subscribe() {
 
     const handleDeleteSubscribes = async () => {
         try {
-            await axios.delete(`http://localhost:5163/api/Subscribe/${subToDelete}`);
+            await axios.delete(`${import.meta.env.VITE_BASE_URL}api/Subscribe/${subToDelete}`);
             
             setSub(sub.filter(m => m.id !== subToDelete));
             setSubToDelete(null); 

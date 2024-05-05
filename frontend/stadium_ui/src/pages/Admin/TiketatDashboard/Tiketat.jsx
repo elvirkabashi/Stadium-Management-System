@@ -11,7 +11,7 @@ function Tiketat() {
     const [hoverStates, setHoverStates] = useState({});
 
     useEffect(() => {
-        axios.get('http://localhost:5163/api/Tiketa')
+        axios.get(`${import.meta.env.VITE_BASE_URL}api/Tiketa`)
             .then(res => {
                 const formattedTiketat = res.data.map(tiketa => {
                     return {
@@ -27,6 +27,7 @@ function Tiketat() {
                 setError('Error fetching tickets!');
                 setLoading(false);
             });
+
     }, []);
 
     const handleMouseEnter = (id) => {
@@ -63,6 +64,7 @@ function Tiketat() {
                             <th scope="col">Rezervuesi</th>
                             <th scope="col">Nr. Ulseve</th>
                             <th scope="col">Date</th>
+                            <th scope="col">Total</th>
                             <th scope="col">Details</th>
                         </tr>
                     </thead>
@@ -70,11 +72,12 @@ function Tiketat() {
                         {tiketat.length > 0 ? (
                             tiketat.map(t => (
                                 <tr key={t.tiketaId}>
-                                    <th scope="row">{t.tiketaId}</th>
-                                    <td>{t.eventName}</td>
+                                    <th scope="row">1</th>
+                                    <td>{t.eventId}</td>
                                     <td>Filani</td>
-                                    <td>{t.nrUlseve} {t.nrUlseve > 1 ? 'persona' : 'person'}</td>
+                                    <td>{t.ulset.length} {t.ulset.length > 1 ? 'persona' : 'person'}</td>
                                     <td>{t.dataRezervimit}</td>
+                                    <td>{t.total}€</td>
                                     <td onMouseEnter={() => handleMouseEnter(t.tiketaId)}
                                         onMouseLeave={() => handleMouseLeave(t.tiketaId)}>
                                         <a href={`tiketat/${t.tiketaId}`}><i className={`bx ${hoverStates[t.tiketaId] ? 'bx-detail' : 'bxs-detail'} bx-flip-vertical ms-3 fs-5`}></i></a>

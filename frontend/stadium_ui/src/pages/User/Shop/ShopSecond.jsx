@@ -1,8 +1,5 @@
 import React, {useEffect} from 'react';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.min.js';
-
 import img10 from '../../images/full_width_banner-culture_wear_535x.webp'
 import img1 from '../../images/d9a6c41ab6ef92bd3e6c11d0df37b942.jpg'
 import img2 from '../../images/RealMadrid_Official_Online_Store.avif'

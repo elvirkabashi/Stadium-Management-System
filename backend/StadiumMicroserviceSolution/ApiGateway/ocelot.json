@@ -1,0 +1,124 @@
+{
+  "Routes": [
+    {
+      //Contact API
+      "UpstreamPathTemplate": "/api/Contact",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Contact"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Contact/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Contact/{id}"
+    },
+    {
+
+      //EventCategory API
+      "UpstreamPathTemplate": "/api/EventsCategory",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/EventsCategory"
+    },
+    {
+      "UpstreamPathTemplate": "/api/EventsCategory/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/EventsCategory/{id}"
+    },
+    {
+
+      //Event API
+      "UpstreamPathTemplate": "/api/Events",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Events"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Events/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Events/{id}"
+    },
+    {
+      //Tiketa API
+      "UpstreamPathTemplate": "/api/Tiketa",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mongodbwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Tiketa",
+      "CorsPolicyName": "AllowAll"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Tiketa/{tiketaId}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mongodbwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Tiketa/{tiketaId}",
+      "CorsPolicyName": "AllowAll"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Tiketa/Exists/{label}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mongodbwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Tiketa/Exists/{label}",
+      "CorsPolicyName": "AllowAll"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://mysqlwebapi:80"
+  }
+}

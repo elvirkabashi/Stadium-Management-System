@@ -68,7 +68,7 @@ function EditProductModal({ isOpen, onRequestClose, product, categories }) {
         imageUrl: imageUrll
       };
 
-      await axios.put(`http://localhost:5163/api/Products/${product.id}`, updatedProduct);
+      await axios.put(`${import.meta.env.VITE_BASE_URL}api/Products/${product.id}`, updatedProduct);
       toast.success(`Product updated successfully`);
       location.href = "/"
       setIsLoading(false);  

@@ -10,8 +10,12 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
-builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseMySql(connectionString,ServerVersion.AutoDetect(connectionString)));
+var dbHost = Environment.GetEnvironmentVariable("DB_HOST");
+var dbName = Environment.GetEnvironmentVariable("DB_NAME");
+var dbPassword = Environment.GetEnvironmentVariable("DB_ROOT_PASSWORD");
+var connectionstring = $"Server={dbHost};Initial Catalog={dbName};Port=3306;User Id=lab2admin;Password={dbPassword}";
+
+builder.Services.AddDbContext<ApplicationDbContext>(o => o.UseMySQL(connectionstring));
 
 var app = builder.Build();
 

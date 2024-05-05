@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "mysqlwebapi": "StartDebugging",
+        "mongodbwebapi": "StartDebugging",
+        "apigateway": "StartDebugging"
+      }
+    }
+  }
+}

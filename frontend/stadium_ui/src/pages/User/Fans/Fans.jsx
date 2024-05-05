@@ -22,7 +22,7 @@ const Fans = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:5163/api/Fans');
+      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}api/Fans`);
       setFansData(response.data);
     } catch (error) {
       console.error('Error fetching fans:', error);

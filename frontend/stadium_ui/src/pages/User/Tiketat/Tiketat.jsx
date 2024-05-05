@@ -16,7 +16,7 @@ const Tiketat = () => {
     Aos.init({duration: 2000, easing: 'ease-out-back'})
   },[])
 
-  const [selectedType, setSelectedType] = useState('');
+  const [selectedType, setSelectedType] = useState('Futboll');
 
   function handleTypeChange(event) {
     setSelectedType(event.target.value);

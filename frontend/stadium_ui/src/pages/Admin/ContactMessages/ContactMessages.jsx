@@ -13,7 +13,7 @@ function ContactMessages() {
     const [showConfirmModal, setShowConfirmModal] = useState(false);
 
     useEffect(() => {
-        axios.get('http://localhost:5163/api/Contact')
+        axios.get(`${import.meta.env.VITE_BASE_URL}api/Contact`)
             .then(res => {
                 const formattedMessages = res.data.map(m => ({
                     ...m,
@@ -46,7 +46,7 @@ function ContactMessages() {
 
     const handleDeleteMessage = async () => {
         try {
-            await axios.delete(`http://localhost:5163/api/Contact/${messageToDelete}`);
+            await axios.delete(`${import.meta.env.VITE_BASE_URL}api/Contact/${messageToDelete}`);
             
             setMessages(messages.filter(m => m.id !== messageToDelete));
             setMessageToDelete(null); 
