@@ -1,27 +1,42 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { jwtDecode } from "jwt-decode";
 import './App.css'
 import { Routes, Route, BrowserRouter} from 'react-router-dom';
 import HomePage from './pages/User/HomePage/HomePage';
 import Sidebar from './components/Sidebar';
 import Navbar from './components/Navbar/Navbar'
 import Contact from './pages/User/Contact/Contact';
-import Eventet from './pages/User/Eventet/Eventet';
 import Tiketat from './pages/User/Tiketat/Tiketat'
 import Stadiumi from './pages/User/Stadiumi/Stadiumi';
 import LiveScore from './pages/User/Livescore/LiveScore';
 import Fans from './pages/User/Fans/Fans';
 import Footer from './components/Footer/Footer';
 import Shop from './pages/User/Shop/Shop';
+import Eventet from './pages/User/Eventet/Eventet';
+import Login from './pages/Auth/Login/Login';
+import { getAuthToken } from './pages/utils/Cookies';
+import NotFound from './components/NotFound/NotFound';
 
 
 const App = () => {
-                              //provo true ose false
-  const [isAdmin,] = useState(true)//Nese admini eshte true kan me u shfaq Sidebari dhe Routes per adminin 
-                                            //ne te kunderten ka mu shfaq pjesa e userit
 
-                                            //BrowserRouter per user te tjesht kan mu caktu te app.jsx 
-                                            //kurse per pjesen e adminit BrowserRouter jan te file Sidebar.jsx
+  const [isAdmin,setAdmin] = useState(null) 
 
+  useEffect(() => {
+    const authToken = getAuthToken();
+    if (authToken) {
+      const decodedToken = jwtDecode(authToken);
+      console.log(decodedToken.Role);
+      if (decodedToken.Role === 'Admin') {
+        setAdmin(true);
+      } else {
+        setAdmin(false);
+      }
+    } else {
+      setAdmin(null);
+    }
+  }, []);
+  
   return (
     <>
     {isAdmin ? (
@@ -32,12 +47,14 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/' element={<HomePage />} />
+          <Route path='/login' element={<Login/>}/>
           <Route path='/stadiumi' element={<Stadiumi />} />
           <Route path='/fans' element={<Fans />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/tiketat' element={<Tiketat />} />
           <Route path='/livescore' element={<LiveScore />} />
-          <Route path='*' element={<Eventet/>} />
+          <Route path='*' element={<NotFound/>} />
+          <Route path='/eventet' element={<Eventet/>} />
           <Route path='/shop' element={<Shop/>}/>
         </Routes>
         <Footer/>

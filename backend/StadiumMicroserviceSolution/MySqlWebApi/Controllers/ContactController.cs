@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +24,7 @@ namespace MySqlWebApi.Controllers
 
         // GET: api/Contact
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<IEnumerable<Contact>>> GetContact()
         {
           if (_context.Contact == null)
@@ -34,6 +36,7 @@ namespace MySqlWebApi.Controllers
 
         // GET: api/Contact/5
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ActionResult<Contact>> GetContact(int id)
         {
           if (_context.Contact == null)
@@ -68,6 +71,7 @@ namespace MySqlWebApi.Controllers
 
         // DELETE: api/Contact/5
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteContact(int id)
         {
             if (_context.Contact == null)

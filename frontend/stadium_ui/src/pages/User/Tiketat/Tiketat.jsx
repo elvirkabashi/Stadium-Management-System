@@ -4,6 +4,7 @@ import ConcertSeat from './ConcertSeat'
 import Aos from 'aos'
 import 'aos/dist/aos.css'
 import StadiumSeat from './StadiumSeat'
+import { getAuthToken } from '../../utils/Cookies'
 
 const eventTypes = [
   { label: 'Futboll', value: 'Futboll' },
@@ -11,6 +12,13 @@ const eventTypes = [
 ];
 
 const Tiketat = () => {
+
+  useEffect(() => {
+    const authToken = getAuthToken();
+    if(!authToken){
+        window.location.href = '/login';
+    }
+}, []);
 
   useEffect(() => {
     Aos.init({duration: 2000, easing: 'ease-out-back'})

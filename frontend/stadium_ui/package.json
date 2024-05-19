@@ -22,6 +22,8 @@
     "emailjs-com": "^3.2.0",
     "flowbite-react": "^0.8.0",
     "framer-motion": "^11.0.28",
+    "js-cookie": "^3.0.5",
+    "jwt-decode": "^4.0.0",
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",

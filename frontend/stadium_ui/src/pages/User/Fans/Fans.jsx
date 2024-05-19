@@ -1,15 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { HiOutlineLocationMarker, HiOutlineClipboardCheck } from 'react-icons/hi';
-import Footer from '../../../components/Footer/Footer';
 import { Link } from 'react-router-dom';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import axios from 'axios';
 
-// Import the images
-import KosovoStandard from '../../../Assets/KosovoStandard.jpg';
-import KosovoPremium from '../../../Assets/KosovoPremium.jpg';
-import KosovoJunior from '../../../Assets/KosovoJunior.jpg';
 import './Fans.css';
 
 const Fans = () => {
@@ -31,7 +26,7 @@ const Fans = () => {
 
   return (
     <>
-      <div class="events">
+      <div className="events">
         <h2 data-aos="fade-right">FANS</h2>
       </div>
       <section className="new-main container section">
@@ -74,7 +69,6 @@ const Fans = () => {
           })}
         </div>
       </section>
-      <Footer />
     </>
   );
 };

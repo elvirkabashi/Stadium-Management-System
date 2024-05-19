@@ -1,6 +1,19 @@
 {
   "Routes": [
     {
+      //Auth API
+      "UpstreamPathTemplate": "/api/Account",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "authenticationwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Account"
+    },
+    {
       //Contact API
       "UpstreamPathTemplate": "/api/Contact",
       "UpstreamHttpMethod": [ "Get", "Post", "Put" ],
@@ -76,6 +89,65 @@
         }
       ],
       "DownstreamPathTemplate": "/api/Events/{id}"
+    },
+    {
+
+      //Fans API
+      "UpstreamPathTemplate": "/api/Fans",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Fans",
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //},
+      //"RouteClaimsRequirement": {
+      //  "Role" :  "Admin"
+      //}authentifikimi ne api gateway
+    },
+    {
+      "UpstreamPathTemplate": "/api/Fans/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Fans/{id}"
+    },
+    {
+
+      //FansCategory API
+      "UpstreamPathTemplate": "/api/FansCategory",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/FansCategory"
+    },
+    {
+      "UpstreamPathTemplate": "/api/FansCategory/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/FansCategory/{id}"
     },
     {
       //Tiketa API

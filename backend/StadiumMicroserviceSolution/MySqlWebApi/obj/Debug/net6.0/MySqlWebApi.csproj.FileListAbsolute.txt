@@ -2252,3 +2252,7 @@ C:\Users\elvir\Desktop\Stadium-Management-System\backend\StadiumMicroserviceSolu
 C:\Users\elvir\Desktop\Stadium-Management-System\backend\StadiumMicroserviceSolution\MySqlWebApi\bin\Debug\net6.0\runtimes\win-x64\native\krb5_64.dll
 C:\Users\elvir\Desktop\Stadium-Management-System\backend\StadiumMicroserviceSolution\MySqlWebApi\bin\Debug\net6.0\runtimes\win-x64\native\krbcc64.dll
 C:\Users\elvir\Desktop\Stadium-Management-System\backend\StadiumMicroserviceSolution\MySqlWebApi\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\elvir\Desktop\Stadium-Management-System\backend\StadiumMicroserviceSolution\MySqlWebApi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\elvir\Desktop\Stadium-Management-System\backend\StadiumMicroserviceSolution\MySqlWebApi\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\elvir\Desktop\Stadium-Management-System\backend\StadiumMicroserviceSolution\MySqlWebApi\bin\Debug\net6.0\JwtAuthenticationManager.dll
+C:\Users\elvir\Desktop\Stadium-Management-System\backend\StadiumMicroserviceSolution\MySqlWebApi\bin\Debug\net6.0\JwtAuthenticationManager.pdb

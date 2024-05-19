@@ -5,10 +5,11 @@ import { TbGridDots } from 'react-icons/tb';
 import { MdOutlineStadium } from 'react-icons/md';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
+import { getAuthToken } from '../../pages/utils/Cookies';
+import Cookies from 'js-cookie';
 
 const Navbar = () => {
     const [active, setActive] = useState('navBar');
-
     const showNav = () => {
         setActive('navBar activeNavbar');
     };
@@ -20,14 +21,14 @@ const Navbar = () => {
     };
 
     useEffect(() => {
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
-        if (isLoggedIn) {
+        const authToken = getAuthToken();
+        if(authToken){
             setIsLoggedIn(true);
         }
     }, []);
 
     const handleLogout = () => {
-        localStorage.removeItem('isLoggedIn');
+        Cookies.remove('token');
         setIsLoggedIn(false);
         window.location.replace('/login');
     };

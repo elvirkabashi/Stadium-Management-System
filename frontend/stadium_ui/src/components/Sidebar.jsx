@@ -10,6 +10,7 @@ import Details from '../pages/Admin/TiketatDashboard/Details';
 import FansCategoryDashboard from '../pages/Admin/FansCategory/FansCategoryDashboard';
 import FansDashboard from '../pages/Admin/Fans/FansDashboard';
 import { MdGroups } from "react-icons/md";
+import Cookies from 'js-cookie';
 
 function Sidebar() {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -17,7 +18,10 @@ function Sidebar() {
     const toggleSidebar = () => {
         setIsExpanded(!isExpanded);
     }
-
+    const handleClickLogout = () => {
+        Cookies.remove('token');
+        window.location.href = '/';
+    };
     return (
         <div className='wrapper'>
             <aside id="sidebar" className={`${isExpanded ? 'expand' : ''}`}>
@@ -118,7 +122,7 @@ function Sidebar() {
                     </li>
                 </ul>
                 <div className="sidebar-footer">
-                    <a href="#" className="sidebar-link">
+                    <a href="/" onClick={handleClickLogout} className="sidebar-link">
                         <i className="lni lni-exit"></i>
                         <span>Logout</span>
                     </a>
