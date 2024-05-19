@@ -26,7 +26,7 @@ const App = () => {
     const authToken = getAuthToken();
     if (authToken) {
       const decodedToken = jwtDecode(authToken);
-      console.log(decodedToken.Role);
+      // console.log(decodedToken);
       if (decodedToken.Role === 'Admin') {
         setAdmin(true);
       } else {

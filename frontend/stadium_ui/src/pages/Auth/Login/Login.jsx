@@ -3,24 +3,26 @@ import axios from 'axios';
 import './Login.css';
 import Cookies from 'js-cookie';
 import { getAuthToken } from '../../utils/Cookies';
+import LoadingSpinner from '../../../components/LoadingSpinner';
 
 const LoginForm = () => {
+    const [loading, setLoading] = useState(false);
+
     const [formData, setFormData] = useState({
         username: '',
         password: '',
     });
 
-
     useEffect(() => {
         const authToken = getAuthToken();
-        if(authToken){
+        if (authToken) {
             window.location.href = '/';
         }
     }, []);
 
-
     const handleSubmit = async (event) => {
         event.preventDefault();
+        setLoading(true);
 
         try {
             const response = await axios.post('http://localhost:8001/api/Account', formData);
@@ -30,6 +32,8 @@ const LoginForm = () => {
             window.location.href = '/';
         } catch (error) {
             console.log(error.response.data);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -43,16 +47,18 @@ const LoginForm = () => {
 
     return (
         <div>
-            <p className='text-center'>Per momentin userat jan te shtuar hard code sa per testim <br/>
-            <b>Kyqu si admin</b>: Username: <b>Admin</b>, Password: <b>admin123</b> <br/>
-            <b>Kyqu si user</b>: Username: <b>User</b>, Password: <b>user123</b></p>
+            <p className='text-center'>
+                Për momentin userat janë të shtuar hard code sa për testim <br />
+                <b>Kyçu si admin</b>: Username: <b>Admin</b>, Password: <b>admin123</b> <br />
+                <b>Kyçu si user</b>: Username: <b>User</b>, Password: <b>user123</b>
+            </p>
             <form onSubmit={handleSubmit} className="signup-form" style={{ marginTop: '10px', marginBottom: '0px' }}>
                 <div className='container' style={{ maxWidth: '400px' }}>
                     <h1 className="signin" style={{ fontWeight: 'bold', paddingBottom: '30px', paddingTop: '20px' }}>
                         Log in
                     </h1>
                     <label>Username</label>
-                    <input 
+                    <input
                         type="text"
                         name="username"
                         placeholder="username"
@@ -60,16 +66,20 @@ const LoginForm = () => {
                         onChange={handleChange}
                     />
                     <label>Password</label>
-                    <input 
+                    <input
                         type="password"
                         name="password"
                         placeholder="password"
                         value={formData.password}
                         onChange={handleChange}
                     />
-                    <button type="submit" className="signup-button" style={{ marginBottom: '10px', marginTop: '5px' }}>
-                        Log In
-                    </button>
+                    {loading ? (
+                        <LoadingSpinner />
+                    ) : (
+                        <button type="submit" className="signup-button" style={{ marginBottom: '10px', marginTop: '5px' }}>
+                            Log In
+                        </button>
+                    )}
                 </div>
             </form>
         </div>

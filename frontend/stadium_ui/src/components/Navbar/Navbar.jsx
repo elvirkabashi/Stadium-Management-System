@@ -7,6 +7,7 @@ import { AiOutlineSearch } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { getAuthToken } from '../../pages/utils/Cookies';
 import Cookies from 'js-cookie';
+import { jwtDecode } from "jwt-decode";
 
 const Navbar = () => {
     const [active, setActive] = useState('navBar');
@@ -15,6 +16,7 @@ const Navbar = () => {
     };
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [userLoggedin, setUserLoggedIn] = useState(null)
 
     const removeNavbar = () => {
         setActive('navBar');
@@ -24,6 +26,8 @@ const Navbar = () => {
         const authToken = getAuthToken();
         if(authToken){
             setIsLoggedIn(true);
+            const decodedToken = jwtDecode(authToken);
+            setUserLoggedIn(decodedToken.name)
         }
     }, []);
 
@@ -87,9 +91,19 @@ const Navbar = () => {
                         </li>
                         {isLoggedIn ? (
                             <li className="navItem">
-                                <button className="btn" onClick={handleLogout}>
+                                 <li className="nav-item dropdown d-flex align-items-center justify-content-center gap-1 fs-6">
+                                    <i className="bi bi-person-circle mb-1"></i>
+                                    <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {userLoggedin}
+                                    </a>
+                                    <ul className="dropdown-menu">
+                            
+                                    <li><a className="dropdown-item" id="logout" href="" onClick={handleLogout}>Logout</a></li>
+                                    </ul>
+                                </li>
+                                {/* <button className="btn" onClick={handleLogout}>
                                     <span className="navLink">LOGOUT</span>
-                                </button>
+                                </button> */}
                             </li>
                         ) : (
                             <li className="navItem">
