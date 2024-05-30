@@ -17,7 +17,6 @@ import Login from './pages/Auth/Login/Login';
 import { getAuthToken } from './pages/utils/Cookies';
 import NotFound from './components/NotFound/NotFound';
 
-
 const App = () => {
 
   const [isAdmin,setAdmin] = useState(null) 
