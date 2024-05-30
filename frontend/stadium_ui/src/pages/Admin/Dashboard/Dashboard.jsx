@@ -3,6 +3,7 @@ import { Grid, Card, CardContent, Typography, Button } from "@mui/material";
 import EventsCrud from "./Events/EventsCrud";
 import ProductCrud from "./Product/ProductCrud";
 import "./Dashboard.css";
+import CategoryCrud from "./Categories/CategoryCrud";
 
 function Dashboard() {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -39,6 +40,9 @@ function Dashboard() {
 
       case "Events":
         return <EventsCrud />;
+
+        case "Categories":
+        return <CategoryCrud />;
       // Add more cases for other CRUD operations if needed
       default:
         return null;
