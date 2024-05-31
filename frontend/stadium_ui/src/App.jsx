@@ -10,6 +10,7 @@ import Tiketat from './pages/User/Tiketat/Tiketat'
 import Stadiumi from './pages/User/Stadiumi/Stadiumi';
 import LiveScore from './pages/User/Livescore/LiveScore';
 import Tours from './pages/User/Tours/Tours';
+import Autobuset from './pages/User/Tours/Autobuset';
 import Fans from './pages/User/Fans/Fans';
 import Footer from './components/Footer/Footer';
 import Shop from './pages/User/Shop/Shop';
@@ -50,6 +51,7 @@ const App = () => {
           <Route path='/login' element={<Login/>}/>
           <Route path='/stadiumi' element={<Stadiumi />} />
           <Route path='/tours' element={<Tours/>}/>
+          <Route path='/autobuset' element={<Autobuset/>}/>
           <Route path='/fans' element={<Fans />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/tiketat' element={<Tiketat />} />
