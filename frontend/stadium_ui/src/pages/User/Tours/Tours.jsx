@@ -244,7 +244,7 @@ const Tours = () => {
                   </div>
 
                   <button className='btn flex'>
-                  <Link to="/tiketat">
+                  <Link to="/disability">
                           Kliko Ketu  ► 
                   </Link>
                     
