@@ -1,5 +1,7 @@
 import React from 'react';
 import './Disability.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const Disability = () => {
   const handleSpeech = () => {
@@ -23,7 +25,7 @@ const Disability = () => {
           Nëse ju ose dikush që njihni kërkon këto akomodime, ju lutemi informoni stafin tonë dhe ata do t'ju ndihmojnë për të hyrë në këto vende të rezervuara.
         </p>
       </div>
-      <button className="speech-button" onClick={handleSpeech}>Dëgjoni përmbajtjen</button>
+      <button className="speech-button" onClick={handleSpeech}> <i className="fas fa-volume-up"></i> Dëgjoni përmbajtjen</button>
     </div>
   );
 }
