@@ -12,6 +12,7 @@ import LiveScore from './pages/User/Livescore/LiveScore';
 import Tours from './pages/User/Tours/Tours';
 import Autobuset from './pages/User/Tours/Autobuset';
 import ArritjaKetu from './pages/User/Tours/ArritjaKetu';
+import Objektet from './pages/User/Tours/Objektet';
 import Fans from './pages/User/Fans/Fans';
 import Footer from './components/Footer/Footer';
 import Shop from './pages/User/Shop/Shop';
@@ -54,6 +55,7 @@ const App = () => {
           <Route path='/tours' element={<Tours/>}/>
           <Route path='/autobuset' element={<Autobuset/>}/>
           <Route path='/arritja-ketu' element={<ArritjaKetu/>}/>
+          <Route path='/objektet' element={<Objektet/>}/>
           <Route path='/fans' element={<Fans />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/tiketat' element={<Tiketat />} />
