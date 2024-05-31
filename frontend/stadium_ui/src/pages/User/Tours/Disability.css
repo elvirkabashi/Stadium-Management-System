@@ -65,51 +65,19 @@ body {
   a:hover {
     text-decoration: underline;
   }
-  
-  /* Accessibility improvements */
-  @media (max-width: 600px) {
-    .disability-page {
-      padding: 1rem;
-      margin: 1rem;
-    }
-  
-    .disability-page h1 {
-      font-size: 2rem;
-    }
-  
-    .disability-page h2 {
-      font-size: 1.5rem;
-    }
-  
-    .disability-page p {
-      font-size: 1rem;
-    }
+  .speech-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
-  /* High contrast mode for better readability */
-  @media (prefers-contrast: high) {
-    body {
-      background-color: #000;
-      color: #fff;
-    }
-  
-    .disability-page {
-      background-color: #222;
-      color: #eee;
-      box-shadow: none;
-    }
-  
-    .disability-info {
-      background-color: #444;
-      border-left-color: #66ccff;
-    }
-  
-    a {
-      color: #66ccff;
-    }
-  
-    a:hover {
-      text-decoration: underline;
-    }
+  .speech-button:hover {
+    background-color: #2980b9;
   }
-  
