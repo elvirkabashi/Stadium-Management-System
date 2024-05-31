@@ -14,6 +14,7 @@ import Autobuset from './pages/User/Tours/Autobuset';
 import ArritjaKetu from './pages/User/Tours/ArritjaKetu';
 import Objektet from './pages/User/Tours/Objektet';
 import Disability from './pages/User/Tours/Disability';
+import VirtualTour from './pages/User/Tours/VirtualTour';
 import Fans from './pages/User/Fans/Fans';
 import Footer from './components/Footer/Footer';
 import Shop from './pages/User/Shop/Shop';
@@ -58,6 +59,7 @@ const App = () => {
           <Route path='/arritja-ketu' element={<ArritjaKetu/>}/>
           <Route path='/objektet' element={<Objektet/>}/>
           <Route path='/disability' element={<Disability/>}/>
+          <Route path='/virtualTour' element={<VirtualTour/>}/>
           <Route path='/fans' element={<Fans />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/tiketat' element={<Tiketat />} />
