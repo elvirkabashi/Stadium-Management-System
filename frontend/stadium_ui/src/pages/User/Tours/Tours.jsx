@@ -35,17 +35,17 @@ const Data2 = [
   },
 ]
 
-const Data3 = [
+// const Data3 = [
 
-  {
-    id:3,
-    imgSrc:fansat,
-    destTitle:'Harta e Stadiumit',
-    description: 'Planifikoni udhëtimin tuaj për ta bërë atë sa më të thjeshtë.'
-  },
+//   {
+//     id:3,
+//     imgSrc:fansat,
+//     destTitle:'Harta e Stadiumit',
+//     description: 'Planifikoni udhëtimin tuaj për ta bërë atë sa më të thjeshtë.'
+//   },
 
 
-]
+// ]
 const Data4 = [
     
     {
@@ -164,14 +164,10 @@ const Tours = () => {
           })
         }
        {
-          Data3.map(({id, imgSrc, destTitle, description})=>{
+          Data6.map(({id, destTitle, description})=>{
             return( 
               <div key={id} className="singleDestination" data-aos="fade-up">
                 
-                <div className="imageDiv">
-                  <img src={imgSrc} alt={destTitle} />
-                </div>
-
                 <div className="cardInfo">
                   <h4 className="destTitle">{destTitle}</h4>
 
@@ -180,8 +176,8 @@ const Tours = () => {
                   </div>
 
                   <button className='btn flex'>
-                  <Link to="/tiketat">
-                          Kliko Ketu  ► 
+                  <Link to="/contact">
+                          Shko te Kontakti  ► 
                   </Link>
                     
                   </button>
@@ -278,30 +274,6 @@ const Tours = () => {
                   <button className='btn flex'>
                   <Link to="/virtualTour">
                           Kliko Ketu  ► 
-                  </Link>
-                    
-                  </button>
-                </div>
-              </div>
-            )
-            
-          })
-        }
-        {
-          Data6.map(({id, destTitle, description})=>{
-            return( 
-              <div key={id} className="singleDestination" data-aos="fade-up">
-                
-                <div className="cardInfo">
-                  <h4 className="destTitle">{destTitle}</h4>
-
-                  <div className="desc">
-                    <p>{description}</p>
-                  </div>
-
-                  <button className='btn flex'>
-                  <Link to="/contact">
-                          Shko te Kontakti  ► 
                   </Link>
                     
                   </button>
