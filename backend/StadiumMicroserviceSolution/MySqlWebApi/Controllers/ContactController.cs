@@ -24,7 +24,7 @@ namespace MySqlWebApi.Controllers
 
         // GET: api/Contact
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<ActionResult<IEnumerable<Contact>>> GetContact()
         {
           if (_context.Contact == null)
@@ -36,7 +36,7 @@ namespace MySqlWebApi.Controllers
 
         // GET: api/Contact/5
         [HttpGet("{id}")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<ActionResult<Contact>> GetContact(int id)
         {
           if (_context.Contact == null)
@@ -71,7 +71,7 @@ namespace MySqlWebApi.Controllers
 
         // DELETE: api/Contact/5
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public async Task<IActionResult> DeleteContact(int id)
         {
             if (_context.Contact == null)

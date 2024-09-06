@@ -102,7 +102,7 @@
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Fans",
+      "DownstreamPathTemplate": "/api/Fans"
       //"AuthenticationOptions": {
       //  "AuthenticationProviderKey": "Bearer",
       //  "AllowedScopes": []
@@ -148,6 +148,60 @@
         }
       ],
       "DownstreamPathTemplate": "/api/FansCategory/{id}"
+    },
+    {
+
+      //Product API
+      "UpstreamPathTemplate": "/api/Products",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Products"
+    },
+    {
+      "UpstreamPathTemplate": "/api/Products/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Products/{id}"
+    },
+    {
+
+      //Category API
+      "UpstreamPathTemplate": "/api/Categories",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Categories"
+    },
+
+
+    {
+      "UpstreamPathTemplate": "/api/Categories/{id}",
+      "UpstreamHttpMethod": [ "Get", "Put", "Delete" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "mysqlwebapi",
+          "Port": 80
+        }
+      ],
+      "DownstreamPathTemplate": "/api/Categories/{id}"
     },
     {
       //Tiketa API

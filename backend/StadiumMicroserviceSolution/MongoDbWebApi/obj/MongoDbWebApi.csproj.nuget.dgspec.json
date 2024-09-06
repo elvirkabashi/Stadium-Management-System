@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj": {}
+    "C:\\Users\\T14s\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
+    "C:\\Users\\T14s\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
+        "projectUniqueName": "C:\\Users\\T14s\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
         "projectName": "JwtAuthenticationManager",
-        "projectPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
-        "packagesPath": "C:\\Users\\elvir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\obj\\",
+        "projectPath": "C:\\Users\\T14s\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj",
+        "packagesPath": "C:\\Users\\T14s\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\T14s\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\elvir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\T14s\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +22,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,15 +35,32 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Duende.IdentityServer.EntityFramework": {
+              "target": "Package",
+              "version": "[6.3.8, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.30, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.28, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.28, )"
             },
             "Microsoft.Extensions.DependencyInjection.Abstractions": {
               "target": "Package",
@@ -51,6 +69,10 @@
             "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
               "version": "[6.35.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[6.0.3, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -73,21 +95,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj": {
+    "C:\\Users\\T14s\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
+        "projectUniqueName": "C:\\Users\\T14s\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
         "projectName": "MongoDbWebApi",
-        "projectPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
-        "packagesPath": "C:\\Users\\elvir\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\obj\\",
+        "projectPath": "C:\\Users\\T14s\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\MongoDbWebApi.csproj",
+        "packagesPath": "C:\\Users\\T14s\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\T14s\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\MongoDbWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\elvir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\T14s\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -95,14 +117,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
-                "projectPath": "C:\\Users\\elvir\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
+              "C:\\Users\\T14s\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj": {
+                "projectPath": "C:\\Users\\T14s\\Desktop\\Stadium-Management-System\\backend\\StadiumMicroserviceSolution\\JwtAuthenticationManager\\JwtAuthenticationManager.csproj"
               }
             }
           }
@@ -111,6 +134,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -163,7 +191,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

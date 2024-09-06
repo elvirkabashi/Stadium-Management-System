@@ -8,13 +8,15 @@ Modal.setAppElement("#root");
 
 function EditCategoryModal({ isOpen, onRequestClose, category, loadCategories }) {
   const [name, setName] = useState(category.name);
+  const id = category.id;
+
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       setIsLoading(true);
-      await axios.put(`${import.meta.env.VITE_BASE_URL}api/Categories/${category.id}`, { name });
+      await axios.put(`${import.meta.env.VITE_BASE_URL}api/Categories/${category.id}`, {id, name });
       onRequestClose();
       loadCategories();
       toast.success("Category updated successfully");

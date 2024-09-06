@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MongoDbWebApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45926fc76d7504bf9be657be688be56473e973db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b21a315ce5b913f74022bd41a8045c8eef8573de")]
 [assembly: System.Reflection.AssemblyProductAttribute("MongoDbWebApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MongoDbWebApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

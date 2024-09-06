@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllers();
-builder.Services.AddCostumJwtAuthentication();
-
+/*builder.Services.AddCostumJwtAuthentication();
+*/
 
 IConfiguration configuration = new ConfigurationBuilder()
     .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)

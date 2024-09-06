@@ -1,84 +1,58 @@
-﻿################################################################################
-# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
-################################################################################
+﻿# Build Folders
+bin/
+obj/
+/obj/
 
+# Rider Project Files
+.idea/
+.idea_modules/
+.idea_bin/
 
-
-/backend/StadiumMicroserviceSolution/.vs
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/apphost.exe
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.AssemblyInfo.cs
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.AssemblyInfoInputs.cache
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.assets.cache
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.csproj.AssemblyReference.cache
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.GeneratedMSBuildEditorConfig.editorconfig
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/MongoDbWebApi.csproj.nuget.dgspec.json
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/MongoDbWebApi.csproj.nuget.g.props
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/project.assets.json
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/project.nuget.cache
-/backend/StadiumMicroserviceSolution/MySqlWebApi/bin/Debug/net6.0/MySqlWebApi.dll
-/backend/StadiumMicroserviceSolution/MySqlWebApi/bin/Debug/net6.0/MySqlWebApi.exe
-/backend/StadiumMicroserviceSolution/MySqlWebApi/bin/Debug/net6.0/MySqlWebApi.pdb
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/apphost.exe
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/ref/MySqlWebApi.dll
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/refint/MySqlWebApi.dll
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.AssemblyInfoInputs.cache
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.assets.cache
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.csproj.AssemblyReference.cache
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.dll
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.GeneratedMSBuildEditorConfig.editorconfig
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.pdb
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.sourcelink.json
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/MySqlWebApi.csproj.nuget.dgspec.json
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/MySqlWebApi.csproj.nuget.g.props
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/project.assets.json
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/project.nuget.cache
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.AssemblyInfoInputs.cache
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.assets.cache
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.GeneratedMSBuildEditorConfig.editorconfig
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/MongoDbWebApi.csproj.nuget.g.props
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/project.nuget.cache
-/backend/StadiumMicroserviceSolution/MySqlWebApi/bin/Debug/net6.0/MySqlWebApi.dll
-/backend/StadiumMicroserviceSolution/MySqlWebApi/bin/Debug/net6.0/MySqlWebApi.exe
-/backend/StadiumMicroserviceSolution/MySqlWebApi/bin/Debug/net6.0/MySqlWebApi.pdb
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/ref/MySqlWebApi.dll
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/refint/MySqlWebApi.dll
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/apphost.exe
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.AssemblyInfoInputs.cache
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.assets.cache
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.csproj.CoreCompileInputs.cache
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.dll
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.GeneratedMSBuildEditorConfig.editorconfig
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.genruntimeconfig.cache
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.pdb
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.sourcelink.json
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/bin/Debug/net6.0/MongoDbWebApi.dll
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/bin/Debug/net6.0/MongoDbWebApi.exe
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/bin/Debug/net6.0/MongoDbWebApi.pdb
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/ref/MongoDbWebApi.dll
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/refint/MongoDbWebApi.dll
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/apphost.exe
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.csproj.CoreCompileInputs.cache
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.csproj.FileListAbsolute.txt
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.dll
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.genruntimeconfig.cache
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.pdb
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/Debug/net6.0/MongoDbWebApi.sourcelink.json
-/backend/StadiumMicroserviceSolution/MongoDbWebApi/obj/MongoDbWebApi.csproj.nuget.g.props
-
+# User-specific files
+*.rsuser
 *.suo
 *.user
-_ReSharper.*
-bin
-obj
-bin/
-*.obj 
-backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.GeneratedMSBuildEditorConfig.editorconfig
-backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.assets.cache
-backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.AssemblyInfoInputs.cache
-backend/StadiumMicroserviceSolution/MySqlWebApi/obj/Debug/net6.0/MySqlWebApi.AssemblyInfo.cs
-backend/StadiumMicroserviceSolution/MySqlWebApi/obj/project.assets.json
-backend/StadiumMicroserviceSolution/MySqlWebApi/obj/MySqlWebApi.csproj.nuget.g.props
-backend/StadiumMicroserviceSolution/MySqlWebApi/obj/MySqlWebApi.csproj.nuget.dgspec.json
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/project.assets.json
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/MySqlWebApi.csproj.nuget.dgspec.json
-/backend/StadiumMicroserviceSolution/MySqlWebApi/obj/MySqlWebApi.csproj.nuget.g.props
+*.userosscache
+*.sln.docstates
+
+# Rider-specific files
+.idea/
+*.sln.iml
+
+# Mac specific files
+*.DS_Store
+
+# Windows specific files
+Thumbs.db
+desktop.ini
+
+# Visual Studio temporary files
+.vs/
+.vscode/
+
+# Rider specific files
+.idea/
+
+# Auto-generated files
+docker-compose.override.yml
+docker-compose.*
+
+# NuGet Packages
+*.nupkg
+# The packages folder can be ignored because of the .nuget folder.
+**/packages/*
+!**/packages/build/
+!**/packages/repositories.config
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code directories
+.vscode/

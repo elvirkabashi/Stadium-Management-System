@@ -27,7 +27,7 @@ namespace MongoDbWebApi.Controllers
 
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        // [Authorize(Roles = "Admin")]
         public async Task<ActionResult<IEnumerable<Tiketa>>> GetTiketat()
         {
             return await _tiketaCollection.Find(Builders<Tiketa>.Filter.Empty).ToListAsync();
@@ -35,7 +35,7 @@ namespace MongoDbWebApi.Controllers
 
 
         [HttpGet("{tiketaId}")]
-        [Authorize(Roles = "Admin,User")]
+        // [Authorize(Roles = "Admin,User")]
         public async Task<ActionResult<Tiketa>> GetById(string tiketaId)
         {
             var filterDefiniton = Builders<Tiketa>.Filter.Eq(x => x.TiketaId, tiketaId);
@@ -44,7 +44,7 @@ namespace MongoDbWebApi.Controllers
 
 
         [HttpPost]
-        [Authorize(Roles = "User")]
+        // [Authorize(Roles = "User")]
         public async Task<ActionResult> Create(Tiketa tiketa)
         {
             await _tiketaCollection.InsertOneAsync(tiketa);
@@ -62,7 +62,7 @@ namespace MongoDbWebApi.Controllers
 
 
         [HttpDelete("{tiketaId}")]
-        [Authorize(Roles = "Admin,User")]
+        // [Authorize(Roles = "Admin,User")]
         public async Task<ActionResult> Delete(string tiketaId)
         {
             var filterDefinition = Builders<Tiketa>.Filter.Eq(x => x.TiketaId, tiketaId);
@@ -72,7 +72,7 @@ namespace MongoDbWebApi.Controllers
 
         // GET: api/Tiketa/Exists/{label}
         [HttpGet("Exists/{label}")]
-        [Authorize(Roles = "User")]
+        // [Authorize(Roles = "User")]
         public async Task<ActionResult<bool>> LabelExists(string label)
         {
             try
