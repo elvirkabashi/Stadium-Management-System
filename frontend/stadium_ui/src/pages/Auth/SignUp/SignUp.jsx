@@ -1,15 +1,17 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import './Login.css';
-import Cookies from 'js-cookie';
+import './SignUp.css';
 import { getAuthToken } from '../../utils/Cookies';
 import LoadingSpinner from '../../../components/LoadingSpinner';
 
-const LoginForm = () => {
+const SignUp = () => {
     const [loading, setLoading] = useState(false);
 
     const [formData, setFormData] = useState({
-        username: '',
+        name: '',
+        lastName: '',
+        email: '',
+        phoneNumber: '',
         password: '',
     });
 
@@ -25,11 +27,8 @@ const LoginForm = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:54524/api/Auth/Login', formData);
-            const { token } = response.data;
-            Cookies.set('token', token, { secure: true, sameSite: 'strict' });
-            console.log('Token: ' + token);
-            window.location.href = '/';
+            await axios.post('http://localhost:54524/api/Auth/Register', formData);
+            window.location.href = '/login';
         } catch (error) {
             console.log(error.response.data);
         } finally {
@@ -50,39 +49,67 @@ const LoginForm = () => {
             <form onSubmit={handleSubmit} className="signup-form" style={{ marginTop: '10px', marginBottom: '0px' }}>
                 <div className='container' style={{ maxWidth: '400px' }}>
                     <h1 className="signin" style={{ fontWeight: 'bold', paddingBottom: '30px', paddingTop: '20px' }}>
-                        Log in
+                        Sign Up
                     </h1>
+
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Enter your name"
+                        value={formData.name}
+                        onChange={handleChange}
+                    />
+
+                    <label>Last Name</label>
+                    <input
+                        type="text"
+                        name="lastName"
+                        placeholder="Enter your last name"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                    />
+
                     <label>Email</label>
                     <input
                         type="email"
-                        name="username"
-                        placeholder="username"
-                        value={formData.username}
+                        name="email"
+                        placeholder="Enter your email"
+                        value={formData.email}
                         onChange={handleChange}
                     />
+
+                    <label>Phone Number</label>
+                    <input
+                        type="tel"
+                        name="phoneNumber"
+                        placeholder="Enter your phone number"
+                        value={formData.phoneNumber}
+                        onChange={handleChange}
+                    />
+
                     <label>Password</label>
                     <input
                         type="password"
                         name="password"
-                        placeholder="password"
+                        placeholder="Enter your password"
                         value={formData.password}
                         onChange={handleChange}
                     />
-                    
+
                     {loading ? (
                         <LoadingSpinner />
                     ) : (
                         <button type="submit" className="signup-button" style={{ marginBottom: '10px', marginTop: '5px' }}>
-                            Log In
+                            Sign Up
                         </button>
                     )}
-                    <p>Dont have an account? 
-                    <a href="/signup" className='ms-1'>Sign Up</a></p>
+                    <p>Already have an account?
+                    <a href="/Login" className='ms-1'>Log In</a></p>
                 </div>
-                
             </form>
         </div>
     );
 };
 
-export default LoginForm;
+export default SignUp;
