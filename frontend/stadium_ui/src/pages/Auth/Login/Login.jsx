@@ -25,7 +25,7 @@ const LoginForm = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:8001/api/Account', formData);
+            const response = await axios.post('http://localhost:8001/api/AuthController/Login', formData);
             const { token } = response.data;
             Cookies.set('token', token, { secure: true, sameSite: 'strict' });
             console.log('Token: ' + token);

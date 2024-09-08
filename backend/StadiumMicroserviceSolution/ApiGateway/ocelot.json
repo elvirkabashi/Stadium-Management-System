@@ -2,16 +2,16 @@
   "Routes": [
     {
       //Auth API
-      "UpstreamPathTemplate": "/api/Account",
+      "UpstreamPathTemplate": "/api/Auth/Login",
       "UpstreamHttpMethod": [ "Post" ],
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "authenticationwebapi",
+          "Host": "jwtauthenticationmanager",
           "Port": 80
         }
       ],
-      "DownstreamPathTemplate": "/api/Account"
+      "DownstreamPathTemplate": "/api/Auth/Login"
     },
     {
       //Contact API
