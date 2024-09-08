@@ -18,11 +18,11 @@ namespace JwtAuthenticationManager
 
         public JwtTokenHandler() 
         {
-            _userAccountList = new List<UserAccount>
-            {
-                new UserAccount{ UserName = "Admin", Password = "admin123", Role = "Admin" },
-                new UserAccount{ UserName = "User", Password = "user123", Role = "User" }
-            };
+            //_userAccountList = new List<UserAccount>
+            //{
+            //    new UserAccount{ UserName = "Admin", Password = "admin123", Role = "Admin" },
+            //    new UserAccount{ UserName = "User", Password = "user123", Role = "User" }
+            //};
         }
 
 

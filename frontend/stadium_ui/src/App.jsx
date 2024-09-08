@@ -22,6 +22,7 @@ import Eventet from './pages/User/Eventet/Eventet';
 import Login from './pages/Auth/Login/Login';
 import { getAuthToken } from './pages/utils/Cookies';
 import NotFound from './components/NotFound/NotFound';
+import SignUp from './pages/Auth/SignUp/SignUp';
 
 const App = () => {
 
@@ -31,8 +32,8 @@ const App = () => {
     const authToken = getAuthToken();
     if (authToken) {
       const decodedToken = jwtDecode(authToken);
-      // console.log(decodedToken);
-      if (decodedToken.Role === 'Admin') {
+      console.log(decodedToken.role);
+      if (decodedToken.role === 'Admin') {
         setAdmin(true);
       } else {
         setAdmin(false);
@@ -53,6 +54,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='/login' element={<Login/>}/>
+          <Route path='/signup' element={<SignUp/>}/>
           <Route path='/stadiumi' element={<Stadiumi />} />
           <Route path='/tours' element={<Tours/>}/>
           <Route path='/autobuset' element={<Autobuset/>}/>
