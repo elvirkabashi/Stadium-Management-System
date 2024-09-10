@@ -96,5 +96,31 @@ namespace JwtAuthenticationManager.Controller
                 return BadRequest("Error while registering!");
             }
         }
+
+        [AllowAnonymous]
+        [HttpPost("RefreshToken")]
+        public async Task<IActionResult> RefreshToken([FromBody] RefreshTokenDto dto)
+        {
+            try
+            {
+                var result = await _authService.RefreshToken(dto.RefreshToken);
+
+                if (result.newAccessToken == null)
+                {
+                    return BadRequest("Error in refresh token");
+                }
+
+                return Ok(new
+                {
+                    AccessToken = result.newAccessToken,
+                    RefreshToken = result.newRefreshToken
+                });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = "Error refreshing token: " + ex.Message });
+            }
+        }
+
     }
 }
