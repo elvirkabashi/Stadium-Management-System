@@ -1,7 +1,8 @@
 import React from 'react';
 import './LiveChatWindow.css';
+import Livechat from '../HomePage/Livechat/Livechat'; // Import the Livechat component
 
-const LiveChat = ({ isOpen, handleClose }) => {
+const LiveChatWindow = ({ isOpen, handleClose }) => {
   return (
     <div className={`live-chat ${isOpen ? 'open' : ''}`}>
       <div className="live-chat-header">
@@ -9,10 +10,10 @@ const LiveChat = ({ isOpen, handleClose }) => {
         <button onClick={handleClose}>Close</button>
       </div>
       <div className="live-chat-body">
-        {/* content */}
+        {isOpen && <Livechat />} {/* Render Livechat when the chat window is open */}
       </div>
     </div>
   );
 };
 
-export default LiveChat;
+export default LiveChatWindow;

@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using JwtAuthenticationManager.Helpers;
+using ChatService.Hubs;
+using ChatService.DataService;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddSignalR();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
@@ -104,6 +106,8 @@ builder.Services.AddRazorPages();
 
 builder.Services.AddTransient<JwtAuthenticationManager.Interfaces.IAuthService, JwtAuthenticationManager.Services.AuthService>();
 
+builder.Services.AddSingleton<SharedDb>();
+
 var app = builder.Build();
 
 app.UseCors(policy => policy.AllowAnyHeader()
@@ -121,5 +125,6 @@ app.UseCors("AllowLocalhost");
 app.UseRouting();
 
 app.MapControllers();
+app.MapHub<ChatHub>("/Chat");
 
 app.Run();

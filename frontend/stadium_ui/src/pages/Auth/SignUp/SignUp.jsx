@@ -27,7 +27,7 @@ const SignUp = () => {
         setLoading(true);
 
         try {
-            await axios.post('http://localhost:54524/api/Auth/Register', formData);
+            await axios.post('http://localhost:60311/api/Auth/Register', formData);
             window.location.href = '/login';
         } catch (error) {
             console.log(error.response.data);

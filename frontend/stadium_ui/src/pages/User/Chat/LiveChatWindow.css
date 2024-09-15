@@ -1,32 +1,74 @@
 .live-chat {
-    position: fixed;
-    right: -300px;
-    bottom: 0;
-    width: 300px;
-    height: 400px;
-    background-color: white;
-    border: 1px solid #ccc;
-    transition: right 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-  }
-  
-  .live-chat.open {
-    right: 0;
-  }
-  
-  .live-chat-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .live-chat-body {
-    padding: 10px;
-    overflow-y: auto;
-    height: calc(100% - 40px);
-  }
-  
+  position: fixed;
+  right: -400px; /* Updated to be larger when closed */
+  bottom: 0;
+  width: 400px; /* Increased width */
+  height: 600px; /* Increased height */
+  background-color: white;
+  border: 1px solid #ccc;
+  transition: right 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.live-chat.open {
+  right: 0;
+}
+
+.live-chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px; /* Increased padding */
+  background-color: #007bff;
+  color: white;
+  font-size: 18px; /* Increased font size */
+}
+
+.live-chat-header h4 {
+  margin: 0;
+}
+
+.live-chat-header button {
+  background-color: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.live-chat-body {
+  padding: 15px; /* Increased padding */
+  overflow-y: auto;
+  height: calc(100% - 60px); /* Adjusted to accommodate larger header */
+  font-size: 16px; /* Increased font size for better readability */
+}
+
+.live-chat-body::-webkit-scrollbar {
+  width: 6px;
+}
+
+.live-chat-body::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.live-chat-body::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Additional styling for Livechat component content */
+.live-chat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.live-chat-message {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 90%;
+  word-wrap: break-word;
+}
