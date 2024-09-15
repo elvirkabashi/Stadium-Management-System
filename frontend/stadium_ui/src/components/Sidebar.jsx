@@ -8,6 +8,7 @@ import Tiketat from '../pages/Admin/TiketatDashboard/Tiketat';
 import Subscribe from '../pages/Admin/Subscribe/Subscribe';
 import Details from '../pages/Admin/TiketatDashboard/Details';
 import FansCategoryDashboard from '../pages/Admin/FansCategory/FansCategoryDashboard';
+import Group from '../pages/Admin/Group/Group';
 import FansDashboard from '../pages/Admin/Fans/FansDashboard';
 import { MdGroups } from "react-icons/md";
 import Cookies from 'js-cookie';
@@ -115,6 +116,12 @@ function Sidebar() {
                         </a>
                     </li>
                     <li className="sidebar-item">
+                        <a href="/group" className="sidebar-link">
+                        <i className='bi'><MdGroups /></i>
+                            <span>Group</span>
+                        </a>
+                    </li>
+                    <li className="sidebar-item">
                         <a href="#" className="sidebar-link">
                             <i className="lni lni-cog"></i>
                             <span>Setting</span>
@@ -140,6 +147,7 @@ function Sidebar() {
                   <Route path="/fansCategoryDashboard" element={<FansCategoryDashboard/>} />
                   <Route path="/fansDashboard" element={<FansDashboard/>} />
                   <Route path="/tiketat/:id" element={<Details/>} />
+                  <Route path="/group" element={<Group/>} />
                   <Route path="*" element={<NotFound/>} />
                 </Routes>
               </div>

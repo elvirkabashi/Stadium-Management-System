@@ -15,25 +15,11 @@ namespace MySqlWebApi.Data
         public DbSet<EventsCategory> EventsCategories { get; set; }
         public DbSet<FansCategory> FansCategory { get; set; }
         public DbSet<Fans> Fans { get; set; }
+        public DbSet<Group> Groups { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
-            try
-            {
-                var databseCreator = Database.GetService<IDatabaseCreator>() as RelationalDatabaseCreator;
 
-                if (databseCreator != null)
-                {
-                    if (!databseCreator.CanConnect()) databseCreator.Create();
-
-                    if (!databseCreator.HasTables()) databseCreator.CreateTables();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
         }
     }
 }

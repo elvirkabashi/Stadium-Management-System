@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MySqlWebApi.Migrations
 {
-    public partial class ResetimiDatabazes : Migration
+    public partial class ResetimiDatabazes_Sh : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -70,25 +70,35 @@ namespace MySqlWebApi.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Fans",
+                name: "FansCategory",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Title = table.Column<string>(type: "longtext", nullable: false)
+                    Name = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    TitleDescription = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    PriceDescription = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Price = table.Column<int>(type: "int", nullable: false),
-                    Description = table.Column<string>(type: "longtext", nullable: false)
-                        .Annotation("MySql:CharSet", "utf8mb4"),
-                    Status = table.Column<bool>(type: "tinyint(1)", nullable: false)
+                    CreatedDateTime = table.Column<DateTime>(type: "datetime(6)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Fans", x => x.Id);
+                    table.PrimaryKey("PK_FansCategory", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Groups",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    GroupName = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Description = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Groups", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -169,25 +179,31 @@ namespace MySqlWebApi.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Tiketat",
+                name: "Fans",
                 columns: table => new
                 {
-                    TiketaId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    EventId = table.Column<int>(type: "int", nullable: false),
-                    Ulsja = table.Column<string>(type: "longtext", nullable: false)
+                    Title = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    UserId = table.Column<string>(type: "longtext", nullable: true)
+                    TitleDescription = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4"),
-                    DataRezervimit = table.Column<DateTime>(type: "datetime(6)", nullable: false)
+                    PriceDescription = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Price = table.Column<double>(type: "double", nullable: false),
+                    Description = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ImageUrl = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    FansCategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tiketat", x => x.TiketaId);
+                    table.PrimaryKey("PK_Fans", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Tiketat_Events_EventId",
-                        column: x => x.EventId,
-                        principalTable: "Events",
+                        name: "FK_Fans_FansCategory_FansCategoryId",
+                        column: x => x.FansCategoryId,
+                        principalTable: "FansCategory",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 })
@@ -199,14 +215,14 @@ namespace MySqlWebApi.Migrations
                 column: "EventCategoryId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Fans_FansCategoryId",
+                table: "Fans",
+                column: "FansCategoryId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Products_CategoryId",
                 table: "Products",
                 column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Tiketat_EventId",
-                table: "Tiketat",
-                column: "EventId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -215,7 +231,13 @@ namespace MySqlWebApi.Migrations
                 name: "Contact");
 
             migrationBuilder.DropTable(
+                name: "Events");
+
+            migrationBuilder.DropTable(
                 name: "Fans");
+
+            migrationBuilder.DropTable(
+                name: "Groups");
 
             migrationBuilder.DropTable(
                 name: "Products");
@@ -224,16 +246,13 @@ namespace MySqlWebApi.Migrations
                 name: "Subscribe");
 
             migrationBuilder.DropTable(
-                name: "Tiketat");
+                name: "EventsCategories");
+
+            migrationBuilder.DropTable(
+                name: "FansCategory");
 
             migrationBuilder.DropTable(
                 name: "Categories");
-
-            migrationBuilder.DropTable(
-                name: "Events");
-
-            migrationBuilder.DropTable(
-                name: "EventsCategories");
         }
     }
 }

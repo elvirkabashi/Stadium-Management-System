@@ -11,14 +11,14 @@ using MySqlWebApi.Data;
 namespace MySqlWebApi.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240422110715_ShtimiImageFans")]
-    partial class ShtimiImageFans
+    [Migration("20240915182504_ResetimiDatabazes_Sh")]
+    partial class ResetimiDatabazes_Sh
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.29")
+                .HasAnnotation("ProductVersion", "6.0.28")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("MySqlWebApi.Model.Category", b =>
@@ -140,12 +140,15 @@ namespace MySqlWebApi.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
+                    b.Property<int>("FansCategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("ImageUrl")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<double>("Price")
+                        .HasColumnType("double");
 
                     b.Property<string>("PriceDescription")
                         .IsRequired()
@@ -161,7 +164,46 @@ namespace MySqlWebApi.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("FansCategoryId");
+
                     b.ToTable("Fans");
+                });
+
+            modelBuilder.Entity("MySqlWebApi.Model.FansCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FansCategory");
+                });
+
+            modelBuilder.Entity("MySqlWebApi.Model.Group", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("GroupName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Groups");
                 });
 
             modelBuilder.Entity("MySqlWebApi.Model.Product", b =>
@@ -217,32 +259,6 @@ namespace MySqlWebApi.Migrations
                     b.ToTable("Subscribe");
                 });
 
-            modelBuilder.Entity("MySqlWebApi.Model.Tiketa", b =>
-                {
-                    b.Property<int>("TiketaId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("DataRezervimit")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Ulsja")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("longtext");
-
-                    b.HasKey("TiketaId");
-
-                    b.HasIndex("EventId");
-
-                    b.ToTable("Tiketat");
-                });
-
             modelBuilder.Entity("MySqlWebApi.Model.Events", b =>
                 {
                     b.HasOne("MySqlWebApi.Model.EventsCategory", "EventsCategory")
@@ -254,6 +270,17 @@ namespace MySqlWebApi.Migrations
                     b.Navigation("EventsCategory");
                 });
 
+            modelBuilder.Entity("MySqlWebApi.Model.Fans", b =>
+                {
+                    b.HasOne("MySqlWebApi.Model.FansCategory", "FansCategory")
+                        .WithMany()
+                        .HasForeignKey("FansCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("FansCategory");
+                });
+
             modelBuilder.Entity("MySqlWebApi.Model.Product", b =>
                 {
                     b.HasOne("MySqlWebApi.Model.Category", "Category")
@@ -263,17 +290,6 @@ namespace MySqlWebApi.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("MySqlWebApi.Model.Tiketa", b =>
-                {
-                    b.HasOne("MySqlWebApi.Model.Events", "Event")
-                        .WithMany()
-                        .HasForeignKey("EventId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Event");
                 });
 #pragma warning restore 612, 618
         }
