@@ -28,7 +28,7 @@ function EditGroupModal({ isOpen, onRequestClose, group }) {
         description
       };
 
-      await axios.put(`http://localhost:60311/api/Group/${group.id}`, updatedGroup);
+      await axios.put(`http://localhost:50473/api/Group/${group.id}`, updatedGroup);
       toast.success(`Group updated successfully`);
       location.href = "/"
       setIsLoading(false);  

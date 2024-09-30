@@ -23,11 +23,12 @@ function AddGroupModal({ isOpen, onRequestClose }) {
     try {
       setAddLoading(true);
       const newGroup = {
-        name
+        groupName,
+        description
       };
 
 
-        await axios.post(`http://localhost:60311/api/Group`, newGroup);
+      await axios.post(`http://localhost:50473/api/Group`, newGroup);
         onRequestClose();
         window.location.reload();
 

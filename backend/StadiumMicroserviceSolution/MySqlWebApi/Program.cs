@@ -20,7 +20,7 @@ builder.Services.AddEndpointsApiExplorer();
 var dbHost = Environment.GetEnvironmentVariable("DB_HOST");
 var dbName = Environment.GetEnvironmentVariable("DB_NAME");
 var dbPassword = Environment.GetEnvironmentVariable("DB_ROOT_PASSWORD");
-var connectionstring = $"Server=stadium.mysql.database.azure.com;Initial Catalog=stadium;Port=3306;User Id=lab2admin;Password=Elvirk123*";
+var connectionstring = $"Server=stadiumii.mysql.database.azure.com;Initial Catalog=stadium;Port=3306;User Id=lab2admin;Password=P@ssw0rd";
 
 builder.Services.AddDbContext<UserDbContext>(o =>
     o.UseMySql(connectionstring, ServerVersion.AutoDetect(connectionstring)));

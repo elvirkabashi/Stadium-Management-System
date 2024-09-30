@@ -13,9 +13,9 @@ services:
     networks:
       - backend
     environment:
-     - DB_HOST=stadium.mysql.database.azure.com
-     - DB_NAME=stadium
-     - DB_ROOT_PASSWORD=
+     - DB_HOST=stadiumii.mysql.database.azure.com
+     - DB_NAME=stadiumi
+     - DB_ROOT_PASSWORD=P@ssw0rd
 
   mongodbwebapi:
     container_name: stadiumi-api

@@ -1,17 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-import AddGroupModal from "./Modals/AddGroupModal";
-import EditGroupModal from "./Modals/EditGroupModal";
-import "./Group.css";
 import { Link } from "react-router-dom";
 
-
-function Group() {
+function GroupDashboard() {
   const [group, setGroup] = useState([]);
-  const [showAddModal, setShowAddModal] = useState(false);
-  const [showEditModal, setShowEditModal] = useState(false);
-  const [selectedGroup, setSelectedGroup] = useState(null);
-  const [, setIsEditing] = useState(false);
+  const [newGroup, setNewGroup] = useState({ groupName: "", description: ""});
+  const [editingGroup, setEditingGroup] = useState(null); // Track the group being edited
 
   useEffect(() => {
     loadGroup();
@@ -20,97 +14,152 @@ function Group() {
 
   const loadGroup = async () => {
     try {
-      const response = await axios.get(`http://localhost:60311/api/Group`);
+      const response = await axios.get(`http://localhost:50473/api/Group`);
       setGroup(response.data);
     } catch (error) {
-      console.error("Error loading fans groups:", error);
+      console.error("Error loading groups:", error);
     }
   };
 
-  const handleAddGroup = () => {
-    setShowAddModal(true);
+  const handleAddGroup = async () => {
+    try {
+      await axios.post(`http://localhost:50473/api/Group`, newGroup);
+      setNewGroup({ groupName: "", description: "" }); // Reset form
+      loadGroup(); // Reload group
+    } catch (error) {
+      console.error("Error adding group:", error);
+    }
   };
 
-  const handleCloseAddModal = () => {
-    setShowAddModal(false);
-  };
-
-  const handleEditGroup = (group) => {
-    setSelectedGroup(group);
-    setIsEditing(true);
-    setShowEditModal(true);
-  };
-
-  const handleCloseEditModal = () => {
-    setSelectedGroup(null);
-    setIsEditing(false);
-    setShowEditModal(false);
+  const handleUpdateGroup = async (updatedGroup) => {
+    try {
+      await axios.put(`http://localhost:50473/api/Group/${updatedGroup.id}`, updatedGroup);
+      setEditingGroup(null); // Exit edit mode
+      loadGroup(); // Reload group
+    } catch (error) {
+      console.error("Error updating group:", error);
+    }
   };
 
   const handleDeleteGroup = async (id) => {
     try {
-      await axios.delete(`http://localhost:60311/api/Group/${id}`);
-      await loadGroup();
+      await axios.delete(`http://localhost:50473/api/Group/${id}`);
+      loadGroup(); // Reload group
     } catch (error) {
-      console.error("Error deleting Fans Category:", error);
+      console.error("Error deleting group:", error);
     }
+  };
+
+  const handleEditChange = (e, field) => {
+    setEditingGroup({ ...editingGroup, [field]: e.target.value });
+  };
+
+  const handleNewGroupChange = (e, field) => {
+    setNewGroup({ ...newGroup, [field]: e.target.value });
   };
 
   return (
     <div className="container">
-      <h1 className="title">Groups</h1>
+      <h1 className="title">MEMBER</h1>
       <div className="title-line"></div>
-      <div className="action-container">
+
+      {/* Add New Group */}
+      <div className="add-group">
+        <input
+          type="text"
+          placeholder="Name"
+          value={newGroup.groupName}
+          onChange={(e) => handleNewGroupChange(e, "groupName")}
+          className="form-control"
+        />
+        <input
+          type="text"
+          placeholder="Description"
+          value={newGroup.description}
+          onChange={(e) => handleNewGroupChange(e, "description")}
+          className="form-control"
+        />
         <button onClick={handleAddGroup} className="btn btn-primary">
-          Add group
+          Add Group
         </button>
       </div>
+
       <table className="table">
         <thead>
           <tr>
+            <th>Nr.</th>
             <th>Name</th>
-            <th>Description</th>
-            <th>Action</th>
+            <th>Role</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          {group.map((group) => (
+          {group.map((group, index) => (
             <tr key={group.id}>
-              <td>{group.groupName}</td>
-              <td>{group.description}</td>
+              <td>{index + 1}</td>
               <td>
-                <button onClick={() => handleEditGroup(group)} className="edit-button">
-                  Edit
-                </button>
-                <button onClick={() => handleDeleteGroup(group.id)} className="delete-button">
-                  Delete
-                </button>
+                {editingGroup && editingGroup.id === group.id ? (
+                  <input
+                    type="text"
+                    value={editingGroup.groupName}
+                    onChange={(e) => handleEditChange(e, "groupName")}
+                    className="form-control"
+                  />
+                ) : (
+                  group.groupName
+                )}
+              </td>
+              <td>
+                {editingGroup && editingGroup.id === group.id ? (
+                  <input
+                    type="text"
+                    value={editingGroup.description}
+                    onChange={(e) => handleEditChange(e, "description")}
+                    className="form-control"
+                  />
+                ) : (
+                  group.description
+                )}
+              </td>
+              <td>
+                {editingGroup && editingGroup.id === group.id ? (
+                  <>
+                    <button
+                      onClick={() => handleUpdateGroup(editingGroup)}
+                      className="btn btn-success"
+                    >
+                      Save
+                    </button>
+                    <button
+                      onClick={() => setEditingGroup(null)}
+                      className="btn btn-secondary"
+                    >
+                      Cancel
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <button
+                      onClick={() => setEditingGroup(group)}
+                      className="btn btn-warning"
+                    >
+                      Update
+                    </button>
+                    <button
+                      onClick={() => handleDeleteGroup(group.id)}
+                      className="btn btn-danger"
+                    >
+                      Delete
+                    </button>
+                  </>
+                )}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <AddGroupModal
-        isOpen={showAddModal}
-        onRequestClose={handleCloseAddModal}
-        loadGroup={loadGroup}
-      />
-      {selectedGroup && (
-        <EditGroupModal
-          isOpen={showEditModal}
-          onRequestClose={handleCloseEditModal}
-          group={selectedGroup}
-          loadGroup={loadGroup}
-        />
-      )}
-
-      <div className="action-container">
-        <Link to="/fansDashboard" className="btn btn-secondary">
-          Return
-        </Link>
-      </div>
     </div>
   );
 }
 
-export default Group;
+export default GroupDashboard;

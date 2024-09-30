@@ -25,7 +25,7 @@ const LoginForm = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:60311/api/Auth/Login', formData);
+            const response = await axios.post(`${import.meta.env.VITE_BASE_URL}api/Auth/Login`, formData);
             const { token } = response.data;
             Cookies.set('token', token, { secure: true, sameSite: 'strict' });
             console.log('Token: ' + token);
