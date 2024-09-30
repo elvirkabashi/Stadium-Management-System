@@ -25,7 +25,7 @@ const StadiumSeat = () => {
 
     const isSeatReserved = async (label) => {
       try {
-        const response = await axios.get(`http://localhost:8001/api/Tiketa/Exists/${label}`);
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL_mongo}api/Tiketa/Exists/${label}`);
         return response.data;
       } catch (error) {
         console.error('Gabim gjatë kontrollimit të disponueshmërisë së ulësës:', error.message);
@@ -88,7 +88,7 @@ const StadiumSeat = () => {
 
       
       
-      await axios.post('http://localhost:8001/api/Tiketa', JSON.stringify(tiketa), {
+      await axios.post(`${import.meta.env.VITE_BASE_URL_mongo}api/Tiketa`, JSON.stringify(tiketa), {
         headers: {
           'Content-Type': 'application/json'
         }

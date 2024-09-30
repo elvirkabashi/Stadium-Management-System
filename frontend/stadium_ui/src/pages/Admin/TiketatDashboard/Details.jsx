@@ -13,7 +13,7 @@ function Details() {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_BASE_URL}api/Tiketa/${id}`)
+        axios.get(`${import.meta.env.VITE_BASE_URL_mongo}api/Tiketa/${id}`)
             .then(res => {
                 const data = res.data;
                 const formattedTiketa = {
@@ -83,7 +83,7 @@ function Details() {
                         <QRCode
                             size={256}
                             style={{ height: "auto", maxWidth: "100%", width: "100%" }}
-                            value={`http://localhost:5173/tiketat/${tiketa.tiketaId}`}
+                            value={`${import.meta.env.VITE_BASE_URL_mongo}tiketat/${tiketa.tiketaId}`}
                             viewBox={`0 0 256 256`}
                         />
                         </div>

@@ -11,7 +11,7 @@ function Tiketat() {
     const [hoverStates, setHoverStates] = useState({});
 
     useEffect(() => {
-        axios.get(`${import.meta.env.VITE_BASE_URL}api/Tiketa`)
+        axios.get(`${import.meta.env.VITE_BASE_URL_mongo}api/Tiketa`)
             .then(res => {
                 const formattedTiketat = res.data.map(tiketa => {
                     return {

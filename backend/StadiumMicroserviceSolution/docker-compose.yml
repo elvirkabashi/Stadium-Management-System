@@ -12,6 +12,8 @@ services:
       dockerfile: MySqlWebApi/Dockerfile
     networks:
       - backend
+    ports:
+        - 8083:80 
     environment:
      - DB_HOST=stadiumii.mysql.database.azure.com
      - DB_NAME=stadiumi
@@ -25,6 +27,8 @@ services:
       dockerfile: MongoDbWebApi/Dockerfile 
     networks:
      - backend
+    ports:
+     - 8082:80 
     environment:
        - DB_NAME=StadiumiDB
        - DB_ROOT_PASSWORD=lab2admin
