@@ -99,6 +99,7 @@ const Navbar = () => {
                                     <ul className="dropdown-menu">
                             
                                     <li><a className="dropdown-item" id="logout" href="" onClick={handleLogout}>Logout</a></li>
+                                    <li><a className="dropdown-item" href='/userTikets'>Tiketat</a></li>
                                     </ul>
                                 </li>
                                 {/* <button className="btn" onClick={handleLogout}>

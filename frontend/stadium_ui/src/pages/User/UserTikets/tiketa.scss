@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@100..900&display=swap');
+
+.container{
+
+    .tiketa{
+
+        background-color: rgb(255, 255, 255);
+        width: 900px;
+
+        .header{
+            h1{
+                font-size: 70px;
+                color: #2a4a6c;
+            }
+            p{
+                text-align: center;
+                font-family: "Heebo", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 500;
+                font-style: normal;
+            }
+        }
+
+
+        .mainn{
+            .line2{
+                height: 50px;
+                background-color: rgb(225, 221, 221);
+                width: 20%;
+                clip-path: polygon(0 0, 100% 0, 100% 0, 62% 100%, 0 100%);
+            }
+            .line{
+                
+                background-color: #2a4a6c;
+                height: 50px;
+                width: 80%;
+                clip-path: polygon(10% 0, 100% 0, 100% 90%, 0 100%);
+
+                p{
+                    color: white;
+                    float: right;
+                }
+            }
+        }
+
+
+
+        .foter{
+            .image{
+                width: 300px;
+            }
+
+            .info{
+                background-color: white;
+
+                li{
+                    
+                    span{
+                        font-weight: 600;
+                    }
+                }
+
+                ol{
+                    li{
+                        list-style:decimal;
+                    }
+                }
+            }
+            .butoni{
+                margin:0 auto;
+                button{
+                    border: none;
+                    padding: 5px;
+                    border-radius: 5px;
+                    background-color: #2a4a6c;
+                    color: white;
+                    
+                }
+            }
+            .qrcode{
+                width: 200px;
+                margin-left: 70px;
+            }
+        }
+        
+    }
+
+
+}
+
+.qrcode {
+    display: none;
+}
+@media print {
+    .butoni{
+        display: none;
+    }
+    .qrcode {
+        display: block;
+    }
+    .ulset{
+        display: none;
+    }
+}

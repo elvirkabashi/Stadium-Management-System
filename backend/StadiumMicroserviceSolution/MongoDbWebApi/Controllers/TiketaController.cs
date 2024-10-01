@@ -87,5 +87,27 @@ namespace MongoDbWebApi.Controllers
             }
         }
 
+        [HttpGet("user/{email}")]
+        public async Task<ActionResult<IEnumerable<Tiketa>>> GetByUserEmail(string email)
+        {
+            try
+            {
+                // Filter tickets by user's email in the "users" array
+                var filter = Builders<Tiketa>.Filter.ElemMatch(t => t.Users, u => u.Email == email);
+                var tiketat = await _tiketaCollection.Find(filter).ToListAsync();
+
+                if (tiketat.Count == 0)
+                {
+                    return NotFound($"No tickets found for the user with email: {email}");
+                }
+
+                return Ok(tiketat);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Gabim gjatë kërkesës: {ex.Message}");
+            }
+        }
+
     }
 }

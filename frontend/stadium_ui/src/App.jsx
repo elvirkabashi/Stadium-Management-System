@@ -23,6 +23,8 @@ import Login from './pages/Auth/Login/Login';
 import { getAuthToken } from './pages/utils/Cookies';
 import NotFound from './components/NotFound/NotFound';
 import SignUp from './pages/Auth/SignUp/SignUp';
+import UserTikets from './pages/User/UserTikets/UserTikets';
+import Details from './pages/Admin/TiketatDashboard/Details';
 
 const App = () => {
 
@@ -69,6 +71,8 @@ const App = () => {
           <Route path='*' element={<NotFound/>} />
           <Route path='/eventet' element={<Eventet/>} />
           <Route path='/shop' element={<Shop/>}/>
+          <Route path='/userTikets' element={<UserTikets/>}/>
+          <Route path="/tiketat/:id" element={<Details/>} />
         </Routes>
         <Footer/>
       </BrowserRouter>
