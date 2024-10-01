@@ -74,7 +74,7 @@ function Tiketat() {
                                 <tr key={t.tiketaId}>
                                     <th scope="row">1</th>
                                     <td>{t.eventId}</td>
-                                    <td>Filani</td>
+                                    <td>{t.users.length > 0 ? t.users[0].email : 'No email'}</td>
                                     <td>{t.ulset.length} {t.ulset.length > 1 ? 'persona' : 'person'}</td>
                                     <td>{t.dataRezervimit}</td>
                                     <td>{t.total}€</td>

@@ -8,8 +8,8 @@ namespace MongoDbWebApi.Model
     {
         [BsonId, BsonElement("_id"), BsonRepresentation(BsonType.ObjectId)]
         public string TiketaId { get; set; }
-        [BsonElement("userId"), BsonRepresentation(BsonType.String)]
-        public string UserId { get; set; }
+        [BsonElement("users")]
+        public List<User> Users { get; set; }
         [BsonElement("eventId"), BsonRepresentation(BsonType.Int32)]
         public int EventId { get; set; }
         [BsonElement("data_rezervimit"), BsonRepresentation(BsonType.DateTime)]

@@ -67,7 +67,7 @@ function Details() {
                         <div className='info'>
                             <ul>
                                 <li><span>TiketId:</span> {tiketa.tiketaId}</li>
-                                <li><span>Emri:</span> Elvir Kabashi</li>
+                                <li><span>Email:</span> {tiketa.users.length > 0 ? tiketa.users[0].email : 'No email'}</li>
                                 <li><span>Nr.Ulseve:</span> {tiketa.ulset.length} ulse</li>
                                 <li><span>Cmimi:</span> {tiketa.total}€</li>
                                 <li className='ulset'><span>Ulset:</span></li>

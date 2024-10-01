@@ -2,20 +2,32 @@ import { useEffect, useState } from 'react';
 import { SeatsioSeatingChart } from '@seatsio/seatsio-react';
 import axios from 'axios';
 import Modal from 'react-modal';
+import { jwtDecode } from "jwt-decode";
+import { getAuthToken } from '../../utils/Cookies';
 
 const StadiumSeat = () => {
 
-  const userId = "s1sd5w16";
   const [selectedSeats, setSelectedSeats] = useState([]);
   const [error,setError] = useState(null);
   const[ulset,setUlset] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [userId,setUserId] = useState()
+  const [userEmail,setUserEmail] = useState()
 
   useEffect(() => {
     if(ulset.length <= 0) {
       setError(null);
     }
   },[ulset,selectedSeats])
+
+  useEffect(() => {
+    const authToken = getAuthToken();
+    if (authToken) {
+      const decodedToken = jwtDecode(authToken);
+      setUserId(decodedToken.nameid);
+      setUserEmail(decodedToken.unique_name);
+    }
+  })
 
 
   const handleSeatSelect = async (selectedObject) => {
@@ -75,7 +87,12 @@ const StadiumSeat = () => {
 
       const tiketa = {
         tiketaId: "",
-        userId: userId,
+        users: [
+          {
+            id: userId,
+            email: userEmail,
+          }
+        ],
         eventId:1,
         ulset: selectedSeats.map(seat => (
         {
