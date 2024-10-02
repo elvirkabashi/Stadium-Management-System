@@ -12,7 +12,7 @@ function Livechat() {
     try {
       // initiate connection
       const conn = new HubConnectionBuilder()
-        .withUrl("http://localhost:60311/chat")
+        .withUrl(`${import.meta.env.VITE_BASE_URL}chat`)
         .configureLogging(LogLevel.Information)
         .build();
 

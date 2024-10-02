@@ -49,7 +49,7 @@ const Footer = () => {
 
     try {
       setLoading(true);
-      await axios.post('http://localhost:5163/api/Subscribe', newSubscribe);
+      await axios.post('${import.meta.env.VITE_BASE_URL}api/Subscribe', newSubscribe);
 
       setSubmissionStatus({ success: true, error: '' });
       setNewSubscribe({

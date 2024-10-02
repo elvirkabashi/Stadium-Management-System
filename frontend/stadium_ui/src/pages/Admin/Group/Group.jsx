@@ -14,7 +14,7 @@ function GroupDashboard() {
 
   const loadGroup = async () => {
     try {
-      const response = await axios.get(`http://localhost:50473/api/Group`);
+      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}api/Group`);
       setGroup(response.data);
     } catch (error) {
       console.error("Error loading groups:", error);
@@ -23,7 +23,7 @@ function GroupDashboard() {
 
   const handleAddGroup = async () => {
     try {
-      await axios.post(`http://localhost:50473/api/Group`, newGroup);
+      await axios.post(`${import.meta.env.VITE_BASE_URL}api/Group`, newGroup);
       setNewGroup({ groupName: "", description: "" }); // Reset form
       loadGroup(); // Reload group
     } catch (error) {
@@ -33,7 +33,7 @@ function GroupDashboard() {
 
   const handleUpdateGroup = async (updatedGroup) => {
     try {
-      await axios.put(`http://localhost:50473/api/Group/${updatedGroup.id}`, updatedGroup);
+      await axios.put(`${import.meta.env.VITE_BASE_URL}api/Group/${updatedGroup.id}`, updatedGroup);
       setEditingGroup(null); // Exit edit mode
       loadGroup(); // Reload group
     } catch (error) {
@@ -43,7 +43,7 @@ function GroupDashboard() {
 
   const handleDeleteGroup = async (id) => {
     try {
-      await axios.delete(`http://localhost:50473/api/Group/${id}`);
+      await axios.delete(`${import.meta.env.VITE_BASE_URL}api/Group/${id}`);
       loadGroup(); // Reload group
     } catch (error) {
       console.error("Error deleting group:", error);

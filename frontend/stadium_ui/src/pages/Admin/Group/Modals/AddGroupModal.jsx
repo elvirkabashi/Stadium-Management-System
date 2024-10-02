@@ -28,7 +28,7 @@ function AddGroupModal({ isOpen, onRequestClose }) {
       };
 
 
-      await axios.post(`http://localhost:50473/api/Group`, newGroup);
+      await axios.post(`${import.meta.env.VITE_BASE_URL}api/Group`, newGroup);
         onRequestClose();
         window.location.reload();
 
